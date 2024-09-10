@@ -1,5 +1,6 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { TableComponent } from '../../shared/components/table/table.component';
 
 @Component({
   standalone: true,
@@ -7,6 +8,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  imports: [TableComponent],
 })
 export class RecipesComponent {
   @HostBinding('class') readonly className = 'recipes';

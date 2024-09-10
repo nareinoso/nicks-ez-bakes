@@ -1,0 +1,23 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let column of exampleData.columns">
+          {{ column.label }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of exampleData.data">
+        <td *ngFor="let column of exampleData.columns">
+          {{
+            (item[column.key] | typeof) === '[object Date]'
+              ? (item[column.key] | date: 'dd/MM/yyyy')
+              : item[column.key]
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

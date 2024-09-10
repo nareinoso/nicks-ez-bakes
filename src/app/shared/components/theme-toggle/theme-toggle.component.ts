@@ -20,8 +20,8 @@ const MOON_SVG =
 @Component({
   standalone: true,
   selector: 'theme-toggle',
-  templateUrl: 'theme-toggle.html',
-  styleUrls: ['./theme-toggle.scss'],
+  templateUrl: 'theme-toggle.component.html',
+  styleUrls: ['./theme-toggle.component.scss'],
   encapsulation: ViewEncapsulation.None,
   imports: [MatSlideToggleModule, CommonModule],
 })
