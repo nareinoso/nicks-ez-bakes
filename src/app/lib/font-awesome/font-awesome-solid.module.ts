@@ -3,7 +3,11 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faDownload,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   imports: [FontAwesomeModule],
@@ -11,6 +15,6 @@ import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class FontAwesomeSolidModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faDownload, faBars);
+    library.addIcons(faDownload, faBars, faSearch);
   }
 }

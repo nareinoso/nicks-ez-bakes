@@ -1,8 +1,10 @@
+
 .ez-header {
   display: block;
   position: sticky;
   top: 0;
   z-index: 2;
+  background-color: white; // TODO: get from theme
 
   .nav-wrapper {
     display: flex;

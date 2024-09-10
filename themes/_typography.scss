@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@import "variables";
+
+// https://material.angular.io/guide/typography
+
+$ez-typography: mat.m2-define-typography-config(
+  $body-1: mat.m2-define-typography-level($base-font-size, 20px, normal),
+  $body-2: mat.m2-define-typography-level($base-font-size, 24px, normal),
+  $button: mat.m2-define-typography-level($base-font-size, $base-font-size, normal),
+);

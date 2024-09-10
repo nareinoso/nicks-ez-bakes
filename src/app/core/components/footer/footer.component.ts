@@ -8,8 +8,8 @@ import { FontAwesomeModule } from '../../../lib/font-awesome';
   selector: 'ez-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [RouterModule, CommonModule, FontAwesomeModule],
   encapsulation: ViewEncapsulation.None,
+  imports: [RouterModule, CommonModule, FontAwesomeModule],
 })
 export class FooterComponent {
   @HostBinding('class') readonly className = 'ez-footer';

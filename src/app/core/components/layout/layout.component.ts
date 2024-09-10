@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
   selector: 'ez-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  imports: [HeaderComponent, FooterComponent, RouterModule],
   encapsulation: ViewEncapsulation.None,
+  imports: [HeaderComponent, FooterComponent, RouterModule],
 })
 export class LayoutComponent {
   @HostBinding('class') readonly className = 'ez-layout';

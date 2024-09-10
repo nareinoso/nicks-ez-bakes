@@ -1,4 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 
@@ -7,7 +8,8 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss'],
-  imports: [HeaderComponent, RouterModule],
+  encapsulation: ViewEncapsulation.None,
+  imports: [HeaderComponent, RouterModule, MatButtonModule],
 })
 export class NotFoundComponent {
   @HostBinding('class') readonly className = 'not-found';

@@ -16,8 +16,8 @@ import { FontAwesomeModule } from '../../../lib/font-awesome';
   selector: 'ez-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [RouterModule, CommonModule, MatButtonModule, FontAwesomeModule],
   encapsulation: ViewEncapsulation.None,
+  imports: [RouterModule, CommonModule, MatButtonModule, FontAwesomeModule],
 })
 export class HeaderComponent {
   @HostBinding('class') readonly className = 'ez-header';

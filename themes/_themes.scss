@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+@import 'palette';
+@import 'typography';
+
+@include mat.core();
+
+$ez-light-theme: mat.m2-define-light-theme((
+  color: $ez-light-palette,
+  typography: $ez-typography,
+  density: 0,
+));
+
+$ez-dark-theme: mat.m2-define-dark-theme((
+  color: $ez-dark-palette,
+));
+
+@include mat.all-component-themes($ez-light-theme);
+
+.color-scheme-dark {
+  @include mat.all-component-colors($ez-dark-theme);
+}

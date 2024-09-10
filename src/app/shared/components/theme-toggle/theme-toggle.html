@@ -1,0 +1,5 @@
+<mat-slide-toggle
+  #themeToggle
+  [checked]="themeService.isDarkMode$ | async"
+  (toggleChange)="toggleTheme()">
+</mat-slide-toggle>

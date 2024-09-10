@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import 'variables';
+
+$ez-light-palette: (
+  primary:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-primary, 15),
+                500: $color-primary,
+                700: darken($color-primary, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+    accent:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-secondary, 15),
+                500: $color-secondary,
+                700: darken($color-secondary, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+    warn:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-danger, 15),
+                500: $color-danger,
+                700: darken($color-danger, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+);
+
+$ez-dark-palette: (
+  primary:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-primary, 15),
+                500: $color-primary,
+                700: darken($color-primary, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+    accent:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-secondary, 15),
+                500: $color-secondary,
+                700: darken($color-secondary, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+    warn:
+        mat.m2-define-palette(
+            (
+                100: lighten($color-danger, 15),
+                500: $color-danger,
+                700: darken($color-danger, 15),
+                contrast: (
+                  //TODO: define contrasts
+                )
+            )
+        ),
+);

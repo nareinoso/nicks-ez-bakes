@@ -1,0 +1,8 @@
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-flat-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-raised-button:not(:disabled),
+.mat-mdc-flat-button:not(:disabled),
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-image: linear-gradient(90deg,#8d49f7,#6b53ff);
+}

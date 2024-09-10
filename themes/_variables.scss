@@ -1,0 +1,16 @@
+/* Fonts */
+$base-font-family: Roboto, "Helvetica Neue", sans-serif !default;
+$base-font-size: 14px !default;
+$base-color: #333333 !default;
+
+/* Default colors */
+$color-primary: #337291 !default;
+$color-secondary: #E6735B !default;
+$color-success: #1b7739 !default;
+$color-warn: #a05632 !default;
+$color-danger: #bf0006 !default;
+$color-info: #1565c0 !default;
+$color-favorite: #d5ab29 !default;
+
+$color-link: $color-primary !default;
+$color-link-hover: darken($color-primary, 15) !default;
