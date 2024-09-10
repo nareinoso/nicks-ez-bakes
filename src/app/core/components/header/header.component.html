@@ -1,0 +1,27 @@
+<div class="nav-wrapper" [ngClass]="{ 'small' : (isMobileView$ | async) }">
+  <ng-container *ngIf="!(isMobileView$ | async); else small">
+    <div class="nav-logo" [routerLink]="'/home'">
+      <div id="navIcon"></div>
+        <h1>The Caffeinated Baker</h1>
+    </div>
+    <div class="nav-menu">
+      <a mat-button [routerLink]="'/home'" [routerLinkActive]="'active_route'">Home</a>
+      <a mat-button [routerLink]="'/recipes'" [routerLinkActive]="'active_route'">Recipes</a>
+      <a mat-button [routerLink]="'/equipment'" [routerLinkActive]="'active_route'">Equipment</a>
+      <a mat-button [routerLink]="'/about'" [routerLinkActive]="'active_route'">About</a>
+    </div>
+  </ng-container>
+
+  <!-- Mobile Nav-->
+  <ng-template #small>
+    <div class="nav-logo" [routerLink]="'/home'">
+      <div id="navIcon"></div>
+        <h1>The Caffeinated Baker</h1>
+    </div>
+
+    <button mat-icon-button class="menu-btn">
+      <!-- <fa-icon [icon]="['fas', 'bars']"></fa-icon> -->
+    </button>
+
+  </ng-template>
+</div>

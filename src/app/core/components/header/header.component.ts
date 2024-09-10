@@ -1,23 +1,29 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
-import { Component, HostBinding, inject } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, map, Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   standalone: true,
   selector: 'ez-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MatButtonModule],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
   @HostBinding('class') readonly className = 'ez-header';
-  destroyed = new Subject<void>();
-  public currentScreenSize: string = 'Unknown';
+  private destroyed = new Subject<void>();
+  public isMobileView$ = new BehaviorSubject<boolean>(false);
 
-  // Create a map to display breakpoint names for demonstration purposes.
-  displayNameMap = new Map([
+  private displayNameMap = new Map([
     [Breakpoints.XSmall, 'XSmall'],
     [Breakpoints.Small, 'Small'],
     [Breakpoints.Medium, 'Medium'],
@@ -38,8 +44,11 @@ export class HeaderComponent {
       .subscribe((result) => {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
-            this.currentScreenSize =
-              this.displayNameMap.get(query) ?? 'Unknown';
+            const breakpointName = this.displayNameMap.get(query) ?? 'Unknown';
+            const isMobileView =
+              breakpointName === 'XSmall' || breakpointName === 'Small';
+
+            this.isMobileView$.next(isMobileView);
           }
         }
       });

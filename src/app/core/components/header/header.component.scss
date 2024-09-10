@@ -1,0 +1,56 @@
+.ez-header {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  .nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &.small {
+      .hamburger-btn {
+        margin-right: 16px;
+        padding: 12px 8px;
+      }
+    }
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-family: 'Roboto', cursive;
+      text-wrap: nowrap;
+    }
+
+    span {
+      font-size: 14px;
+      padding-left: 16px;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-right: 24px;
+  }
+
+  .active_route {
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

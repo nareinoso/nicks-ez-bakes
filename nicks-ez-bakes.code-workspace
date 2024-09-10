@@ -44,6 +44,7 @@
       "*.component.ts": "${capture}.*.html, ${capture}.*.scss",
       "*.directive.ts": "${capture}.scss"
     },
-    "task.allowAutomaticTasks": "on"
+    "task.allowAutomaticTasks": "on",
+    "editor.wordWrap": "off"
   }
 }

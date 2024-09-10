@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './core/components/layout.component';
-import { HomeComponent } from './components/home.component';
-import { NotFoundComponent } from './core/components/not-found.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { LayoutComponent } from './core/components/layout/layout.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { EquipmentComponent } from './components/equipment/equipment.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +15,18 @@ export const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'recipes',
+        component: RecipesComponent,
+      },
+      {
+        path: 'equipment',
+        component: EquipmentComponent,
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
       },
     ],
   },

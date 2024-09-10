@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   standalone: true,
