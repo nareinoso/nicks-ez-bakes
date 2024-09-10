@@ -1,0 +1,37 @@
+.ez-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid black;
+  margin: auto 48px 0;
+
+  span {
+  color: #979797;
+  }
+
+  .copyright-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+
+    fa-icon, a {
+      cursor: pointer;
+      color: inherit;
+      opacity: 0.8;
+      transition: opacity 0.3;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
