@@ -3,6 +3,7 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
   faBars,
   faDownload,
@@ -15,6 +16,6 @@ import {
 })
 export class FontAwesomeSolidModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faDownload, faBars, faSearch);
+    library.addIcons(faDownload, faBars, faSearch, faXTwitter);
   }
 }

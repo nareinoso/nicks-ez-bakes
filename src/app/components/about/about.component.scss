@@ -1,3 +1,99 @@
 .about {
   display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 32px;
+
+  #profile-img {
+    background-image: url("../../../../content/images/nick-profile.png");
+    background-repeat: no-repeat;
+    background-size: 400px;
+    height: 400px;
+    width: 400px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex-shrink: 0;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 32px;
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px 64px;
+    padding: 24px 64px;
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  &-item {
+    @mixin about-img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: 50%;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: all 250ms ease-in-out;
+    }
+
+    @mixin about-img--hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      cursor: pointer;
+    }
+
+    &__img {
+      &-cake {
+        background-image: url("../../../../content/images/cake.png");
+        @include about-img;
+
+        &:hover {
+          @include about-img--hover;
+        }
+      }
+      &-friends {
+        background-image: url("../../../../content/images/friends.png");
+        @include about-img;
+
+        &:hover {
+          @include about-img--hover;
+        }
+      }
+      &-family {
+        background-image: url("../../../../content/images/family.png");
+        @include about-img;
+
+        &:hover {
+          @include about-img--hover;
+        }
+      }
+    }
+  }
+
+  .p1 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  p {
+    line-height: 1.875;
+    letter-spacing: 0.3px;
+  }
 }
