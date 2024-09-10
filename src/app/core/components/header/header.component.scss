@@ -37,13 +37,18 @@
 
     h1 {
       margin: 0;
-      font-family: "Roboto", cursive;
+      padding-left: 8px;
+      font-size: 1.5rem;
       text-wrap: nowrap;
+      font-family: "Edu AU VIC WA NT Hand", cursive;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
     }
 
-    span {
-      font-size: 14px;
-      padding-left: 16px;
+    .nav-icon {
+      font-size: 42px;
+      color: #6F4E37;
     }
   }
 

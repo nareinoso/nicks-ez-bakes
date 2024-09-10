@@ -1,4 +1,5 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -9,4 +10,8 @@ import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 })
 export class EquipmentComponent {
   @HostBinding('class') readonly className = 'equipment';
+
+  constructor(title: Title) {
+    title.setTitle('Equipment | The Caffeinated Baker');
+  }
 }

@@ -1,10 +1,13 @@
+
 <div class="nav-wrapper"  [ngClass]="{ 'small' : (isMobileView$ | async) }">
   <!-- Desktop View -->
   <ng-container *ngIf="!(isMobileView$ | async); else small">
     <!-- Logo -->
     <div class="nav-logo" [routerLink]="'/home'">
-      <div id="navIcon"></div>
-      <h1>The Caffeinated Baker</h1>
+      <span class="material-symbols-outlined nav-icon">
+        coffee_maker
+        </span>
+      <h1 class="edu-au-vic-wa-nt-hand-500">The Caffeinated Baker</h1>
     </div>
     <!-- Navigation Menu -->
     <div class="nav-menu">
@@ -23,7 +26,10 @@
     <!-- Logo -->
     <div class="nav-logo" [routerLink]="'/home'">
       <div id="navIcon"></div>
-      <h1>The Caffeinated Baker</h1>
+      <span class="material-symbols-outlined nav-icon">
+        coffee_maker
+      </span>
+      <h1 class="edu-au-vic-wa-nt-hand-500">The Caffeinated Baker</h1>
     </div>
     <!-- Navigation Menu -->
     <button mat-icon-button
