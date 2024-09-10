@@ -8,14 +8,15 @@ import {
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { BehaviorSubject, map, Observable, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { FontAwesomeModule } from '../../../lib/font-awesome';
 
 @Component({
   standalone: true,
   selector: 'ez-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [RouterModule, CommonModule, MatButtonModule],
+  imports: [RouterModule, CommonModule, MatButtonModule, FontAwesomeModule],
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
