@@ -4,7 +4,9 @@
   top: 0;
   z-index: 2;
   background-color: white; // TODO: get from theme
-
+  -webkit-box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
+  -moz-box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
+  box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
 
   .nav-wrapper {
     display: flex;
@@ -12,6 +14,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px;
+    max-width: 1200px;
+    margin: auto;
 
     &.small {
       .hamburger-btn {
