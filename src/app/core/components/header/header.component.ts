@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { FontAwesomeModule } from '../../../lib/font-awesome';
+import { NavLink } from '../../models/nav-link.model';
 
 @Component({
   standalone: true,
@@ -23,6 +24,13 @@ export class HeaderComponent {
   @HostBinding('class') readonly className = 'ez-header';
   private destroyed = new Subject<void>();
   public isMobileView$ = new BehaviorSubject<boolean>(false);
+
+  public navLinks: NavLink[] = [
+    { label: 'Recipes', path: '/recipes' },
+    { label: 'Learn', path: '/learn' },
+    { label: 'Equipment', path: '/equipment' },
+    { label: 'About', path: '/about' },
+  ];
 
   private displayNameMap = new Map([
     [Breakpoints.XSmall, 'XSmall'],

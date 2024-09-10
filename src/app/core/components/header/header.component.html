@@ -1,31 +1,34 @@
-<div class="nav-wrapper" [ngClass]="{ 'small' : (isMobileView$ | async) }">
+<div class="nav-wrapper"  [ngClass]="{ 'small' : (isMobileView$ | async) }">
+  <!-- Desktop View -->
   <ng-container *ngIf="!(isMobileView$ | async); else small">
+    <!-- Logo -->
     <div class="nav-logo" [routerLink]="'/home'">
       <div id="navIcon"></div>
-        <h1>The Caffeinated Baker</h1>
+      <h1>The Caffeinated Baker</h1>
     </div>
+    <!-- Navigation Menu -->
     <div class="nav-menu">
-      <a mat-button [routerLink]="'/home'" [routerLinkActive]="'active_route'">Home</a>
-      <a mat-button [routerLink]="'/recipes'" [routerLinkActive]="'active_route'">Recipes</a>
-      <a mat-button [routerLink]="'/equipment'" [routerLinkActive]="'active_route'">Equipment</a>
-      <a mat-button [routerLink]="'/about'" [routerLinkActive]="'active_route'">About</a>
+      <a mat-button *ngFor="let link of navLinks"
+        [routerLink]="link.path" [routerLinkActive]="'active_route'">
+        {{ link.label }}
+      </a>
       <button mat-icon-button class="search-btn">
         <fa-icon [icon]="['fas', 'search']"></fa-icon>
       </button>
-
     </div>
   </ng-container>
 
-  <!-- Mobile Nav-->
+  <!-- Mobile View -->
   <ng-template #small>
+    <!-- Logo -->
     <div class="nav-logo" [routerLink]="'/home'">
       <div id="navIcon"></div>
-        <h1>The Caffeinated Baker</h1>
+      <h1>The Caffeinated Baker</h1>
     </div>
-
-    <button mat-icon-button class="menu-btn">
+    <!-- Navigation Menu -->
+    <button mat-icon-button
+      class="menu-btn">
       <fa-icon [icon]="['fas', 'bars']"></fa-icon>
     </button>
-
   </ng-template>
 </div>
