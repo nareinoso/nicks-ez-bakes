@@ -3,10 +3,8 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: white; // TODO: get from theme
-  -webkit-box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
-  -moz-box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
-  box-shadow: 0 0 10px 0 rgba(33, 33, 33, .1);
+  background-color: #fff8f5;
+  padding: 0 24px;
 
   .nav-wrapper {
     display: flex;
@@ -16,6 +14,7 @@
     padding: 16px;
     max-width: 1200px;
     margin: auto;
+    border-bottom: 2px solid;
 
     &.small {
       .hamburger-btn {
@@ -61,7 +60,8 @@
     span.mdc-button__label {
       font-weight: bold;
       padding: 0 8px;
-      color: #2c2c2c
+      color: #2c2c2c;
+      letter-spacing: 1.5px;
     }
   }
 

@@ -30,10 +30,30 @@
     justify-content: flex-end;
     gap: 16px;
 
+    #facebook {
+      color: #0866FF;
+    }
+
+    #twitter {
+      color: black;
+    }
+    #linkedin {
+      color: #0a66c2;
+    }
+    #instagram {
+      color: #e4405f;
+      background-image: url('../../../../../content/images/instagram.png');
+      background-size: cover;
+      height: 40px;
+      width: 40px;
+      margin-top: -3px;
+    }
+    #youtube {
+      color: #ff0000;
+    }
+
     fa-icon, a {
       cursor: pointer;
-      color: inherit;
-      opacity: 0.8;
 
       &:hover {
         opacity: 1;
