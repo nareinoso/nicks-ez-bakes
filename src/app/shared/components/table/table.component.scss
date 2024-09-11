@@ -1,14 +1,15 @@
 .ez-table {
   display: block;
-  max-width: 1070px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 16px;
+  border: 2px solid #f8d6c7;
   background-color: white;
-  border: 1px solid #f8d6c7;
   border-radius: 8px;
 
   ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -18,7 +19,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #096968;
+    background: rgba(9, 105, 104, 1);
   }
 
   .table-container {
@@ -31,6 +32,7 @@
 
   table {
     width: 100%;
+    min-width: 624px;
     overflow-y: auto;
     max-height: 500px;
     border-collapse: collapse;
@@ -51,7 +53,7 @@
       tr {
 
         &:nth-child(even) {
-          background-color: #f8f8f8;
+          background-color: rgba(9, 105, 104, .1);
         }
         td {
           padding: 16px 0;

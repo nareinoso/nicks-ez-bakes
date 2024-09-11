@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent {
-  @HostBinding('class') readonly className = 'ez-home';
+  @HostBinding('class') readonly className = 'home';
 
   constructor(title: Title) {
     title.setTitle('The Caffeinated Baker');

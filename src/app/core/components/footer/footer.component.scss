@@ -34,10 +34,11 @@
       cursor: pointer;
       color: inherit;
       opacity: 0.8;
-      transition: opacity 0.3;
 
       &:hover {
         opacity: 1;
+        transition-duration: 500ms;
+        transform: scale(1.1);
       }
     }
   }
