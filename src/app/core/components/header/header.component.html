@@ -19,10 +19,12 @@
     <!-- Navigation Menu -->
     <div class="nav-menu">
       <a mat-button *ngFor="let link of navLinks"
-        [routerLink]="link.path" [routerLinkActive]="'active_route'">
+        [attr.aria-label]="link.label"
+        [routerLink]="link.path"
+        [routerLinkActive]="'active_route'">
         {{ link.label }}
       </a>
-      <button mat-icon-button class="search-btn">
+      <button mat-icon-button class="search-btn" aria-label="Search button">
         <fa-icon [icon]="['fas', 'search']"></fa-icon>
       </button>
     </div>
@@ -46,8 +48,7 @@
       <h1 class="edu-au-vic-wa-nt-hand-500">The Caffeinated Baker</h1>
     </div>
     <!-- Navigation Menu -->
-    <button mat-icon-button
-      class="menu-btn">
+    <button mat-icon-button class="menu-btn" aria-label="Navigation menu">
       <fa-icon [icon]="['fas', 'bars']"></fa-icon>
     </button>
   </ng-template>
