@@ -7,8 +7,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ThemeService } from '../../services/services/theme.service';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 // https://stackoverflow.com/questions/62549139/it-is-possible-change-angular-material-mat-slide-toggle-icon
 const SUN_SVG =

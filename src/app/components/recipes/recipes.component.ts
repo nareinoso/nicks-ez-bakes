@@ -8,7 +8,7 @@ import {
 import { Title } from '@angular/platform-browser';
 import { TableComponent } from '../../shared/components/table/table.component';
 import { TableData } from '../../shared/models';
-import { ExampleService } from '../../shared/services/example.service';
+import { RecipesService } from '../../shared/services/recipes.service';
 
 const RECIPE_COLUMNS = [
   { key: 'name', label: 'Name', sortable: true },
@@ -29,7 +29,7 @@ const RECIPE_COLUMNS = [
 })
 export class RecipesComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipes';
-  private _exampleService: ExampleService = inject(ExampleService);
+  private _recipesService: RecipesService = inject(RecipesService);
   public tableData: TableData = { columns: [], rows: [] };
 
   constructor(title: Title) {
@@ -38,6 +38,9 @@ export class RecipesComponent implements OnInit {
 
   public ngOnInit(): void {
     this.tableData.columns = RECIPE_COLUMNS;
-    this.tableData.rows = this._exampleService.getExampleData();
+
+    this._recipesService
+      .getRecipes()
+      .subscribe((recipes) => (this.tableData.rows = recipes));
   }
 }
