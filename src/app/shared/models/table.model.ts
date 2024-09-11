@@ -5,5 +5,5 @@ export interface TableColumn {
 
 export interface TableData {
   columns: TableColumn[];
-  data: any[];
+  rows: any[];
 }

@@ -2,22 +2,22 @@
   <table>
     <thead>
       <tr>
-        <th *ngFor="let column of exampleData.columns">
+        <th *ngFor="let column of data.columns">
           {{ column.label }}
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of exampleData.data">
-        <td *ngFor="let column of exampleData.columns">
+      <tr *ngFor="let row of data.rows">
+        <td *ngFor="let column of data.columns"
+          [class.center]="(row[column.key] | typeof) === '[object Number]'">
           {{
-            (item[column.key] | typeof) === '[object Date]'
-              ? (item[column.key] | date: 'dd/MM/yyyy')
-              : item[column.key]
+            (row[column.key] | typeof) === '[object Date]'
+              ? (row[column.key] | date: 'dd/MM/yyyy')
+              : row[column.key]
           }}
         </td>
       </tr>
     </tbody>
   </table>
-
 </div>
