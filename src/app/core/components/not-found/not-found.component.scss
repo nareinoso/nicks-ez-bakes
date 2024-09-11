@@ -1,28 +1,22 @@
 .not-found {
-  $bg: #e6e2df;
-
   display: block;
   height: 100%;
-
-  .tks-header {
-    width: 100%;
-
-    .nav-wrapper {
-      position: fixed;
-      width: 100%;
-    }
-  }
 
   .not-found-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    text-align: center;
+
+    height: calc(100% - 80px);
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 24px;
 
     h1 {
       font-size: 10em;
-      margin: revert;
+      margin: 0;
       color: white;
 
       text-shadow: 0 0.1em 20px rgba(0, 0, 0, 1),
@@ -34,6 +28,7 @@
 
     button {
       margin-top: 16px;
+      color: white;
     }
   }
 }
