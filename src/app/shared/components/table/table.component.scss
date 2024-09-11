@@ -43,10 +43,24 @@
         position: sticky;
         top: 0;
         background-color: white;
+
         th {
           text-align: start;
           text-wrap: nowrap;
           letter-spacing: 1px;
+
+          fa-icon {
+            color: #4a4a4a;
+
+            &.default {
+              opacity: 0;
+              transition: opacity 0.3s;
+            }
+        }
+
+          &:hover fa-icon.default {
+            opacity: 0.54;
+          }
         }
       }
     }

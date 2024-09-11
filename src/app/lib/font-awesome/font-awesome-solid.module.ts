@@ -5,9 +5,12 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
+  faArrowDown,
+  faArrowUp,
   faBars,
   faDownload,
   faSearch,
+  faSort,
 } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
@@ -16,6 +19,14 @@ import {
 })
 export class FontAwesomeSolidModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faDownload, faBars, faSearch, faXTwitter);
+    library.addIcons(
+      faDownload,
+      faBars,
+      faSearch,
+      faXTwitter,
+      faSort,
+      faArrowUp,
+      faArrowDown
+    );
   }
 }

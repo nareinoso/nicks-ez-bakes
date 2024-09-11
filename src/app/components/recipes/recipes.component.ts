@@ -11,12 +11,12 @@ import { TableData } from '../../shared/models';
 import { ExampleService } from '../../shared/services/example.service';
 
 const RECIPE_COLUMNS = [
-  { key: 'name', label: 'Name' },
-  { key: 'type', label: 'Type' },
-  { key: 'mainIngredient', label: 'Main Ingredient' },
-  { key: 'occasion', label: 'Occasion' },
-  { key: 'difficulty', label: 'Difficulty' },
-  { key: 'dateAdded', label: 'Added' },
+  { key: 'name', label: 'Name', sortable: true },
+  { key: 'type', label: 'Type', sortable: true },
+  { key: 'mainIngredient', label: 'Main Ingredient', sortable: true },
+  { key: 'occasion', label: 'Occasion', sortable: true },
+  { key: 'difficulty', label: 'Difficulty', sortable: true },
+  { key: 'dateAdded', label: 'Added', sortable: true },
 ];
 
 @Component({

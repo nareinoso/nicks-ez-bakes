@@ -4,7 +4,7 @@ export interface Recipe {
   name: string;
   type: RecipeType;
   mainIngredient: string;
-  occasion?: string;
+  occasion: string;
   difficulty: number;
   dateAdded: Date;
 }
