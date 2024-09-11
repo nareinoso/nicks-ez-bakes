@@ -7,10 +7,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import _ from 'lodash';
 import { FontAwesomeModule } from '../../../lib/font-awesome';
 import { TableColumn, TableData } from '../../models';
 import { TypeofPipe } from '../../pipes/typeof.pipe';
-import _ from 'lodash';
 
 //https://medium.com/@bananicabananica/its-so-easy-with-angular-part-2-dynamic-tables-f4c0ab41f72f
 

@@ -2,10 +2,12 @@
   <table>
     <thead>
       <tr>
-        <th
-          *ngFor="let column of modifiedDataSource.columns" (click)="toggleSort(column)">
+        <th *ngFor="let column of modifiedDataSource.columns" (click)="toggleSort(column)">
           {{ column.label }}
-          <fa-icon *ngIf="column.sortable" [class.default]="!column.sort" [icon]="sortIcon(column)"></fa-icon>
+          <fa-icon *ngIf="column.sortable"
+            [class.default]="!column.sort"
+            [icon]="sortIcon(column)">
+          </fa-icon>
         </th>
       </tr>
     </thead>
