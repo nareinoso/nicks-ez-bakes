@@ -8,14 +8,64 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 24px 40px;
+    padding: 40px;
     background: white;
     border-radius: 8px;
+    border: 2px solid #f8d6c7;
     box-shadow: 2px 2px 6px 0 #2c2c2c0a;
   }
 
-  .page-title {
-    margin-top: 8px;
+  &-pics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 40px 24px;
+    gap: 32px;
+  }
+
+  &-pic {
+    @mixin about-img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: 50%;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: all 250ms ease-in-out;
+    }
+
+    @mixin about-img--hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      cursor: pointer;
+    }
+
+    &-cake {
+      background-image: url("../../../../content/images/cake.png");
+      @include about-img;
+
+      &:hover {
+        @include about-img--hover;
+      }
+    }
+    &-friends {
+      background-image: url("../../../../content/images/friends.png");
+      @include about-img;
+
+      &:hover {
+        @include about-img--hover;
+      }
+    }
+    &-family {
+      background-image: url("../../../../content/images/family.png");
+      @include about-img;
+
+      &:hover {
+        @include about-img--hover;
+      }
+      }
   }
 
   p {
@@ -24,11 +74,15 @@
     margin: 0;
   }
 
+  .page-title {
+    margin-top: 0;
+  }
+
   .profile-container {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 16px;
+    gap: 32px;
 
     @media (max-width: 1100px) {
       flex-direction: column;
@@ -50,60 +104,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-
-  &-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 24px;
-    gap: 32px;
-  }
-
-  &-item {
-    @mixin about-img {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: 50%;
-      height: 250px;
-      width: 250px;
-      border-radius: 50%;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-      transition: all 250ms ease-in-out;
-    }
-
-    @mixin about-img--hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-      cursor: pointer;
-    }
-
-    &__img {
-      &-cake {
-        background-image: url("../../../../content/images/cake.png");
-        @include about-img;
-
-        &:hover {
-          @include about-img--hover;
-        }
-      }
-      &-friends {
-        background-image: url("../../../../content/images/friends.png");
-        @include about-img;
-
-        &:hover {
-          @include about-img--hover;
-        }
-      }
-      &-family {
-        background-image: url("../../../../content/images/family.png");
-        @include about-img;
-
-        &:hover {
-          @include about-img--hover;
-        }
-      }
-    }
+    margin-top: 24px;
   }
 }
