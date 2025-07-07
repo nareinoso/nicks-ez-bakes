@@ -1,0 +1,69 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-results {
+  grid-column-gap: 28px;
+  grid-row-gap: 28px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+
+  @media only screen and (max-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-shape: 0.35rem;
+}
+
+.mat-mdc-dialog-container .mat-mdc-dialog-content {
+  padding: 20px !important;
+}
+
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 0.35rem !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-dialog-container {
+  border-radius: 20px !important;
+}
+
+.mat-mdc-standard-chip.mdc-evolution-chip:not(.mdc-evolution-chip--disabled) {
+  background-color: transparent !important;
+  border: 1px solid #ccc !important;
+  color: #333 !important;
+}
+
+.mat-mdc-standard-chip.mdc-evolution-chip--with-primary-graphic
+  .mdc-evolution-chip__graphic {
+  display: none !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  padding-left: 12px;
+}

@@ -1,0 +1,24 @@
+<mat-dialog-content>
+  <div class="search-header">
+    <mat-form-field>
+      <input matInput placeholder="Search" />
+      <button matSuffix mat-icon-button aria-label="Search">
+        <fa-icon [icon]="['fas', 'search']"></fa-icon>
+      </button>
+    </mat-form-field>
+    <mat-chip-listbox class="search-filters">
+      <mat-chip-option *ngFor="let filter of filters" [value]="filter.value">
+        {{ filter.label }}
+      </mat-chip-option>
+    </mat-chip-listbox>
+  </div>
+  <div class="search-results">
+    <ng-container *ngFor="let result of results">
+      <mat-card class="search-result">
+        <mat-card-header>
+          <mat-card-title>{{ result.title }}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </ng-container>
+  </div>
+</mat-dialog-content>

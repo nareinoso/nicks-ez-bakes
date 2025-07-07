@@ -7,10 +7,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { FontAwesomeModule } from '../../../lib/font-awesome';
 import { NavLink } from '../../models/nav-link.model';
+import { SearchDialogComponent } from '../../../shared/components/search/search-dialog.component';
 
 @Component({
   standalone: true,
@@ -22,6 +24,7 @@ import { NavLink } from '../../models/nav-link.model';
 })
 export class HeaderComponent {
   @HostBinding('class') readonly className = 'ez-header';
+  readonly dialog = inject(MatDialog);
   private destroyed = new Subject<void>();
   public isMobileView$ = new BehaviorSubject<boolean>(false);
 
@@ -61,5 +64,15 @@ export class HeaderComponent {
           }
         }
       });
+  }
+
+  public onSearchClick(): void {
+    this.dialog.open(SearchDialogComponent, {
+      height: '61rem',
+      width: '100%',
+      maxHeight: '90vh',
+      maxWidth: '75rem',
+      panelClass: 'search-dialog',
+    });
   }
 }

@@ -24,7 +24,7 @@
         [routerLinkActive]="'active_route'">
         {{ link.label }}
       </a>
-      <button mat-icon-button class="search-btn" aria-label="Search button">
+      <button mat-icon-button class="search-btn" aria-label="Search button" (click)="onSearchClick()">
         <fa-icon [icon]="['fas', 'search']"></fa-icon>
       </button>
     </div>
