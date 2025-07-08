@@ -68,7 +68,7 @@ export class HeaderComponent {
 
   public onSearchClick(): void {
     this.dialog.open(SearchDialogComponent, {
-      height: '61rem',
+      height: '59rem',
       width: '100%',
       maxHeight: '90vh',
       maxWidth: '75rem',

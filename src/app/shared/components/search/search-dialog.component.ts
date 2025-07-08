@@ -42,20 +42,80 @@ export class SearchDialogComponent {
   ];
 
   public results = [
-    { title: 'Chocolate Chip Cookies', category: 'Recipes', image: 'assets/images/cookies.jpg' },
-    { title: 'Baking Basics', category: 'Learn', image: 'assets/images/baking-basics.jpg' },
-    { title: 'Oven Thermometer', category: 'Equipment', image: 'assets/images/oven-thermometer.jpg' },
-    { title: 'Sourdough Bread', category: 'Recipes', image: 'assets/images/sourdough.jpg' },
-    { title: 'Cake Decorating Tips', category: 'Learn', image: 'assets/images/cake-decorating.jpg' },
-    { title: 'Stand Mixer', category: 'Equipment', image: 'assets/images/stand-mixer.jpg' },
-    { title: 'Brownies', category: 'Recipes', image: 'assets/images/brownies.jpg' },
-    { title: 'Pastry Techniques', category: 'Learn', image: 'assets/images/pastry-techniques.jpg' },
-    { title: 'Baking Sheet Set', category: 'Equipment', image: 'assets/images/baking-sheet.jpg' },
-    { title: 'Banana Bread', category: 'Recipes', image: 'assets/images/banana-bread.jpg' },
-    { title: 'Cookie Decorating', category: 'Learn', image: 'assets/images/cookie-decorating.jpg' },
-    { title: 'Rolling Pin', category: 'Equipment', image: 'assets/images/rolling-pin.jpg' },
-    { title: 'Pancakes', category: 'Recipes', image: 'assets/images/pancakes.jpg' },
-    { title: 'Bread Baking Guide', category: 'Learn', image: 'assets/images/bread-baking.jpg' },
-    { title: 'Mixing Bowls', category: 'Equipment', image: 'assets/images/mixing-bowls.jpg' },
-    ];
+    {
+      title: 'Baking Basics',
+      category: 'Learn',
+      image: 'assets/images/baking.jpg',
+    },
+    {
+      title: 'Baking Sheet Set',
+      category: 'Equipment',
+      image: 'assets/images/baking-sheets.jpg',
+    },
+    {
+      title: 'Banana Bread',
+      category: 'Recipes',
+      image: 'assets/images/banana-bread.jpg',
+    },
+    {
+      title: 'Bread Baking Guide',
+      category: 'Learn',
+      image: 'assets/images/bread.jpg',
+    },
+    {
+      title: 'Brownies',
+      category: 'Recipes',
+      image: 'assets/images/brownies.jpg',
+    },
+    {
+      title: 'Cookie Decorating',
+      category: 'Learn',
+      image: 'assets/images/cookie-decorating.jpg',
+    },
+    {
+      title: 'Chocolate Chip Cookies',
+      category: 'Recipes',
+      image: 'assets/images/cookies.jpg',
+    },
+    {
+      title: 'Cake Decorating Tips',
+      category: 'Learn',
+      image: 'assets/images/decorating.jpg',
+    },
+    {
+      title: 'Stand Mixer',
+      category: 'Equipment',
+      image: 'assets/images/mixer.jpg',
+    },
+    {
+      title: 'Mixing Bowls',
+      category: 'Equipment',
+      image: 'http://localhost:4200/assets/images/mixing-bowl.jpg',
+    },
+    {
+      title: 'Oven Thermometer',
+      category: 'Equipment',
+      image: 'assets/images/thermometer.jpg',
+    },
+    {
+      title: 'Pancakes',
+      category: 'Recipes',
+      image: 'assets/images/pancakes.jpg',
+    },
+    {
+      title: 'Pastry Techniques',
+      category: 'Learn',
+      image: 'assets/images/pastries.jpg',
+    },
+    {
+      title: 'Rolling Pin',
+      category: 'Equipment',
+      image: 'assets/images/rolling-pins.jpg',
+    },
+    {
+      title: 'Sourdough Bread',
+      category: 'Recipes',
+      image: 'assets/images/sourdough.jpg',
+    },
+  ];
 }

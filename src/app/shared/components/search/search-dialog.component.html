@@ -16,7 +16,8 @@
     <ng-container *ngFor="let result of results">
       <mat-card class="search-result">
         <mat-card-header>
-          <mat-card-title>{{ result.title }}</mat-card-title>
+          <img [src]="result.image" alt="{{ result.title }}"/>
+          <span>{{ result.title }}</span>
         </mat-card-header>
       </mat-card>
     </ng-container>
