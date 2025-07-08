@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import _ from 'lodash';
-import { FontAwesomeModule } from '../../../lib/font-awesome';
+import { FontAwesomeModule } from '../../../../assets/fonts/font-awesome';
 import { TableColumn, TableData } from '../../models';
 import { TypeofPipe } from '../../pipes/typeof.pipe';
 

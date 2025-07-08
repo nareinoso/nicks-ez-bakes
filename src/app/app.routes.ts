@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
-import { EquipmentComponent } from './components/equipment/equipment.component';
-import { HomeComponent } from './components/home/home.component';
-import { LearnComponent } from './components/learn/learn.component';
-import { RecipesComponent } from './components/recipes/recipes.component';
+import { AboutComponent } from './features/about/about.component';
+import { EquipmentComponent } from './features/equipment/equipment.component';
+import { HomeComponent } from './features/home/home.component';
+import { LearnComponent } from './features/learn/learn.component';
+import { RecipesComponent } from './features/recipes/recipes.component';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 

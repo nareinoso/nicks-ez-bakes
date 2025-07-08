@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
-import { FontAwesomeModule } from '../../../lib/font-awesome';
+import { FontAwesomeModule } from '../../../../assets/fonts/font-awesome';
 import { NavLink } from '../../models/nav-link.model';
 import { SearchDialogComponent } from '../../../shared/components/search/search-dialog.component';
 

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '../../../lib/font-awesome';
+import { FontAwesomeModule } from '../../../../assets/fonts/font-awesome';
 
 @Component({
   standalone: true,

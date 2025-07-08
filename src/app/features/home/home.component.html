@@ -1,0 +1,24 @@
+<section>
+  <div class="featured-item">
+    <img src="assets/images/tart.jpg"
+      class="featured-image">
+    <span>Fresh Fruit Tart</span>
+  </div>
+</section>
+<section>
+  <div class="sub-featured-title">
+    <span>Fresh from the Oven</span>
+    <button class="see-more"
+      mat-icon-button>
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+  <div class="sub-featured">
+    <ng-container *ngFor="let item of featuredItems">
+      <div class="sub-featured-item">
+        <img [src]="item.image">
+        <span class="sub-featured-text">{{ item.name }}</span>
+      </div>
+    </ng-container>
+  </div>
+</section>
