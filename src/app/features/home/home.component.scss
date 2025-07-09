@@ -96,6 +96,10 @@
     text-align: center;
     position: relative;
     min-width: 120px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   a {
@@ -130,6 +134,11 @@
     padding: 40px 10px 20px;
     background: white;
     box-shadow: var(--box-shadow-default);
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: var(--box-shadow-thick);
+    }
   }
 
   .icon-title {

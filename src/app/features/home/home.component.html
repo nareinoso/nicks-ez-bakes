@@ -9,7 +9,7 @@
   <div class="quick-links">
     <ng-container *ngFor="let link of quickLinks">
       <div class="quick-link">
-        <a class="entry-image-link" [routerLink]="link.path">
+        <a class="entry-image-link" (click)="routeToRecipes(link.path)">
           <div class="icon-wrapper">
             <mat-icon>{{ link.icon }}</mat-icon>
           </div>
