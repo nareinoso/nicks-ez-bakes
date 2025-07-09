@@ -8,35 +8,35 @@ import { FeaturedItem } from '../../shared/models';
 
 const FEATURED_DUMMY: FeaturedItem[] = [
   {
-    image: 'assets/images/cheesecake.jpg',
+    image: 'assets/images/cakes/cheesecake.jpg',
     name: 'Cinnamon Toast Crunch Cheesecake',
   },
   {
-    image: 'assets/images/blueberry-cheesecake.jpg',
+    image: 'assets/images/cakes/blueberry-cheesecake.jpg',
     name: 'Blueberry Cheesecake',
   },
   {
-    image: 'assets/images/baked-pear.jpg',
+    image: 'assets/images/desserts/baked-pear.jpg',
     name: 'Baked Pear',
   },
   {
-    image: 'assets/images/chocolate-raspberry-cake.jpg',
-    name: 'Chocolate Raspberry Cak',
+    image: 'assets/images/cakes/chocolate-raspberry-cake.jpg',
+    name: 'Chocolate Raspberry Cake',
   },
   {
-    image: 'assets/images/pecan-pie2.jpg',
+    image: 'assets/images/pies/pecan-pie2.jpg',
     name: 'Pecan Pie',
   },
   {
-    image: 'assets/images/carrot-cake.jpg',
+    image: 'assets/images/cakes/carrot-cake.jpg',
     name: 'Carrot Cake',
   },
   {
-    image: 'assets/images/pineapple-cake.jpg',
+    image: 'assets/images/cakes/pineapple-cake.jpg',
     name: 'Pineapple Upside-Down Cake',
   },
   {
-    image: 'assets/images/xmas-cookies.jpg',
+    image: 'assets/images/cookies/xmas-cookies.jpg',
     name: 'Christmas Cookies',
   },
 ];

@@ -45,77 +45,77 @@ export class SearchDialogComponent {
     {
       title: 'Baking Basics',
       category: 'Learn',
-      image: 'assets/images/baking.jpg',
+      image: 'assets/images/learn/baking.jpg',
     },
     {
       title: 'Baking Sheet Set',
       category: 'Equipment',
-      image: 'assets/images/baking-sheets.jpg',
+      image: 'assets/images/equipment/baking-sheets.jpg',
     },
     {
       title: 'Banana Bread',
       category: 'Recipes',
-      image: 'assets/images/banana-bread.jpg',
+      image: 'assets/images/bread/banana-bread.jpg',
     },
     {
       title: 'Bread Baking Guide',
       category: 'Learn',
-      image: 'assets/images/bread.jpg',
+      image: 'assets/images/bread/bread.jpg',
     },
     {
       title: 'Brownies',
       category: 'Recipes',
-      image: 'assets/images/brownies.jpg',
+      image: 'assets/images/cookies/brownies.jpg',
     },
     {
       title: 'Cookie Decorating',
       category: 'Learn',
-      image: 'assets/images/cookie-decorating.jpg',
+      image: 'assets/images/learn/cookie-decorating.jpg',
     },
     {
       title: 'Chocolate Chip Cookies',
       category: 'Recipes',
-      image: 'assets/images/cookies.jpg',
+      image: 'assets/images/cookies/cookies.jpg',
     },
     {
       title: 'Cake Decorating Tips',
       category: 'Learn',
-      image: 'assets/images/decorating.jpg',
+      image: 'assets/images/learn/decorating.jpg',
     },
     {
       title: 'Stand Mixer',
       category: 'Equipment',
-      image: 'assets/images/mixer.jpg',
+      image: 'assets/images/equipment/mixer.jpg',
     },
     {
       title: 'Mixing Bowls',
       category: 'Equipment',
-      image: 'http://localhost:4200/assets/images/mixing-bowl.jpg',
+      image: 'assets/images/equipment/mixing-bowl.jpg',
     },
     {
       title: 'Oven Thermometer',
       category: 'Equipment',
-      image: 'assets/images/thermometer.jpg',
+      image: 'assets/images/equipment/thermometer.jpg',
     },
     {
       title: 'Pancakes',
       category: 'Recipes',
-      image: 'assets/images/pancakes.jpg',
+      image: 'assets/images/breakfast/pancakes.jpg',
     },
     {
       title: 'Pastry Techniques',
       category: 'Learn',
-      image: 'assets/images/pastries.jpg',
+      image: 'assets/images/desserts/pastries.jpg',
     },
     {
       title: 'Rolling Pin',
       category: 'Equipment',
-      image: 'assets/images/rolling-pins.jpg',
+      image: 'assets/images/equipment/rolling-pins.jpg',
     },
     {
       title: 'Sourdough Bread',
       category: 'Recipes',
-      image: 'assets/images/sourdough.jpg',
+      image: 'assets/images/bread/sourdough.jpg',
     },
   ];
 }

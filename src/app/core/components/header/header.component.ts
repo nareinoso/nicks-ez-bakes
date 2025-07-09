@@ -29,6 +29,7 @@ export class HeaderComponent {
   public isMobileView$ = new BehaviorSubject<boolean>(false);
 
   public navLinks: NavLink[] = [
+    { label: 'Featured', path: '/home' },
     { label: 'Recipes', path: '/recipes' },
     { label: 'Learn', path: '/learn' },
     { label: 'Equipment', path: '/equipment' },

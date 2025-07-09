@@ -43,7 +43,7 @@
     }
 
     &-cake {
-      background-image: url("/assets/images/cake.png");
+      background-image: url("/assets/images/cakes/wedding-cake.png");
       @include about-img;
 
       &:hover {
@@ -51,7 +51,7 @@
       }
     }
     &-friends {
-      background-image: url("/assets/images/friends.png");
+      background-image: url("/assets/images/about/friends.png");
       @include about-img;
 
       &:hover {
@@ -59,7 +59,7 @@
       }
     }
     &-family {
-      background-image: url("/assets/images/family.png");
+      background-image: url("/assets/images/about/family.png");
       @include about-img;
 
       &:hover {
@@ -91,7 +91,7 @@
   }
 
   .profile__img {
-    background-image: url("/assets/images/nick-profile.png");
+    background-image: url("/assets/images/about/nick-profile.png");
     background-repeat: no-repeat;
     background-size: 360px;
     height: 360px;
