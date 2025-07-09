@@ -6,6 +6,24 @@
   </div>
 </section>
 <section>
+  <div class="quick-links">
+    <ng-container *ngFor="let link of quickLinks">
+      <div class="quick-link">
+        <a class="entry-image-link" [routerLink]="link.path">
+          <div class="icon-wrapper">
+            <mat-icon>{{ link.icon }}</mat-icon>
+          </div>
+          <div class="icon-title-wrapper">
+            <div class="icon-title">
+              <span>{{ link.name }}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</section>
+<section>
   <a class="sub-featured-title">
     <span>Fresh from the Oven</span>
     <mat-icon>chevron_right</mat-icon>
