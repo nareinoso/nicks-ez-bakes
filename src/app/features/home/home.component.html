@@ -62,7 +62,7 @@
       <div class="sub-featured-item" (click)="routeToRecipe(item.slug)">
         <img [src]="item.image">
         <span>{{ item.name }}</span>
-        <mat-icon [class.bookmarked]="item.isBookmarked" (click)="bookmarkItem(item)">bookmark</mat-icon>
+        <mat-icon [class.bookmarked]="item.isBookmarked" (click)="bookmarkItem(item, $event)">bookmark</mat-icon>
       </div>
     </ng-container>
   </div>

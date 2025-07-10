@@ -94,8 +94,10 @@ export class HomeComponent {
     this.router.navigate(['/recipe', slug]);
   }
 
-  bookmarkItem(item: FeaturedItem): void {
+  bookmarkItem(item: FeaturedItem, e: Event): void {
     // Here you would typically call a service to handle the bookmarking logic
+    e.preventDefault();
+    e.stopPropagation();
     item.isBookmarked = !item.isBookmarked;
   }
 }

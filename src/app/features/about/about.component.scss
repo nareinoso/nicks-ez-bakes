@@ -1,16 +1,8 @@
 .about {
-  display: block;
-  max-width: 1070px;
-  margin: 0 auto;
-  padding: 32px 5%;
-
   &-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
     padding-top: 16px;
     border-radius: 8px;
+    width: 100%;
   }
 
   &-pics {
@@ -18,11 +10,29 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 40px 24px;
-    gap: 32px;
+    padding: 32px 24px;
+    gap: 72px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+
+      .about-pic:first-of-type,
+      .about-pic:last-of-type {
+        margin: 0;
+      }
+    }
   }
 
   &-pic {
+    &:first-of-type {
+      margin-left: auto;
+    }
+    &:last-of-type {
+      margin-right: auto;
+    }
+
     @mixin about-img {
       background-repeat: no-repeat;
       background-size: cover;
@@ -48,6 +58,7 @@
         @include about-img--hover;
       }
     }
+
     &-friends {
       background-image: url("/assets/images/about/friends.png");
       @include about-img;
@@ -56,6 +67,7 @@
         @include about-img--hover;
       }
     }
+
     &-family {
       background-image: url("/assets/images/about/family.png");
       @include about-img;
@@ -63,7 +75,15 @@
       &:hover {
         @include about-img--hover;
       }
-      }
+    }
+
+    &-text {
+      text-align: center;
+      margin-top: 24px;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #5c3d31;
+    }
   }
 
   p {
@@ -72,21 +92,53 @@
     margin: 0;
   }
 
+  .wave {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: steamSway 5s ease-in-out infinite;
+  }
+
+  svg path {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.05));
+    fill: peachpuff;
+  }
+
+  &.top {
+    transform: rotate(180deg);
+  }
+}
+
+  .page-title,
+  .favorite-moments-title {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
   .page-title {
-    margin-top: 0;
-    margin-left: 40px;;
+    margin: 0;
+    margin-top: 32px;
+    color: #5c3d31;
+  }
+
+  .favorite-moments-title {
+    text-align: center;
+    margin: 32px 16px 16px 16px;
+    color: #5c3d31;
   }
 
   .profile-container {
+    margin: auto;
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 32px;
-
-    @media (max-width: 1100px) {
-      flex-direction: column;
-      align-items: center;
-    }
+    margin-top: 32px;
   }
 
   .profile__img {
@@ -101,17 +153,40 @@
   }
 
   .profile__text {
+    width: 100%;
+    margin-top: 24px;
+    padding: 32px;
+    background-color: peachpuff;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-top: 24px;
 
     &.mt-0 {
       margin-top: 0;
+    }
+
+    &__footer {
+      margin: 32px 16px;
+      padding: 16px;
+      text-align: center;
+      color: #5c3d31;
+      font-weight: 500;
+
+      p {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+    }
+
+    p {
+      max-width: 600px;
+      margin: auto;
     }
   }
 
   .text-center {
     text-align: center;
+    width: 100%;
+    max-width: none;
   }
 }
