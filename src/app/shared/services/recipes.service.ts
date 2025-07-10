@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 const RECIPES: Recipe[] = [
   {
     name: 'Chocolate Cake',
+    slug: 'chocolate-cake',
     type: 'Cakes',
     mainIngredient: 'Chocolate',
     occasion: 'Birthday',
@@ -12,6 +13,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2022, 5, 3),
   },
   {
+    slug: 'pumpkin-cupcakes',
     name: 'Pumpkin Cupcakes',
     type: 'Cupcakes',
     mainIngredient: 'Pumpkin',
@@ -20,6 +22,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2017, 10, 15),
   },
   {
+    slug: 'pumpkin-pie',
     name: 'Pumpkin Pie',
     type: 'Pies',
     mainIngredient: 'Pumpkin',
@@ -28,6 +31,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2010, 11, 9),
   },
   {
+    slug: 'cranberry-orange-cookies',
     name: 'Cranberry Orange Cookies',
     type: 'Cookies',
     mainIngredient: 'Cranberry',
@@ -36,6 +40,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2020, 12, 7),
   },
   {
+    slug: 'chocolate-raspberry-cake',
     name: 'Chocolate Raspberry Cake',
     type: 'Cookies',
     mainIngredient: 'Raspberry',
@@ -44,6 +49,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2023, 2, 14),
   },
   {
+    slug: 'blueberry-muffins',
     name: 'Fudge Brownies',
     type: 'Brownies & Bars',
     mainIngredient: 'Chocolate',
@@ -52,6 +58,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2021, 8, 10),
   },
   {
+    slug: 'caramel-sauce',
     name: 'Caramel Sauce',
     type: 'Sauces',
     mainIngredient: 'Sugar',
@@ -60,6 +67,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2018, 3, 22),
   },
   {
+    slug: 'chocolate-chip-cookies',
     name: 'Chocolate Chip Cookies',
     type: 'Cookies',
     mainIngredient: 'Chocolate Chips',
@@ -68,6 +76,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2015, 6, 18),
   },
   {
+    slug: 'apple-cake',
     name: 'Apple Cake',
     type: 'Cakes',
     mainIngredient: 'Apple',
@@ -76,6 +85,7 @@ const RECIPES: Recipe[] = [
     dateAdded: new Date(2019, 12, 24),
   },
   {
+    slug: 'pecan-pie',
     name: 'Pecan Pie',
     type: 'Pies',
     mainIngredient: 'Pecan',
@@ -85,6 +95,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Bourbon Pecan Pie',
+    slug: 'bourbon-pecan-pie',
     type: 'Pies',
     mainIngredient: 'Bourbon',
     occasion: 'Thanksgiving',
@@ -93,6 +104,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Cake Pops',
+    slug: 'cake-pops',
     type: 'Cakes',
     mainIngredient: 'Sprinkles',
     occasion: 'Birthday',
@@ -101,6 +113,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Salted Caramel Tart',
+    slug: 'salted-caramel-tart',
     type: 'Tarts',
     mainIngredient: 'Caramel',
     occasion: '',
@@ -109,6 +122,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Key Lime Pie',
+    slug: 'key-lime-pie',
     type: 'Pies',
     mainIngredient: 'Key Lime',
     occasion: 'Easter',
@@ -117,6 +131,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Blueberry Sauce',
+    slug: 'blueberry-sauce',
     type: 'Sauces',
     mainIngredient: 'Blueberry',
     occasion: '',
@@ -125,6 +140,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Honey Butter',
+    slug: 'honey-butter',
     type: 'Sauces',
     mainIngredient: 'Honey',
     occasion: '',
@@ -133,6 +149,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Chocolate Ganache',
+    slug: 'chocolate-ganache',
     type: 'Sauces',
     mainIngredient: 'Chocolate',
     occasion: '',
@@ -141,6 +158,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Lemon Curd',
+    slug: 'lemon-curd',
     type: 'Sauces',
     mainIngredient: 'Lemon',
     occasion: '',
@@ -149,6 +167,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Lemon Bars',
+    slug: 'lemon-bars',
     type: 'Brownies & Bars',
     mainIngredient: 'Lemon',
     occasion: '',
@@ -157,6 +176,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Cinnamon Toast Crunch Cheesecake',
+    slug: 'cinnamon-toast-crunch-cheesecake',
     type: 'Cheesecake',
     mainIngredient: ' Cinnamon Toast Crunch',
     occasion: 'Easter',
@@ -165,6 +185,7 @@ const RECIPES: Recipe[] = [
   },
   {
     name: 'Carrot Cake',
+    slug: 'carrot-cake',
     type: 'Cakes',
     mainIngredient: 'Carrot',
     occasion: 'Birthday',
@@ -177,5 +198,15 @@ const RECIPES: Recipe[] = [
 export class RecipesService {
   public getRecipes(): Observable<Recipe[]> {
     return of(RECIPES);
+  }
+
+  public getRecipe(slug?: string | null): Observable<Recipe | null> {
+    if (!slug) {
+      return of(null);
+    }
+    const recipe = RECIPES.find(
+      (r) => r.slug?.toLowerCase().replace(/\s+/g, '-') === slug
+    );
+    return of(recipe || null);
   }
 }

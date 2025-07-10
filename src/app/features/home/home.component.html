@@ -1,8 +1,7 @@
 <!-- Featured Item -->
 <section class="featured-wrapper">
   <div class="featured-item">
-    <img src="assets/images/tarts/tart.jpg"
-      class="featured-image">
+    <img src="assets/images/tarts/tart.jpg" class="featured-image">
   </div>
 </section>
 
@@ -15,7 +14,9 @@
         This is where I share the bakes that bring people together —
         comforting, bold, and always made with love.
       </p>
-      <p class="greeting-subtext">Baked fresh. Written with heart. Served with coffee.</p>
+      <p class="greeting-subtext">
+        Baked fresh. Written with heart. Served with coffee.
+      </p>
     </div>
   </div>
   <div class="wave">
@@ -31,7 +32,12 @@
     <ng-container *ngFor="let link of quickLinks; index as i">
       <div class="quick-link">
         <a class="entry-image-link" (click)="routeToRecipes(link.path)">
-          <div class="icon-wrapper" [ngClass]="{ 'icon-wrapper-odd': i % 2 === 0, 'icon-wrapper-even': i % 2 !== 0, 'icon-wrapper-prime': i % 3 === 0 }">
+          <div class="icon-wrapper"
+            [ngClass]="{
+              'icon-wrapper-odd': i % 2 === 0,
+              'icon-wrapper-even': i % 2 !== 0,
+              'icon-wrapper-prime': i % 3 === 0
+          }">
             <mat-icon>{{ link.icon }}</mat-icon>
           </div>
           <div class="icon-title-wrapper">
@@ -46,16 +52,17 @@
 </section>
 
 <!-- Featured Recipes -->
-<section>
+<section class="sub-featured-wrapper">
   <a class="sub-featured-title">
     <span>Fresh from the Oven</span>
     <mat-icon>chevron_right</mat-icon>
   </a>
-  <div class="sub-featured">
+  <div class="sub-featured-items">
     <ng-container *ngFor="let item of featuredItems">
-      <div class="sub-featured-item">
+      <div class="sub-featured-item" (click)="routeToRecipe(item.slug)">
         <img [src]="item.image">
-        <span class="sub-featured-text">{{ item.name }}</span>
+        <span>{{ item.name }}</span>
+        <mat-icon [class.bookmarked]="item.isBookmarked" (click)="bookmarkItem(item)">bookmark</mat-icon>
       </div>
     </ng-container>
   </div>

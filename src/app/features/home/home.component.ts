@@ -14,34 +14,42 @@ import { FeaturedItem } from '../../shared/models';
 
 const FEATURED_DUMMY: FeaturedItem[] = [
   {
+    slug: 'cinnamon-toast-crunch-cheesecake',
     image: 'assets/images/cakes/cheesecake.jpg',
     name: 'Cinnamon Toast Crunch Cheesecake',
   },
   {
+    slug: 'blueberry-cheesecake',
     image: 'assets/images/cakes/blueberry-cheesecake.jpg',
     name: 'Blueberry Cheesecake',
   },
   {
+    slug: 'baked-pear',
     image: 'assets/images/desserts/baked-pear.jpg',
     name: 'Baked Pear',
   },
   {
+    slug: 'chocolate-raspberry-cake',
     image: 'assets/images/cakes/chocolate-raspberry-cake.jpg',
     name: 'Chocolate Raspberry Cake',
   },
   {
+    slug: 'pecan-pie',
     image: 'assets/images/pies/pecan-pie2.jpg',
     name: 'Pecan Pie',
   },
   {
+    slug: 'carrot-cake',
     image: 'assets/images/cakes/carrot-cake.jpg',
     name: 'Carrot Cake',
   },
   {
+    slug: 'pineapple-upside-down-cake',
     image: 'assets/images/cakes/pineapple-cake.jpg',
     name: 'Pineapple Upside-Down Cake',
   },
   {
+    slug: 'chocolate-chip-cookies',
     image: 'assets/images/cookies/xmas-cookies.jpg',
     name: 'Christmas Cookies',
   },
@@ -80,5 +88,14 @@ export class HomeComponent {
 
   routeToRecipes(target: string): void {
     this.router.navigate(['/recipes'], { queryParams: { category: target } });
+  }
+
+  routeToRecipe(slug: string): void {
+    this.router.navigate(['/recipe', slug]);
+  }
+
+  bookmarkItem(item: FeaturedItem): void {
+    // Here you would typically call a service to handle the bookmarking logic
+    item.isBookmarked = !item.isBookmarked;
   }
 }

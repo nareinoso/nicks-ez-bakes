@@ -1,12 +1,12 @@
 .home {
   display: block;
-  max-width: 1140px;
-  margin: 0 auto;
 
   h1 {
     margin-top: 0;
   }
 }
+
+/* Featured Item */
 
 .featured-wrapper {
   display: flex;
@@ -80,6 +80,8 @@
   }
 }
 
+/* Greeting */
+
 .greeting-wrapper {
   position: relative;
   background-color: #fce7c8;
@@ -88,9 +90,10 @@
 }
 
 .greeting-container {
-  max-width: 1300px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 1rem 3rem;
+  padding-top: 0;
   text-align: center;
   font-size: 2rem;
   font-family: "Patua One", serif;
@@ -135,10 +138,10 @@ h2 {
       transform: rotate(180deg) translateY(0);
     }
     50% {
-      transform: rotate(180deg) translateY(4px);
+      transform: rotate(180deg) translateY(8px);
     }
   }
-  animation: swayWave 6s ease-in-out infinite;
+  animation: swayWave 7s ease-in-out infinite;
 
   svg {
     display: block;
@@ -154,7 +157,11 @@ h2 {
   }
 }
 
+/* Quick Links */
+
 .quick-links {
+  max-width: 1024px;
+  margin: auto;
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -171,19 +178,19 @@ h2 {
   justify-content: center;
   gap: 20px;
   align-items: center;
+}
 
-  .quick-link {
-    display: block;
-    text-align: center;
-    position: relative;
-    min-width: 120px;
+.quick-link {
+  display: block;
+  text-align: center;
+  position: relative;
+  min-width: 120px;
 
-    &:hover {
-      cursor: pointer;
+  &:hover {
+    cursor: pointer;
 
-      .icon-wrapper {
-        transform: scale(1.1);
-      }
+    .icon-wrapper {
+      transform: scale(1.1);
     }
   }
 
@@ -206,9 +213,11 @@ h2 {
     position: relative;
     transform: 0.2s ease;
 
-
     mat-icon {
       font-family: "Material Symbols Outlined", sans-serif;
+      height: 32px;
+      width: 32px;
+      font-size: 32px;
     }
 
     &-even {
@@ -230,8 +239,6 @@ h2 {
         color: #a74421;
       }
     }
-
-
   }
 
   .icon-title-wrapper {
@@ -239,6 +246,7 @@ h2 {
     padding: 40px 10px 20px;
     background: white;
     box-shadow: var(--box-shadow-default);
+    border-radius: 8px;
 
     &:hover {
       cursor: pointer;
@@ -262,22 +270,13 @@ h2 {
   }
 }
 
+/* Sub Featured Items */
+
 .sub-featured {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 24px;
-
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 720px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(1, 1fr);
+  &-wrapper {
+    margin: auto;
+    margin-top: 64px;
+    max-width: 1024px;
   }
 
   &-title {
@@ -285,7 +284,6 @@ h2 {
     align-items: center;
     font: 500 2rem "Patua One", serif;
     width: fit-content;
-    margin: 32px 0 16px 0;
     padding: 0 24px;
 
     mat-icon {
@@ -298,6 +296,27 @@ h2 {
     &:hover {
       cursor: pointer;
       color: var(--color-primary);
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px;
+    max-width: 1024px;
+    margin: auto;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 720px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
@@ -313,7 +332,6 @@ h2 {
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-4px);
     cursor: pointer;
   }
 
@@ -334,6 +352,34 @@ h2 {
     flex-wrap: wrap;
     font-size: 1.05rem;
     font-weight: 500;
+  }
+
+  mat-icon {
+    font-family: "Material Symbols Outlined", sans-serif;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #bb7a0c;
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: auto;
+    border: 1px solid #bb7a0c;
+    border-radius: 50%;
+    padding: 8px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(#ffcf7c, 15%);
+    }
+    &:active {
+      background-color: #ffcf7c;
+      font-family: "Material Icons", sans-serif;
+    }
+
+    &.bookmarked {
+      background-color: #ffcf7c;
+      font-family: "Material Icons", sans-serif;
+    }
   }
 }
 

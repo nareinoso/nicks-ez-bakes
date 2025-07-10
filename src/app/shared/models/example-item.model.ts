@@ -1,6 +1,7 @@
 import { RecipeType } from './recipe-type';
 
 export interface Recipe {
+  slug?: string; // Optional slug for routing
   name: string;
   type: RecipeType;
   mainIngredient: string;
