@@ -1,46 +1,82 @@
 import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import {
   Component,
   HostBinding,
   inject,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
-import { TableComponent } from '../../shared/components/table/table.component';
-import { TableData } from '../../shared/models';
+import { Recipe } from '../../shared/models';
 import { RecipesService } from '../../shared/services/recipes.service';
 
-const RECIPE_COLUMNS = [
-  { key: 'name', label: 'Name', sortable: true },
-  { key: 'type', label: 'Type', sortable: true },
-  { key: 'mainIngredient', label: 'Main Ingredient', sortable: true },
-  { key: 'occasion', label: 'Occasion', sortable: true },
-  { key: 'difficulty', label: 'Difficulty', sortable: true },
-  { key: 'dateAdded', label: 'Added', sortable: true },
-];
+const CATEGORY_OPTIONS = ['Bread', 'Breakfast', 'Cakes', 'Cookies', 'Tarts'];
+const OCCASION_OPTIONS = ['Birthday', 'Holiday', 'Everyday'];
+const INGREDIENT_OPTIONS = ['Chocolate', 'Fruit', 'Nuts', 'Vanilla'];
 
 @Component({
   standalone: true,
   selector: 'recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss'],
+  animations: [
+    trigger('togglePanel', [
+      state('hidden', style({ height: '0px', opacity: 0, overflow: 'hidden' })),
+      state('visible', style({ height: '*', opacity: 1 })),
+      transition('hidden <=> visible', animate('200ms ease-in-out')),
+    ]),
+  ],
   encapsulation: ViewEncapsulation.None,
-  imports: [TableComponent],
+  imports: [MatSelectModule, MatButtonModule, CommonModule],
 })
 export class RecipesComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipes';
-  private _recipesService: RecipesService = inject(RecipesService);
-  public tableData: TableData = { columns: [], rows: [] };
+
+  private recipesService: RecipesService = inject(RecipesService);
+
+  recipes: Recipe[] = [];
+  categories = CATEGORY_OPTIONS;
+  occasions = OCCASION_OPTIONS;
+  ingredients = INGREDIENT_OPTIONS;
+  selectedCategory: string | null = null;
+  selectedOccasion: string | null = null;
+  selectedIngredient: string | null = null;
+  showFilters: boolean = false;
 
   constructor(title: Title) {
     title.setTitle('Recipes | The Caffeinated Baker');
   }
 
-  public ngOnInit(): void {
-    this.tableData.columns = RECIPE_COLUMNS;
+  get panelState() {
+    return this.showFilters ? 'visible' : 'hidden';
+  }
 
-    this._recipesService
+  ngOnInit(): void {
+    this.recipesService
       .getRecipes()
-      .subscribe((recipes) => (this.tableData.rows = recipes));
+      .subscribe((recipes) => (this.recipes = recipes));
+  }
+
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
+
+  selectCategory(cat: string) {
+    this.selectedCategory = this.selectedCategory === cat ? null : cat;
+  }
+
+  clearFilters() {
+    this.selectedCategory = null;
+    this.selectedOccasion = null;
+    this.selectedIngredient = null;
   }
 }

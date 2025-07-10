@@ -1,5 +1,59 @@
-<h1>Recipes</h1>
+<section class="page-header">
+  <h1>Recipes</h1>
+  <p class="page-subtext">
+    From sweet to savory, explore the full collection of bakes. Use the filters below to find just what you're craving.
+  </p>
+</section>
 
+<section class="page-filters">
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-pills">
+      <button class="pill">All</button>
+      <button class="pill">Bread</button>
+      <button class="pill">Breakfast</button>
+      <button class="pill">Cakes</button>
+      <button class="pill">Cookies</button>
+      <button class="pill">Desserts</button>
+      <button class="pill">Pies</button>
+    </div>
+    <button mat-button class="filter-toggle" (click)="toggleFilters()">Filters</button>
+  </div>
 
-<!-- This was a coding example for an interview: -->
-<!-- <ez-table [dataSource]="tableData"></ez-table> -->
+  <!-- Filter Panel -->
+  <div class="filter-panel" [@togglePanel]="panelState">
+    <div class="filter-group">
+      <label for="category">Type/Category</label>
+      <select mat-select id="category"
+        [(value)]="selectedCategory">
+        <option *ngFor="let cat of categories"
+          [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="occasion">Occasion</label>
+      <select mat-select id="occasion"
+        [(value)]="selectedOccasion">
+        <option *ngFor="let occ of occasions"
+          [value]="occ">{{ occ }}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="ingredient">Ingredient</label>
+      <select mat-select id="ingredient"
+        [(value)]="selectedIngredient">
+        <option *ngFor="let ing of ingredients"
+          [value]="ing">{{ ing }}</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="recipe-list">
+  <div class="recipe-card" *ngFor="let recipe of recipes">
+    <h2 class="recipe-title">{{ recipe.name }}</h2>
+    <p class="recipe-description">{{ recipe.type }}</p>
+    <button mat-button class="view-recipe-button">View Recipe</button>
+  </div>

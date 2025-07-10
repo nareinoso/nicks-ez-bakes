@@ -118,18 +118,18 @@
   .page-title,
   .favorite-moments-title {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-family: "Patua One", serif;
+    color: #5c3d31;
+    text-align: center;
   }
 
   .page-title {
     margin: 0;
     margin-top: 32px;
-    color: #5c3d31;
   }
 
   .favorite-moments-title {
-    text-align: center;
     margin: 32px 16px 16px 16px;
-    color: #5c3d31;
   }
 
   .profile-container {
