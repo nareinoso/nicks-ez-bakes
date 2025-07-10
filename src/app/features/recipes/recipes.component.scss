@@ -46,7 +46,6 @@
 
   .filter-panel {
     display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
     padding: 1rem 0;
   }
@@ -56,6 +55,7 @@
     flex-direction: column;
     gap: 0.25rem;
     min-width: 200px;
+    width: 100%;
   }
 
   .filter-group select {
@@ -66,10 +66,56 @@
 
   .recipe-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px;
     max-width: 1024px;
     margin: auto;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 720px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .recipe-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    background-color: white;
+    box-shadow: var(--box-shadow-thick);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      width: 100%;
+      height: 100%;
+      height: 275px;
+      object-fit: cover;
+      box-shadow: var(--box-shadow-default);
+      margin-bottom: 16px;
+    }
+
+    span {
+    margin: 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
   }
 }

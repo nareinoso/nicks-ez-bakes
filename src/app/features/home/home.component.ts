@@ -14,29 +14,19 @@ import { FeaturedItem } from '../../shared/models';
 
 const FEATURED_DUMMY: FeaturedItem[] = [
   {
-    slug: 'cinnamon-toast-crunch-cheesecake',
-    image: 'assets/images/cakes/cheesecake.jpg',
-    name: 'Cinnamon Toast Crunch Cheesecake',
+    slug: 'banana-bread',
+    image: 'assets/images/bread/banana-bread.png',
+    name: 'Banana Bread',
+  },
+  {
+    slug: 'banana-scones',
+    image: 'assets/images/breakfast/banana-scones.jpg',
+    name: 'Banana Scones',
   },
   {
     slug: 'blueberry-cheesecake',
-    image: 'assets/images/cakes/blueberry-cheesecake.jpg',
+    image: 'assets/images/cheesecakes/blueberry-cheesecake.jpg',
     name: 'Blueberry Cheesecake',
-  },
-  {
-    slug: 'baked-pear',
-    image: 'assets/images/desserts/baked-pear.jpg',
-    name: 'Baked Pear',
-  },
-  {
-    slug: 'chocolate-raspberry-cake',
-    image: 'assets/images/cakes/chocolate-raspberry-cake.jpg',
-    name: 'Chocolate Raspberry Cake',
-  },
-  {
-    slug: 'pecan-pie',
-    image: 'assets/images/pies/pecan-pie2.jpg',
-    name: 'Pecan Pie',
   },
   {
     slug: 'carrot-cake',
@@ -44,14 +34,24 @@ const FEATURED_DUMMY: FeaturedItem[] = [
     name: 'Carrot Cake',
   },
   {
-    slug: 'pineapple-upside-down-cake',
-    image: 'assets/images/cakes/pineapple-cake.jpg',
-    name: 'Pineapple Upside-Down Cake',
+    slug: 'chocolate-chunk-cookies',
+    image: 'assets/images/cookies/chocolate-chunk-cookies.jpg',
+    name: 'Chocolate Chunk Cookies',
   },
   {
-    slug: 'chocolate-chip-cookies',
-    image: 'assets/images/cookies/xmas-cookies.jpg',
-    name: 'Christmas Cookies',
+    slug: 'chocolate-raspberry-cake',
+    image: 'assets/images/cakes/chocolate-raspberry-cake.jpg',
+    name: 'Chocolate Raspberry Cake',
+  },
+  {
+    slug: 'cinnamon-toast-crunch-cheesecake',
+    image: 'assets/images/cheesecakes/cheesecake.jpg',
+    name: 'Cinnamon Toast Crunch Cheesecake',
+  },
+  {
+    slug: 'lemon-bars',
+    image: 'assets/images/bars/lemon-bars.jpg',
+    name: 'Lemon Bars',
   },
 ];
 

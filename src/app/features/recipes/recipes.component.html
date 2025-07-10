@@ -30,7 +30,6 @@
           [value]="cat">{{ cat }}</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="occasion">Occasion</label>
       <select mat-select id="occasion"
@@ -39,7 +38,6 @@
           [value]="occ">{{ occ }}</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="ingredient">Ingredient</label>
       <select mat-select id="ingredient"
@@ -53,7 +51,6 @@
 
 <section class="recipe-list">
   <div class="recipe-card" *ngFor="let recipe of recipes">
-    <h2 class="recipe-title">{{ recipe.name }}</h2>
-    <p class="recipe-description">{{ recipe.type }}</p>
-    <button mat-button class="view-recipe-button">View Recipe</button>
+    <img [src]="recipe.imageUrl"/>
+    <span class="recipe-title">{{ recipe.name }}</span>
   </div>
