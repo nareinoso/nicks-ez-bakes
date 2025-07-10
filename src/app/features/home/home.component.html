@@ -1,16 +1,37 @@
-<section>
+<!-- Featured Item -->
+<section class="featured-wrapper">
   <div class="featured-item">
     <img src="assets/images/tarts/tart.jpg"
       class="featured-image">
-    <span>Fruit Tart with Fresh Summer Berries and Rich Vanilla Pastry Cream</span>
   </div>
 </section>
+
+<!-- Greeting -->
+<section>
+  <div class="greeting-wrapper">
+    <div class="greeting-container">
+      <h2>Hi, I’m Nick!</h2>
+      <p class="greeting-body">
+        This is where I share the bakes that bring people together —
+        comforting, bold, and always made with love.
+      </p>
+      <p class="greeting-subtext">Baked fresh. Written with heart. Served with coffee.</p>
+    </div>
+  </div>
+  <div class="wave">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,120 1080,-40 1440,40 L1440,0 L0,0 Z" />
+    </svg>
+  </div>
+</section>
+
+<!-- Quick Links -->
 <section>
   <div class="quick-links">
-    <ng-container *ngFor="let link of quickLinks">
+    <ng-container *ngFor="let link of quickLinks; index as i">
       <div class="quick-link">
         <a class="entry-image-link" (click)="routeToRecipes(link.path)">
-          <div class="icon-wrapper">
+          <div class="icon-wrapper" [ngClass]="{ 'icon-wrapper-odd': i % 2 === 0, 'icon-wrapper-even': i % 2 !== 0, 'icon-wrapper-prime': i % 3 === 0 }">
             <mat-icon>{{ link.icon }}</mat-icon>
           </div>
           <div class="icon-title-wrapper">
@@ -23,6 +44,8 @@
     </ng-container>
   </div>
 </section>
+
+<!-- Featured Recipes -->
 <section>
   <a class="sub-featured-title">
     <span>Fresh from the Oven</span>
