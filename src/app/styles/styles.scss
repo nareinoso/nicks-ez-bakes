@@ -1,5 +1,11 @@
-@import './material.scss';
-@import '../../../themes/themes';
+@import "./material.scss";
+@import "../../../themes/themes";
+
+html {
+  --box-shadow-default: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-thick: 2px 2px 6px 0 #2c2c2c14;
+  --color-primary: rgb(9, 105, 104);
+}
 
 body {
   margin: 0;
