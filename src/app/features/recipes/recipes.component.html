@@ -1,3 +1,4 @@
+<!-- Header -->
 <section class="page-header">
   <h1>Recipes</h1>
   <p class="page-subtext">
@@ -5,52 +6,77 @@
   </p>
 </section>
 
+<!-- Filters -->
 <section class="page-filters">
-  <!-- Filter Bar -->
+  <!-- Filter Pills -->
   <div class="filter-bar">
     <div class="filter-pills">
-      <button class="pill">All</button>
-      <button class="pill">Bread</button>
-      <button class="pill">Breakfast</button>
-      <button class="pill">Cakes</button>
-      <button class="pill">Cookies</button>
-      <button class="pill">Desserts</button>
-      <button class="pill">Pies</button>
+      <button
+        *ngFor="let pill of filterPills"
+        class="pill"
+        [class.active]="isPillActive(pill.key)"
+        (click)="selectPill(pill.key)">
+        {{ pill.label }}
+      </button>
     </div>
-    <button mat-button class="filter-toggle" (click)="toggleFilters()">Filters</button>
+    <button mat-button class="filter-toggle" (click)="toggleFilters()">
+      <mat-icon>instant_mix</mat-icon> Filters
+    </button>
   </div>
 
   <!-- Filter Panel -->
   <div class="filter-panel" [@togglePanel]="panelState">
     <div class="filter-group">
-      <label for="category">Type/Category</label>
-      <select mat-select id="category"
-        [(value)]="selectedCategory">
-        <option *ngFor="let cat of categories"
-          [value]="cat">{{ cat }}</option>
-      </select>
+      <label for="category">
+        <span>Category</span>
+        <a *ngIf="categoriesAreSelected" (click)="clearFilter('category')">Clear</a>
+      </label>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-select id="category" [formControl]="categories" multiple>
+          @for (category of categoryList; track category) {
+          <mat-option [value]="category">{{toTitleCase(category)}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="filter-group">
-      <label for="occasion">Occasion</label>
-      <select mat-select id="occasion"
-        [(value)]="selectedOccasion">
-        <option *ngFor="let occ of occasions"
-          [value]="occ">{{ occ }}</option>
-      </select>
+      <label for="ingredient">
+        <span>Flavor</span>
+        <a *ngIf="ingredientsAreSelected" (click)="clearFilter('ingredient')">Clear</a>
+      </label>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-select id="category" [formControl]="flavors" multiple>
+          @for (flavor of flavorsList; track flavor) {
+          <mat-option [value]="flavor">{{ toTitleCase(flavor)}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="filter-group">
-      <label for="ingredient">Ingredient</label>
-      <select mat-select id="ingredient"
-        [(value)]="selectedIngredient">
-        <option *ngFor="let ing of ingredients"
-          [value]="ing">{{ ing }}</option>
-      </select>
+      <label for="occasion">
+        <span>Perfect for</span>
+        <a *ngIf="occasionsAreSelected" (click)="clearFilter('occasion')">Clear</a>
+      </label>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-select id="category" [formControl]="occasions" multiple>
+          @for (occasion of occasionList; track occasion) {
+          <mat-option [value]="occasion">{{occasion}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 </section>
 
+<!-- Recipes List -->
 <section class="recipe-list">
-  <div class="recipe-card" *ngFor="let recipe of recipes">
+  <div class="recipe-card" *ngFor="let recipe of filteredRecipes">
     <img [src]="recipe.imageUrl"/>
     <span class="recipe-title">{{ recipe.name }}</span>
   </div>
+</section>
+
+<!-- Empty State -->
+ <section *ngIf="recipes.length === 0" class="empty-state">
+  <p>No recipes found. Try adjusting your filters or check back soon!</p>
+</section>

@@ -2,10 +2,10 @@ export declare type RecipeType =
   | 'bars'
   | 'bread'
   | 'breakfast'
-  | 'cakes'
-  | 'cheesecakes'
+  | 'cake'
+  | 'cheesecake'
   | 'cookies'
   | 'healthy'
-  | 'tart'
+  | 'pie'
   | 'sauce'
-  | 'healthy';
+  | 'tart';

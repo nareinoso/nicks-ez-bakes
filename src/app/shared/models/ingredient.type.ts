@@ -1,9 +1,8 @@
-export declare type Ingredient =
-  'chocolate'
-  | 'banana'
+export declare type Flavor =
+  | 'chocolate'
+  | 'fruity'
+  | 'nutty'
+  | 'spiced'
   | 'citrus'
-  | 'apple'
-  | 'carrot'
-  | 'berry'
-  | 'pineapple'
-  | 'nuts';
+  | 'rich'
+  | 'fresh';

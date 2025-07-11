@@ -13,15 +13,43 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
-import { Recipe } from '../../shared/models';
+import { FilterOption, Recipe, RecipeFilterType } from '../../shared/models';
 import { RecipesService } from '../../shared/services/recipes.service';
 
-const CATEGORY_OPTIONS = ['Bread', 'Breakfast', 'Cakes', 'Cookies', 'Tarts'];
+const CATEGORY_OPTIONS = [
+  'bread',
+  'breakfast',
+  'cake',
+  'cookies',
+  'tarts',
+  'cheesecake',
+];
 const OCCASION_OPTIONS = ['Birthday', 'Holiday', 'Everyday'];
-const INGREDIENT_OPTIONS = ['Chocolate', 'Fruit', 'Nuts', 'Vanilla'];
+const FLAVOR_OPTIONS = [
+  'chocolate',
+  'fruity',
+  'nutty',
+  'spiced',
+  'citrus',
+  'rich',
+  'fresh',
+];
+const FILTER_OPTIONS = [
+  { key: 'all', label: 'All' },
+  { key: 'bread', label: 'Bread' },
+  { key: 'breakfast', label: 'Breakfast' },
+  { key: 'bars', label: 'Bars' },
+  { key: 'cake', label: 'Cakes' },
+  { key: 'cookies', label: 'Cookies' },
+  { key: 'cheesecake', label: 'Cheesecakes' },
+  { key: 'pie', label: 'Pies' },
+  { key: 'tart', label: 'Tarts' },
+];
 
 @Component({
   standalone: true,
@@ -36,28 +64,59 @@ const INGREDIENT_OPTIONS = ['Chocolate', 'Fruit', 'Nuts', 'Vanilla'];
     ]),
   ],
   encapsulation: ViewEncapsulation.None,
-  imports: [MatSelectModule, MatButtonModule, CommonModule],
+  imports: [
+    MatSelectModule,
+    MatButtonModule,
+    CommonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+  ],
 })
 export class RecipesComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipes';
-
   private recipesService: RecipesService = inject(RecipesService);
 
-  recipes: Recipe[] = [];
-  categories = CATEGORY_OPTIONS;
-  occasions = OCCASION_OPTIONS;
-  ingredients = INGREDIENT_OPTIONS;
-  selectedCategory: string | null = null;
-  selectedOccasion: string | null = null;
-  selectedIngredient: string | null = null;
+  categoryList = CATEGORY_OPTIONS;
+  occasionList = OCCASION_OPTIONS;
+  flavorsList = FLAVOR_OPTIONS;
+  categories = new FormControl<string[]>([]);
+  occasions = new FormControl<string[]>([]);
+  flavors = new FormControl<string[]>([]);
+
+  filterPills: FilterOption[] = FILTER_OPTIONS;
+  activePill: string = this.filterPills[0].key;
   showFilters: boolean = false;
+
+  recipes: Recipe[] = [];
 
   constructor(title: Title) {
     title.setTitle('Recipes | The Caffeinated Baker');
   }
 
+  get isPillActive() {
+    return (key: string) => {
+      if (key === 'all') return this.categories.value?.length === 0;
+      return this.categories.value?.includes(this.toTitleCase(key));
+    };
+  }
+
   get panelState() {
     return this.showFilters ? 'visible' : 'hidden';
+  }
+
+  get categoriesAreSelected(): boolean {
+    let categoriesVal = this.categories.value?.length;
+    return categoriesVal ? categoriesVal > 0 : false;
+  }
+
+  get ingredientsAreSelected(): boolean {
+    let ingredientsVal = this.flavors.value?.length;
+    return ingredientsVal ? ingredientsVal > 0 : false;
+  }
+
+  get occasionsAreSelected(): boolean {
+    let occasionsVal = this.occasions.value?.length;
+    return occasionsVal ? occasionsVal > 0 : false;
   }
 
   ngOnInit(): void {
@@ -70,13 +129,63 @@ export class RecipesComponent implements OnInit {
     this.showFilters = !this.showFilters;
   }
 
-  selectCategory(cat: string) {
-    this.selectedCategory = this.selectedCategory === cat ? null : cat;
+  selectPill(key: string) {
+    this.activePill = key;
+
+    if (key === 'all') {
+      this.categories.setValue([]); // Clear if using pill-based filters
+    } else {
+      this.categories.setValue([this.toTitleCase(key)]);
+    }
   }
 
-  clearFilters() {
-    this.selectedCategory = null;
-    this.selectedOccasion = null;
-    this.selectedIngredient = null;
+  toTitleCase(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
+  clearFilter(filterType: RecipeFilterType) {
+    switch (filterType) {
+      case 'category':
+        this.categories.reset();
+        break;
+      case 'ingredient':
+        this.flavors.reset();
+        break;
+      case 'occasion':
+        this.occasions.reset();
+        break;
+    }
+  }
+
+  get filteredRecipes(): Recipe[] {
+    const categories = this.categories.value?.map(this.normalize) ?? [];
+    const flavors = this.flavors.value?.map(this.normalize) ?? [];
+    const occasions = this.occasions.value?.map(this.normalize) ?? [];
+
+    return this.recipes.filter((recipe) => {
+      const recipeTypes = recipe.types?.map(this.normalize) ?? [];
+      const recipeOccasion = this.normalize(String(recipe.occasion));
+      const recipeIngredients =
+        recipe.flavors?.map((ing: any) =>
+          this.normalize(typeof ing === 'string' ? ing : ing.name ?? '')
+        ) ?? [];
+
+      const matchesCategory =
+        !categories.length ||
+        recipeTypes.some((type) => categories.includes(type));
+
+      const matchesFlavor =
+        !flavors.length ||
+        flavors.some((ing) => recipeIngredients.includes(ing));
+
+      const matchesOccasion =
+        !occasions.length || occasions.includes(recipeOccasion);
+
+      return matchesCategory && matchesFlavor && matchesOccasion;
+    });
+  }
+
+  private normalize(value: string): string {
+    return value?.trim().toLowerCase();
   }
 }

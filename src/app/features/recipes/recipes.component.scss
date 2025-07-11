@@ -22,12 +22,22 @@
   }
 
   .pill {
-    padding: 0.5rem 1rem;
     border: none;
+    background-color: #f1e0d6;
+    color: #5c3d31;
+    padding: 0.4rem 1rem;
     border-radius: 999px;
-    background-color: #f0f0f0;
-    cursor: pointer;
     font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &.active {
+      background-color: #e0bfa7;
+    }
+
+    &:hover:not(.active) {
+      background-color: #e9d3c1;
+    }
   }
 
   .pill.active {
@@ -36,18 +46,21 @@
   }
 
   .filter-toggle {
-    padding: 0.5rem 1rem;
-    background-color: #e9d5c4;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: bold;
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
     cursor: pointer;
+
+    mat-icon {
+      font-family: "Material Symbols Outlined";
+    }
   }
 
   .filter-panel {
     display: flex;
     gap: 2rem;
-    padding: 1rem 0;
   }
 
   .filter-group {
@@ -56,13 +69,25 @@
     gap: 0.25rem;
     min-width: 200px;
     width: 100%;
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 8px;
+
+      a {
+        cursor: pointer;
+
+        &:hover {
+          color: #5c3d31;
+        }
+      }
+    }
+    .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
+      background-color: white;
+    }
   }
 
-  .filter-group select {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-  }
 
   .recipe-list {
     display: grid;
@@ -111,11 +136,11 @@
     }
 
     span {
-    margin: 0 8px;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1.05rem;
-    font-weight: 500;
-  }
+      margin: 0 8px;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
   }
 }
