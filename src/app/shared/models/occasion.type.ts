@@ -1,6 +1,10 @@
 export declare type Occasion =
-  'birthday'
-  | 'christmas'
-  | 'halloween'
-  | 'easter'
-  | 'fourth-of-july';
+  | 'brunch'
+  | 'birthday'
+  | 'gifting'
+  | 'holidays'
+  | 'datenight'
+  | 'everyday'
+  | 'showstopper'
+  | 'party'
+  | 'justbecause';

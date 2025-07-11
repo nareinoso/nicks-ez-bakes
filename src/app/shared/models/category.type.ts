@@ -1,4 +1,4 @@
-export declare type RecipeType =
+export declare type Category =
   | 'bars'
   | 'bread'
   | 'breakfast'

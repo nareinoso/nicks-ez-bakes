@@ -18,7 +18,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
-import { FilterOption, Recipe, RecipeFilterType } from '../../shared/models';
+import {
+  FilterOption,
+  Occasion,
+  Recipe,
+  RecipeFilterType,
+} from '../../shared/models';
 import { RecipesService } from '../../shared/services/recipes.service';
 
 const CATEGORY_OPTIONS = [
@@ -29,7 +34,18 @@ const CATEGORY_OPTIONS = [
   'tarts',
   'cheesecake',
 ];
-const OCCASION_OPTIONS = ['Birthday', 'Holiday', 'Everyday'];
+export const OCCASION_OPTIONS: { key: Occasion; label: string }[] = [
+  { key: 'brunch', label: 'Brunch' },
+  { key: 'birthday', label: 'Birthdays' },
+  { key: 'gifting', label: 'Gifting' },
+  { key: 'holidays', label: 'Holidays' },
+  { key: 'datenight', label: 'Date Night' },
+  { key: 'everyday', label: 'Everyday Treats' },
+  { key: 'showstopper', label: 'Showstoppers' },
+  { key: 'party', label: 'Potlucks & Parties' },
+  { key: 'justbecause', label: 'Just Because' },
+];
+
 const FLAVOR_OPTIONS = [
   'chocolate',
   'fruity',
@@ -163,7 +179,7 @@ export class RecipesComponent implements OnInit {
     const occasions = this.occasions.value?.map(this.normalize) ?? [];
 
     return this.recipes.filter((recipe) => {
-      const recipeTypes = recipe.types?.map(this.normalize) ?? [];
+      const recipeCategories = recipe.categories?.map(this.normalize) ?? [];
       const recipeOccasion = this.normalize(String(recipe.occasion));
       const recipeIngredients =
         recipe.flavors?.map((ing: any) =>
@@ -172,7 +188,7 @@ export class RecipesComponent implements OnInit {
 
       const matchesCategory =
         !categories.length ||
-        recipeTypes.some((type) => categories.includes(type));
+        recipeCategories.some((cat) => categories.includes(cat));
 
       const matchesFlavor =
         !flavors.length ||

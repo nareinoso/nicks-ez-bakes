@@ -60,7 +60,7 @@
       <mat-form-field appearance="outline" class="full-width">
         <mat-select id="category" [formControl]="occasions" multiple>
           @for (occasion of occasionList; track occasion) {
-          <mat-option [value]="occasion">{{occasion}}</mat-option>
+          <mat-option [value]="occasion.key">{{occasion.label}}</mat-option>
           }
         </mat-select>
       </mat-form-field>
@@ -77,6 +77,6 @@
 </section>
 
 <!-- Empty State -->
- <section *ngIf="recipes.length === 0" class="empty-state">
+ <section *ngIf="filteredRecipes.length === 0" class="empty-state">
   <p>No recipes found. Try adjusting your filters or check back soon!</p>
 </section>

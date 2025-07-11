@@ -1,12 +1,12 @@
 import { Flavor } from './ingredient.type';
 import { Occasion } from './occasion.type';
-import { RecipeType } from './recipe-type';
+import { Category } from './category.type';
 
 export interface Recipe {
   slug?: string; // Optional slug for routing
   imageUrl?: string; // Optional image URL for the recipe
   name: string;
-  types: RecipeType[];
+  categories: Category[];
   flavors: Flavor[];
   occasion: Occasion[];
 }
