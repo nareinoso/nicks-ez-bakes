@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { catchError, Observable, of, throwError } from 'rxjs';
 import { Recipe } from '../models';
 
 const RECIPES_DUMMY_DATA: Recipe[] = [
@@ -247,17 +248,19 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
 
 @Injectable({ providedIn: 'root' })
 export class RecipesService {
+  constructor(private http: HttpClient) {}
+
   public getRecipes(): Observable<Recipe[]> {
     return of(RECIPES_DUMMY_DATA);
   }
 
-  public getRecipe(slug?: string | null): Observable<Recipe | null> {
-    if (!slug) {
-      return of(null);
-    }
-    const recipe = RECIPES_DUMMY_DATA.find(
-      (r) => r.slug?.toLowerCase().replace(/\s+/g, '-') === slug
+  getRecipe(slug: string): Observable<Recipe> {
+    const url = `assets/recipes/${slug}.json`;
+    return this.http.get<Recipe>(url).pipe(
+      catchError((err) => {
+        console.error(`Error loading recipe for slug: ${slug}`, err);
+        return throwError(() => new Error('Recipe not found.'));
+      })
     );
-    return of(recipe || null);
   }
 }

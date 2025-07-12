@@ -1,0 +1,70 @@
+.recipe-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .title {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #5c3d31;
+    font-family: "Patua One", serif;
+  }
+
+  .description {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #7c5c4b;
+    justify-content: center;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    label {
+      font-weight: 600;
+    }
+  }
+
+  .ingredients,
+  .equipment,
+  .steps {
+    margin-bottom: 2rem;
+
+    h2 {
+      margin-bottom: 0.75rem;
+      color: #5c3d31;
+      font-family: "Patua One", serif;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+}

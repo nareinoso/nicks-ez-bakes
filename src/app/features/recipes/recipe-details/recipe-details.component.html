@@ -1,0 +1,48 @@
+<section *ngIf="recipe" class="recipe-details">
+  <button mat-button (click)="router.navigate(['/recipes'])">
+    <mat-icon>arrow_back</mat-icon> Back to Recipes
+  </button>
+
+  <h1 class="title">{{ recipe.name }}</h1>
+
+  <span class="description">{{ recipe.description }}</span>
+
+  <img
+    *ngIf="recipe.imageUrl"
+    [src]="recipe.imageUrl"
+    class="hero-image"
+    alt="{{ recipe.name }}"
+  />
+
+  <div class="meta">
+    <span><label>Prep Time:</label> {{ recipe.prepTime }}</span>
+    <span><label>Cook Time:</label> {{ recipe.cookTime }}</span>
+    <span><label>Total Time:</label> {{ recipe.totalTime }}</span>
+    <span><label>Yield:</label> {{ recipe.yield }}</span>
+  </div>
+
+  <div class="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+      <li *ngFor="let item of recipe.ingredients">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="equipment">
+    <h2>Equipment</h2>
+    <ul>
+      <li *ngFor="let item of recipe.equipment">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="steps">
+    <h2>Instructions</h2>
+    <ol>
+      <li *ngFor="let step of recipe.steps">{{ step }}</li>
+    </ol>
+  </div>
+</section>

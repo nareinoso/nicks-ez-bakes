@@ -70,7 +70,7 @@
 
 <!-- Recipes List -->
 <section class="recipe-list">
-  <div class="recipe-card" *ngFor="let recipe of filteredRecipes">
+  <div class="recipe-card" *ngFor="let recipe of filteredRecipes" (click)="navigateToRecipe(recipe.slug)">
     <img [src]="recipe.imageUrl"/>
     <span class="recipe-title">{{ recipe.name }}</span>
   </div>

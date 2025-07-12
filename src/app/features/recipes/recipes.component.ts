@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   FilterOption,
   Occasion,
@@ -26,35 +27,6 @@ import {
 } from '../../shared/models';
 import { RecipesService } from '../../shared/services/recipes.service';
 
-const CATEGORY_OPTIONS = [
-  'bread',
-  'breakfast',
-  'cake',
-  'cookies',
-  'tarts',
-  'cheesecake',
-];
-export const OCCASION_OPTIONS: { key: Occasion; label: string }[] = [
-  { key: 'brunch', label: 'Brunch' },
-  { key: 'birthday', label: 'Birthdays' },
-  { key: 'gifting', label: 'Gifting' },
-  { key: 'holidays', label: 'Holidays' },
-  { key: 'datenight', label: 'Date Night' },
-  { key: 'everyday', label: 'Everyday Treats' },
-  { key: 'showstopper', label: 'Showstoppers' },
-  { key: 'party', label: 'Potlucks & Parties' },
-  { key: 'justbecause', label: 'Just Because' },
-];
-
-const FLAVOR_OPTIONS = [
-  'chocolate',
-  'fruity',
-  'nutty',
-  'spiced',
-  'citrus',
-  'rich',
-  'fresh',
-];
 const FILTER_OPTIONS = [
   { key: 'all', label: 'All' },
   { key: 'bread', label: 'Bread' },
@@ -65,6 +37,38 @@ const FILTER_OPTIONS = [
   { key: 'cheesecake', label: 'Cheesecakes' },
   { key: 'pie', label: 'Pies' },
   { key: 'tart', label: 'Tarts' },
+];
+const CATEGORY_OPTIONS = [
+  'bars',
+  'bread',
+  'breakfast',
+  'cake',
+  'cheesecake',
+  'cookies',
+  'healthy',
+  'pie',
+  'sauce',
+  'tart',
+];
+const FLAVOR_OPTIONS = [
+  'chocolate',
+  'fruity',
+  'nutty',
+  'spiced',
+  'citrus',
+  'rich',
+  'fresh',
+];
+const OCCASION_OPTIONS: { key: Occasion; label: string }[] = [
+  { key: 'brunch', label: 'Brunch' },
+  { key: 'birthday', label: 'Birthdays' },
+  { key: 'gifting', label: 'Gifting' },
+  { key: 'holidays', label: 'Holidays' },
+  { key: 'datenight', label: 'Date Night' },
+  { key: 'everyday', label: 'Everyday Treats' },
+  { key: 'showstopper', label: 'Showstoppers' },
+  { key: 'party', label: 'Potlucks & Parties' },
+  { key: 'justbecause', label: 'Just Because' },
 ];
 
 @Component({
@@ -91,6 +95,7 @@ const FILTER_OPTIONS = [
 export class RecipesComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipes';
   private recipesService: RecipesService = inject(RecipesService);
+  private router = inject(Router);
 
   categoryList = CATEGORY_OPTIONS;
   occasionList = OCCASION_OPTIONS;
@@ -105,7 +110,7 @@ export class RecipesComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
-  constructor(title: Title) {
+  constructor(title: Title, private route: ActivatedRoute) {
     title.setTitle('Recipes | The Caffeinated Baker');
   }
 
@@ -136,6 +141,13 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe((params) => {
+      const category = params.get('category');
+      if (category && this.categoryList.includes(category)) {
+        this.categories.setValue([category]);
+      }
+    });
+
     this.recipesService
       .getRecipes()
       .subscribe((recipes) => (this.recipes = recipes));
@@ -203,5 +215,9 @@ export class RecipesComponent implements OnInit {
 
   private normalize(value: string): string {
     return value?.trim().toLowerCase();
+  }
+
+  navigateToRecipe(slug: string) {
+    this.router.navigateByUrl(`/recipe/${slug}`);
   }
 }

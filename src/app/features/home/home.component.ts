@@ -58,12 +58,12 @@ const FEATURED_DUMMY: FeaturedItem[] = [
 const QUICK_LINKS = [
   { name: 'Bread', icon: 'breakfast_dining', path: 'bread' },
   { name: 'Breakfast', icon: 'bakery_dining', path: 'breakfast' },
-  { name: 'Brownies', icon: 'oven_gen', path: 'brownies' },
-  { name: 'Cakes', icon: 'cake', path: 'cakes' },
+  { name: 'Brownies', icon: 'oven_gen', path: 'bars' },
+  { name: 'Cakes', icon: 'cake', path: 'cake' },
   { name: 'Cookies', icon: 'cookie', path: 'cookies' },
   { name: 'Desserts', icon: 'icecream', path: 'desserts' },
-  { name: 'Pies', icon: 'blur_circular', path: 'pies' },
-  { name: 'Tarts', icon: 'nutrition', path: 'tarts' },
+  { name: 'Pies', icon: 'blur_circular', path: 'pie' },
+  { name: 'Tarts', icon: 'nutrition', path: 'tart' },
 ];
 
 @Component({

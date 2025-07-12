@@ -5,7 +5,7 @@ import {
   RendererFactory2,
 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ThemeColor } from '../../models/theme-color';
+import { ThemeColor } from '../models';
 
 // https://svenbudak.medium.com/how-to-implement-dark-light-mode-in-angular-mateiral-with-prefers-color-scheme-ce3e980e2ea5
 

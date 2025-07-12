@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -10,6 +10,7 @@ import {
 } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RecipesService } from '../../services';
 
 @Component({
   standalone: true,
@@ -35,13 +36,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchDialogComponent {
-  public filters = [
+  filters = [
     { label: 'Recipes', value: 'recipes' },
     { label: 'Learn', value: 'learn' },
     { label: 'Equipment', value: 'equipment' },
   ];
 
-  public results = [
+  results = [
     {
       title: 'Baking Basics',
       category: 'Learn',

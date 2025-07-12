@@ -1,13 +1,17 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   HostBinding,
-  inject,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Recipe } from '../../../shared/models';
 import { RecipesService } from '../../../shared/services/recipes.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -15,31 +19,37 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  imports: [MatButtonModule, CommonModule, MatIconModule, ReactiveFormsModule],
 })
 export class RecipeDetailsComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipe-details';
-  private recipesService: RecipesService = inject(RecipesService);
-  private readonly recipeSlug: string | null = null;
+  recipe: Recipe | null = null;
 
   constructor(
+    public router: Router,
     public title: Title,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private recipeService: RecipesService
   ) {
     title.setTitle('Recipes | The Caffeinated Baker');
-    this.recipeSlug = this.route.snapshot.paramMap.get('slug');
   }
 
   public ngOnInit(): void {
-    this.recipesService.getRecipe(this.recipeSlug)
-      .subscribe({
-        next:(recipe) => {
-          if (recipe) {
-            this.title.setTitle(`${recipe.name} | The Caffeinated Baker`);
-          } else {
-            this.title.setTitle('Recipe Not Found | The Caffeinated Baker');
-          }
-        },
-        error: (err: any) => console.error('Error fetching recipe:', err)
-      });
+    this.getRecipeFromSlug();
+  }
+
+  private getRecipeFromSlug(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    if (!slug) return;
+
+    this.recipeService.getRecipe(slug).subscribe({
+      next: (recipe) => {
+        this.recipe = recipe;
+      },
+      error: () => {
+        // Log error
+        console.log(`Recipe for slug: ${slug} not found.`);
+      },
+    });
   }
 }
