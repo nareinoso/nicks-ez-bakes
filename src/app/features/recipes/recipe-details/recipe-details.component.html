@@ -1,18 +1,25 @@
-<section *ngIf="recipe" class="recipe-details">
-  <button mat-button (click)="router.navigate(['/recipes'])">
-    <mat-icon>arrow_back</mat-icon> Back to Recipes
-  </button>
+<section *ngIf="recipe"  class="recipe-details">
+  <div class="button-row">
+    <button mat-button (click)="router.navigate(['/recipes'])">
+      <mat-icon>arrow_back</mat-icon> Back to Recipes
+    </button>
+    <button mat-button (click)="saveRecipe()" class="save-button">
+      <mat-icon>bookmark</mat-icon> Save
+    </button>
+    <button mat-button (click)="printRecipe()" class="print-button">
+      <mat-icon>print</mat-icon> Print
+    </button>
+  </div>
 
   <h1 class="title">{{ recipe.name }}</h1>
 
   <span class="description">{{ recipe.description }}</span>
+  <span *ngIf="recipe.credit" class="credit">{{ recipe.credit }}</span>
 
-  <img
-    *ngIf="recipe.imageUrl"
+  <img *ngIf="recipe.imageUrl"
     [src]="recipe.imageUrl"
     class="hero-image"
-    alt="{{ recipe.name }}"
-  />
+    alt="{{ recipe.name }}" />
 
   <div class="meta">
     <span><label>Prep Time:</label> {{ recipe.prepTime }}</span>
@@ -34,15 +41,18 @@
     <h2>Equipment</h2>
     <ul>
       <li *ngFor="let item of recipe.equipment">
-        {{ item }}
+        {{ item | sentenceCase }}
       </li>
     </ul>
   </div>
 
   <div class="steps">
     <h2>Instructions</h2>
-    <ol>
-      <li *ngFor="let step of recipe.steps">{{ step }}</li>
+    <ol class="custom-list">
+      <li *ngFor="let step of recipe.steps; let i = index">
+        <div class="step-number">{{ i + 1 }}</div>
+        <div class="step-text">{{ step }}</div>
+      </li>
     </ol>
   </div>
 </section>

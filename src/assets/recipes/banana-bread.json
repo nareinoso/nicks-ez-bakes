@@ -2,6 +2,7 @@
   "slug": "banana-bread",
   "name": "Banana Bread",
   "description": "This banana bread is soft, moist, and just the right amount of sweet — the kind of bake that fills your kitchen with cozy aromas and brings everyone to the table. Whether it's breakfast, dessert, or a little afternoon comfort, this loaf never disappoints.",
+  "credit": "Recipe originally by Sally McKenney of Sally’s Baking Addiction.",
   "imageUrl": "assets/images/bread/banana-bread.png",
   "categories": ["bread"],
   "flavors": ["fruity"],

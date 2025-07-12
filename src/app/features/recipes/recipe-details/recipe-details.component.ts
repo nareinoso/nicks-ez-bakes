@@ -11,7 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../../shared/models';
-import { RecipesService } from '../../../shared/services/recipes.service';
+import { RecipesService } from '../../../shared/services';
+import { SentenceCasePipe } from '../../../shared/pipes';
 
 @Component({
   standalone: true,
@@ -19,7 +20,13 @@ import { RecipesService } from '../../../shared/services/recipes.service';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  imports: [MatButtonModule, CommonModule, MatIconModule, ReactiveFormsModule],
+  imports: [
+    MatButtonModule,
+    CommonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    SentenceCasePipe,
+  ],
 })
 export class RecipeDetailsComponent implements OnInit {
   @HostBinding('class') readonly className = 'recipe-details';
@@ -36,6 +43,14 @@ export class RecipeDetailsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.getRecipeFromSlug();
+  }
+
+  saveRecipe(): void {
+    //TODO
+  }
+
+  printRecipe(): void {
+    window.print();
   }
 
   private getRecipeFromSlug(): void {

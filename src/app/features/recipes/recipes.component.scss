@@ -83,11 +83,11 @@
         }
       }
     }
-    .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
+    .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
+      .mat-mdc-text-field-wrapper {
       background-color: white;
     }
   }
-
 
   .recipe-list {
     display: grid;
@@ -141,6 +141,46 @@
       flex-wrap: wrap;
       font-size: 1.05rem;
       font-weight: 500;
+    }
+  }
+
+  .empty-state {
+    display: flex;
+    max-width: 1024px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #5c3d31;
+
+    mat-icon {
+      font-family: "Material Symbols Outlined";
+      font-size: 5rem;
+      height: 5rem;
+      width: 5rem;
+      border: 5px solid;
+      border-radius: 50%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Patua One', serif;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #5c3d31;
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 }

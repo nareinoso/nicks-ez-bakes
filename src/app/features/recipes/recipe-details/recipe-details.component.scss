@@ -2,6 +2,104 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: 1rem;
+
+  .button-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 16px;
+
+    button {
+      color: #5c3d31; // or your brand color
+      font-weight: 600;
+      text-transform: none;
+
+      mat-icon {
+        margin-right: 0.25rem;
+        font-family: 'Material Symbols Outlined';
+      }
+
+      &:first-of-type {
+        margin-right: auto;
+      }
+
+      &:not(:first-of-type){
+        border: 1px solid;
+        border-color: #5c3d31;
+        border-radius: 40px;
+
+        mat-icon {
+          padding-left: 16px;
+          margin-right: 4px;
+        }
+
+        span {
+          padding-right: 16px;
+        }
+      }
+
+      &:hover {
+        background-color: #ffefe8; // soft background on hover
+      }
+    }
+  }
+
+  @media print {
+    // Hide interactive UI elements
+    .button-row,
+    .mat-icon-button,
+    .mat-button,
+    nav,
+    footer {
+      display: none !important;
+    }
+
+    // General print layout
+    body {
+      background: white;
+      color: black;
+      font-size: 12pt;
+    }
+
+    .recipe-details {
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .recipe-details .hero-image {
+      max-height: 200px;
+      width: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 0;
+      page-break-inside: avoid;
+    }
+
+    .recipe-details h1,
+    .recipe-details h2 {
+      color: black;
+      page-break-after: avoid;
+    }
+
+    .recipe-details .meta {
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 11pt;
+      margin-bottom: 1rem;
+    }
+
+    .ingredients,
+    .equipment,
+    .steps {
+      page-break-inside: avoid;
+    }
+
+    .steps .custom-list li {
+      break-inside: avoid;
+    }
+  }
 
   .title {
     font-size: 2.5rem;
@@ -12,6 +110,12 @@
   }
 
   .description {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .credit {
+    font-style: italic;
     display: block;
     margin-bottom: 1rem;
   }
@@ -54,6 +158,32 @@
 
     li {
       margin-bottom: 0.5rem;
+    }
+  }
+
+  .custom-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: step;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+      display: flex;
+      counter-increment: step;
+
+      .step-number {
+        font-family: "Patua One", serif;
+        font-size: 1.25rem;
+        color: #5c3d31; // mocha tone to match your headings
+        margin-right: 1rem;
+        line-height: 1.2;
+      }
+
+      .step-text {
+        flex: 1;
+      }
     }
   }
 

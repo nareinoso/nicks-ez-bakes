@@ -78,5 +78,10 @@
 
 <!-- Empty State -->
  <section *ngIf="filteredRecipes.length === 0" class="empty-state">
-  <p>No recipes found. Try adjusting your filters or check back soon!</p>
+  <mat-icon>local_dining</mat-icon>
+  <h2>No Recipes Found</h2>
+  <span>No results for your current filters. Try changing one or more options.</span>
+  <a (click)="clearFilters()">
+    Browse All Recipes
+  </a>
 </section>

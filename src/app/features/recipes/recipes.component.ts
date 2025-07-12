@@ -185,6 +185,12 @@ export class RecipesComponent implements OnInit {
     }
   }
 
+  clearFilters(): void {
+    this.categories.reset();
+    this.flavors.reset();
+    this.occasions.reset();
+  }
+
   get filteredRecipes(): Recipe[] {
     const categories = this.categories.value?.map(this.normalize) ?? [];
     const flavors = this.flavors.value?.map(this.normalize) ?? [];

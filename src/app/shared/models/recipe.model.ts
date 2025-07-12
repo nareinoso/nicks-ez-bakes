@@ -14,6 +14,7 @@ export interface Recipe {
   totalTime?: string;
   yield?: string;
   description?: string;
+  credit?: string;
   ingredients?: string[];
   equipment?: string[];
   steps?: string[];

@@ -32,3 +32,10 @@ body {
   margin: 0 auto;
   color: #6b4b3e;
 }
+
+@media print {
+  .nav-wrapper,
+  .footer-wrapper {
+    display: none !important;
+  }
+}
