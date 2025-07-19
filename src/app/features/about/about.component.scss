@@ -51,7 +51,7 @@
     }
 
     &-cake {
-      background-image: url("/assets/images/cakes/wedding-cake.png");
+      background-image: url("/nicks-ez-bakes/assets/images/cakes/wedding-cake.png");
       @include about-img;
 
       &:hover {
@@ -60,7 +60,7 @@
     }
 
     &-friends {
-      background-image: url("/assets/images/about/friends.png");
+      background-image: url("/nicks-ez-bakes/assets/images/about/friends.png");
       @include about-img;
 
       &:hover {
@@ -69,7 +69,7 @@
     }
 
     &-family {
-      background-image: url("/assets/images/about/family.png");
+      background-image: url("/nicks-ez-bakes/assets/images/about/family.png");
       @include about-img;
 
       &:hover {
@@ -142,7 +142,7 @@
   }
 
   .profile__img {
-    background-image: url("/assets/images/about/nick-profile.png");
+    background-image: url("/nicks-ez-bakes/assets/images/about/nick-profile.png");
     background-size: 360px;
     background-position: center;
     background-repeat: no-repeat;
