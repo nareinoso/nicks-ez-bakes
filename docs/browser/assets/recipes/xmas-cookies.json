@@ -1,0 +1,18 @@
+{
+  "slug": "xmas-cookies",
+  "name": "Christmas Cookies",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/cookies/xmas-cookies.jpg",
+  "categories": ["cookies"],
+  "flavors": ["chocolate", "spiced"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

@@ -11,6 +11,7 @@ export interface Recipe {
   occasion: Occasion[];
   prepTime?: string;
   cookTime?: string;
+  chillTime?: string;
   totalTime?: string;
   yield?: string;
   description?: string;

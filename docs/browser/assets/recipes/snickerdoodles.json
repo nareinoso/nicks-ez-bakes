@@ -1,0 +1,18 @@
+{
+  "slug": "snickerdoodles",
+  "name": "Snickerdoodles",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/cookies/snickerdoodles.jpg",
+  "categories": ["cookies"],
+  "flavors": ["spiced"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "pineapple-cake",
+  "name": "Pineapple Cake",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/cakes/pineapple-cake.jpg",
+  "categories": ["cakes"],
+  "flavors": ["fruity"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

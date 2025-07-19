@@ -1,0 +1,18 @@
+{
+  "slug": "carrot-cake",
+  "name": "Carrot Cake",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/cakes/carrot-cake.jpg",
+  "categories": ["cakes"],
+  "flavors": ["spiced"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

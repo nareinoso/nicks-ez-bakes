@@ -1,0 +1,43 @@
+{
+  "slug": "brownies",
+  "name": "Fudgy Brownies",
+  "description": "These brownies are the ultimate indulgence — rich, fudgy, and deeply chocolatey with that irresistible crackly top. Every bite melts in your mouth, with a gooey center and just the right hint of chew at the edges. Whether you're baking for a crowd or just treating yourself, this recipe delivers bakery-style brownies that feel like a warm hug in dessert form.",
+  "credit": "Recipe originally by Rachel Farnsworth of the Stay at Home Chef.",
+  "imageUrl": "assets/images/bars/brownies.png",
+  "categories": [""],
+  "flavors": [""],
+  "occasion": [],
+  "prepTime": "5 mins.",
+  "cookTime": "30 mins.",
+  "totalTime": "35 mins.",
+  "yield": "9 brownies",
+  "ingredients": [
+    "10 tablespoons (141g) salted butter, melted",
+    "1 cup (207g) granulated sugar",
+    "2 large eggs",
+    "2 tsp vanilla extract",
+    "1/2 cup (114g) chocolate chips, melted",
+    "3/4 cup (99g) all-purpose flour",
+    "1/4 cup (24g) unsweetened cocoa powder",
+    "1/2 tsp salt",
+    "1 cup (180g) chocolate chips",
+    "(optional) Flaky sea salt for topping"
+  ],
+  "equipment": [
+    "9x9 baking pan",
+    "parchment paper",
+    "microwave-safe bowl",
+    "whisk",
+    "silicone spatula",
+    "measuring cups & spoons"
+  ],
+  "steps": [
+    "Preheat the oven to 350°F (175°C) and line a 9x9-inch metal baking pan with parchment paper.",
+    "Melt 141 g salted butter in the microwave in a micrwoave-safe bowl in 20-second increments until fully melted. Pour into a large mixing bowl. Whisk in 207 g granulated sugar by hand until smooth, 30 seconds.",
+    "Add in 2 eggs and 10 mL vanilla extract. Whisk vigorously for 1 minute to ensure a crackly top.",
+    "Melt 114 g chocolate chips in a microwave in 30-second increments, stirring between each. Once melted and smooth, whisk into the brownie batter until combined and smooth.",
+    "Use a rubber spatula to stir in 99 g all-purpose flour, 24 g unsweetened cocoa powder, and 0.5 teaspoon salt until just combined. Stir in whole, unmelted chocolate chips.",
+    "Pour into prepared pan and smooth out.",
+    "Bake in the preheated oven for 30 minutes. Top with flaky sea salt and let cool in pan 30 minutes before slicing."
+  ]
+}

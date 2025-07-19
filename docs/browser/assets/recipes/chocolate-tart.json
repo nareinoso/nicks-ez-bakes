@@ -1,0 +1,18 @@
+{
+  "slug": "chocolate-tart",
+  "name": "Rich Chocolate Tart",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/tarts/chocolate-tart.jpg",
+  "categories": ["tarts"],
+  "flavors": ["chocolate", "rich"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

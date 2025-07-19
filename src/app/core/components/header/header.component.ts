@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   HostBinding,
+  HostListener,
   inject,
   ViewEncapsulation,
 } from '@angular/core';
@@ -26,7 +27,8 @@ export class HeaderComponent {
   @HostBinding('class') readonly className = 'ez-header';
   readonly dialog = inject(MatDialog);
   private destroyed = new Subject<void>();
-  public isMobileView$ = new BehaviorSubject<boolean>(false);
+  isMobileView$ = new BehaviorSubject<boolean>(false);
+  isScrolled = false;
 
   public navLinks: NavLink[] = [
     { label: 'Featured', path: '/home' },
@@ -43,6 +45,11 @@ export class HeaderComponent {
     [Breakpoints.Large, 'Large'],
     [Breakpoints.XLarge, 'XLarge'],
   ]);
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
 
   constructor() {
     inject(BreakpointObserver)

@@ -11,21 +11,36 @@
     </button>
   </div>
 
-  <h1 class="title">{{ recipe.name }}</h1>
-
-  <span class="description">{{ recipe.description }}</span>
-  <span *ngIf="recipe.credit" class="credit">{{ recipe.credit }}</span>
-
-  <img *ngIf="recipe.imageUrl"
-    [src]="recipe.imageUrl"
-    class="hero-image"
-    alt="{{ recipe.name }}" />
-
-  <div class="meta">
-    <span><label>Prep Time:</label> {{ recipe.prepTime }}</span>
-    <span><label>Cook Time:</label> {{ recipe.cookTime }}</span>
-    <span><label>Total Time:</label> {{ recipe.totalTime }}</span>
-    <span><label>Yield:</label> {{ recipe.yield }}</span>
+  <div class="meta-container">
+    <div class="meta-text">
+      <h1 class="title">{{ recipe.name }}</h1>
+      <span class="description">{{ recipe.description }}</span>
+      <span *ngIf="recipe.credit" class="credit">{{ recipe.credit }}</span>
+      <div class="cook-times">
+        <span>
+          <label>Prep Time:</label>
+          <span>{{ recipe.prepTime }}</span>
+        </span>
+        <span>
+          <label>Cook Time:</label> {{ recipe.cookTime }}</span>
+        <span *ngIf="recipe.chillTime">
+          <label>Chill Time:</label>
+          <span>{{ recipe.chillTime }}</span>
+        </span>
+        <span>
+          <label>Total Time:</label>
+          <span>{{ recipe.totalTime }}</span>
+        </span>
+        <span>
+          <label>Yield:</label>
+          <span>{{ recipe.yield }}</span>
+        </span>
+      </div>
+    </div>
+    <img *ngIf="recipe.imageUrl"
+      [src]="recipe.imageUrl"
+      class="hero-image"
+      alt="{{ recipe.name }}" />
   </div>
 
   <div class="ingredients">

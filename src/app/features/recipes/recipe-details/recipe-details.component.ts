@@ -37,9 +37,7 @@ export class RecipeDetailsComponent implements OnInit {
     public title: Title,
     private route: ActivatedRoute,
     private recipeService: RecipesService
-  ) {
-    title.setTitle('Recipes | The Caffeinated Baker');
-  }
+  ) {}
 
   public ngOnInit(): void {
     this.getRecipeFromSlug();
@@ -60,6 +58,7 @@ export class RecipeDetailsComponent implements OnInit {
     this.recipeService.getRecipe(slug).subscribe({
       next: (recipe) => {
         this.recipe = recipe;
+        this.title.setTitle(`${this.recipe?.name} | The Caffeinated Baker`);
       },
       error: () => {
         // Log error

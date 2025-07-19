@@ -53,14 +53,6 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     occasion: [],
   },
   {
-    slug: 'pancakes',
-    name: 'Pancakes',
-    imageUrl: 'assets/images/breakfast/pancakes.jpg',
-    categories: ['breakfast'],
-    flavors: ['fruity'],
-    occasion: [],
-  },
-  {
     slug: 'apple-cake',
     name: 'Apple Cake',
     imageUrl: 'assets/images/cakes/apple-cake.jpg',
@@ -79,7 +71,7 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
   {
     slug: 'carrot-cake',
     name: 'Carrot Cake',
-    imageUrl: 'assets/images/cakes/carrot-cake2.png',
+    imageUrl: 'assets/images/cakes/carrot-cake.jpg',
     categories: ['cake'],
     flavors: ['spiced'],
     occasion: [],
@@ -109,14 +101,6 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     occasion: [],
   },
   {
-    slug: 'wedding-cake',
-    name: 'Two-tier Wedding Cake',
-    imageUrl: 'assets/images/cakes/wedding-cake.png',
-    categories: ['cake'],
-    flavors: ['chocolate', 'fruity', 'spiced'],
-    occasion: [],
-  },
-  {
     slug: 'basque-cheesecake',
     name: 'Basque Cheesecake',
     imageUrl: 'assets/images/cheesecakes/basque-cheesecake.jpg',
@@ -135,7 +119,7 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
   {
     slug: 'cinnamon-toast-crunch-cheesecake',
     name: 'Cinnamon Toast Crunch Cheesecake',
-    imageUrl: 'assets/images/cheesecakes/cinnamon-toast-crunch-cake2.jpg',
+    imageUrl: 'assets/images/cheesecakes/cheesecake.jpg',
     categories: ['cheesecake'],
     flavors: ['spiced', 'rich'],
     occasion: [],

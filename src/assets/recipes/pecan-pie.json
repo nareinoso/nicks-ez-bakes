@@ -1,0 +1,18 @@
+{
+  "slug": "pecan-pie",
+  "name": "Pecan Pie",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/pies/pecan-pie.jpg",
+  "categories": ["pies"],
+  "flavors": ["spiced"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

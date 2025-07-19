@@ -1,0 +1,18 @@
+{
+  "slug": "christmas-cake",
+  "name": "Christmas Cake",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/cakes/christmas-cake.jpg",
+  "categories": ["cakes"],
+  "flavors": ["citrus", "rich"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}

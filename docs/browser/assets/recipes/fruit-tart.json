@@ -1,0 +1,18 @@
+{
+  "slug": "fruit-tart",
+  "name": "Fruit Tart",
+  "description": "",
+  "credit": "Recipe originally by of .",
+  "imageUrl": "assets/images/tarts/tart.jpg",
+  "categories": ["tarts"],
+  "flavors": ["fruity", "fresh"],
+  "occasion": [],
+  "prepTime": "",
+  "cookTime": "",
+  "chillTime": "",
+  "totalTime": "",
+  "yield": "",
+  "ingredients": [],
+  "equipment": [],
+  "steps": []
+}
