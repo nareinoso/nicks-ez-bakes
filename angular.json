@@ -45,6 +45,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/nicks-ez-bakes/",
               "budgets": [
                 {
                   "type": "initial",
@@ -60,6 +61,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "baseHref": "/nicks-ez-bakes/",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
