@@ -1,8 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   Component,
   HostBinding,
+  Inject,
   OnInit,
+  Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../../shared/models';
 import { RecipesService } from '../../../shared/services';
 import { SentenceCasePipe } from '../../../shared/pipes';
+import { timestamp } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -36,7 +39,9 @@ export class RecipeDetailsComponent implements OnInit {
     public router: Router,
     public title: Title,
     private route: ActivatedRoute,
-    private recipeService: RecipesService
+    private recipeService: RecipesService,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   public ngOnInit(): void {
@@ -59,11 +64,55 @@ export class RecipeDetailsComponent implements OnInit {
       next: (recipe) => {
         this.recipe = recipe;
         this.title.setTitle(`${this.recipe?.name} | The Caffeinated Baker`);
+        this.insertRecipeSchema(this.recipe);
       },
       error: () => {
         // Log error
         console.log(`Recipe for slug: ${slug} not found.`);
       },
     });
+  }
+
+  private insertRecipeSchema(recipe: Recipe) {
+    const script = this.renderer.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Recipe',
+      name: recipe.name,
+      description: recipe.description,
+      image: [recipe.imageUrl],
+      author: {
+        '@type': 'Person',
+        name: recipe.credit || 'The Caffeinated Baker',
+      },
+      prepTime: this.convertToISO8601Duration(recipe.prepTime),
+      cookTime: this.convertToISO8601Duration(recipe.cookTime),
+      totalTime: this.convertToISO8601Duration(recipe.totalTime),
+      recipeYield: recipe.yield,
+      recipeIngredient: recipe.ingredients,
+      recipeInstructions: recipe?.steps?.map((step) => ({
+        '@type': 'HowToStep',
+        text: step,
+      })),
+    });
+    this.renderer.appendChild(this.document.head, script);
+  }
+
+  private convertToISO8601Duration(timeStr: string | undefined): string {
+    if (!timeStr) return '';
+    const lower = timeStr.toLowerCase();
+
+    const hourMatch = lower.match(/(\d+)\s*hour|hr|h/);
+    const minMatch = lower.match(/(\d+)\s*minute|min|m/);
+
+    const hours = hourMatch ? parseInt(hourMatch[1], 10) : 0;
+    const minutes = minMatch ? parseInt(minMatch[1], 10) : 0;
+
+    if (hours === 0 && minutes === 0) return ''; // or null
+
+    return `PT${hours > 0 ? hours + 'H' : ''}${
+      minutes > 0 ? minutes + 'M' : ''
+    }`;
   }
 }
