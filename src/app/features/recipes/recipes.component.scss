@@ -61,6 +61,12 @@
   .filter-panel {
     display: flex;
     gap: 2rem;
+    padding: 0 24px;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .filter-group {

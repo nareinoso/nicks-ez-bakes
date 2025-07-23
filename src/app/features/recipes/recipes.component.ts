@@ -117,7 +117,7 @@ export class RecipesComponent implements OnInit {
   get isPillActive() {
     return (key: string) => {
       if (key === 'all') return this.categories.value?.length === 0;
-      return this.categories.value?.includes(this.toTitleCase(key));
+      return this.categories.value?.includes(key);
     };
   }
 
@@ -143,8 +143,12 @@ export class RecipesComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params) => {
       const category = params.get('category');
+
       if (category && this.categoryList.includes(category)) {
         this.categories.setValue([category]);
+        this.activePill = category.toLowerCase();
+      } else {
+        this.activePill = 'all';
       }
     });
 
@@ -161,9 +165,9 @@ export class RecipesComponent implements OnInit {
     this.activePill = key;
 
     if (key === 'all') {
-      this.categories.setValue([]); // Clear if using pill-based filters
+      this.categories.setValue([]);
     } else {
-      this.categories.setValue([this.toTitleCase(key)]);
+      this.categories.setValue([key]);
     }
   }
 

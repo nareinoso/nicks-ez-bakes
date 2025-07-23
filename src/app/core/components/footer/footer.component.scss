@@ -33,6 +33,10 @@
     gap: 64px;
     margin-top: 16px;
 
+    @media (max-width: 720px) {
+      gap: 24px;
+    }
+
     #facebook {
       color: #0866FF;
     }
