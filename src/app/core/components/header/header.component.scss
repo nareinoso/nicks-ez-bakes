@@ -38,15 +38,14 @@
       opacity: 0.7;
     }
 
-    h1 {
-      margin: 0;
-      padding: 0 16px 0 8px;
-      font-size: 1.5rem;
-      text-wrap: nowrap;
-      font-family: "Edu AU VIC WA NT Hand", cursive;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
+    #tcb-logo {
+      height: 48px;
+      width: 48px;
+    }
+
+    #tcb-logo-text {
+      height: 48px;
+      margin-left: 8px;
     }
   }
 
