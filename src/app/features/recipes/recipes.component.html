@@ -71,7 +71,7 @@
 <!-- Recipes List -->
 <section class="recipe-list">
   <div class="recipe-card" *ngFor="let recipe of filteredRecipes" (click)="navigateToRecipe(recipe.slug)">
-    <a class="recipe-title" [href]="'/nicks-ez-bakes/recipe/' + recipe.slug">
+    <a class="recipe-title" [href]="'/recipe/' + recipe.slug">
       <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" loading="lazy" />
       <span>{{ recipe.name }}</span>
     </a>
