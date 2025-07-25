@@ -1,10 +1,17 @@
 {
   "hosting": {
     "public": "docs",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "/assets/sitemap.xml",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0"
+          }
+        ]
+      }
     ],
     "rewrites": [
       {
