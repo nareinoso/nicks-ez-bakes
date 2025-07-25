@@ -102,7 +102,7 @@ div.nav-container {
   margin-top: 1rem;
   text-align: center;
   font-size: 1.2rem;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   line-height: 1.6;
   color: #5c3d31;
   padding: 0 1rem;
@@ -121,7 +121,7 @@ div.nav-container {
   margin: 3rem auto;
   max-width: 1024px;
   color: #5c3d31;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .section-header::before,
@@ -159,7 +159,6 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   max-width: 1024px;
   margin: 0 auto;
   padding: 3rem;
-  text-align: center;
   font-size: 1.6rem;
   font-family: "Patua One", serif;
   line-height: 1.6;
@@ -170,17 +169,40 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   opacity: 0;
   animation: fadeInGreeting 0.8s ease-out forwards;
   animation-delay: 200ms;
-  pointer-events: none;
   position: relative;
 
-  p {
-    margin: 0;
-    max-width: 650px;
-    margin: auto;
+  .greeting-row {
+    display: flex;
+    gap: 40px;
+
+    img {
+      max-height: 300px;
+      border-radius: 50%;
+      border: 8px solid white;
+      box-shadow: var(--box-shadow-thick);
+    }
   }
 
-  p, h1 {
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  .greeting-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+
+    p {
+      margin: 0;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    p,
+    h1 {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
@@ -236,9 +258,7 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 /* CTA */
 
 .cta-container {
-  text-align: center;
-  margin: 1.5rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
 }
 
 .cta-button {
@@ -246,23 +266,19 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   padding: 0.9rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: 'Patua One', serif;
+  font-family: "Patua One", serif;
   color: #4b2e2e;
   background-color: #fff8f5; // soft vanilla base
   border: 3px double #f5cda7; // piped border look
   border-radius: 32px;
   text-decoration: none;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 4px #fce7d8; // layered frosting feel
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 0 0 4px #fce7d8; // layered frosting feel
   transition: all 0.2s ease;
 
   &:hover {
     background-color: #fff2e0;
     transform: scale(1.03);
-    box-shadow:
-      0 6px 14px rgba(0, 0, 0, 0.12),
-      inset 0 0 0 4px #fbd9c6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12), inset 0 0 0 4px #fbd9c6;
   }
 
   &:active {
@@ -388,6 +404,7 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 .sub-featured {
   &-wrapper {
     margin: 64px auto;
+    margin-top: 32px;
     max-width: 1024px;
   }
 
