@@ -177,10 +177,19 @@ div.nav-container {
 
     img {
       max-height: 300px;
+      max-width: 300px;
       border-radius: 50%;
       border: 8px solid white;
       box-shadow: var(--box-shadow-thick);
     }
+
+    @media (max-width: 840px) {
+    flex-direction: column;
+
+    img {
+      align-self: center;
+    }
+  }
   }
 
   .greeting-col {
