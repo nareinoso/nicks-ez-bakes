@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FeaturedItem } from '../../shared/models';
 
 const FEATURED_DUMMY: FeaturedItem[] = [
@@ -73,7 +73,13 @@ const QUICK_LINKS = [
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  imports: [MatIconModule, MatButtonModule, MatGridListModule, CommonModule],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatGridListModule,
+    CommonModule,
+    RouterModule,
+  ],
 })
 export class HomeComponent implements OnInit {
   private router = inject(Router);

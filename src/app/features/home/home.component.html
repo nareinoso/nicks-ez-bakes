@@ -1,3 +1,4 @@
+<!-- Greeting & Links -->
 <section>
   <div class="greeting-wrapper">
     <!-- Greeting -->
@@ -6,13 +7,12 @@
       <p>I’m a self-taught baker with a passion for bold, comforting flavors that bring people together. This site is my recipe
         book—filled with sweets shared with friends, late-night cravings, and family favorites.</p>
     </div>
-    <!-- Featured Image -->
-    <section class="featured-wrapper">
-      <div class="featured-item">
-        <img src="assets/images/tarts/tart.jpg"
-          class="featured-image">
-      </div>
-    </section>
+    <!-- CTA -->
+    <div class="cta-container">
+      <a routerLink="/recipes" class="cta-button">
+        Browse Recipes
+      </a>
+    </div>
     <!-- Quick Links -->
     <section>
       <div class="section-header">
@@ -48,6 +48,23 @@
       xmlns="http://www.w3.org/2000/svg">
       <path d="M0,40 C360,120 1080,-40 1440,40 L1440,0 L0,0 Z" />
     </svg>
+  </div>
+</section>
+
+<!-- Signature Treat -->
+<section>
+  <div class="section-header">
+    <span>Signature Treat</span>
+  </div>
+  <div class="featured-wrapper">
+    <div class="featured-item">
+      <a [routerLink]="['/recipe', 'fruit-tart']">
+        <img src="assets/images/tarts/tart.jpg" class="featured-image">
+      </a>
+    </div>
+    <div class="featured-description">
+      <p>This vibrant fruit tart is a celebration of color and flavor—featuring a tender buttery crust, silky vanilla custard, and an arrangement of fresh, seasonal fruit. It's a show-stopper centerpiece and a family favorite for any special gathering.</p>
+    </div>
   </div>
 </section>
 

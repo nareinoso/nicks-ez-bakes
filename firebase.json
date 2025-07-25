@@ -9,6 +9,10 @@
           {
             "key": "Cache-Control",
             "value": "public, max-age=0"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/xml"
           }
         ]
       }
