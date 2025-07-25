@@ -1,68 +1,69 @@
-<!-- Featured Item -->
-<section class="featured-wrapper">
-  <div class="featured-item">
-    <img src="assets/images/tarts/tart.jpg" class="featured-image">
-  </div>
-</section>
-
-<!-- Greeting -->
 <section>
   <div class="greeting-wrapper">
+    <!-- Greeting -->
     <div class="greeting-container">
-      <h2>Hi, I’m Nick!</h2>
-      <p class="greeting-body">
-        This is where I share the bakes that bring people together —
-        comforting, bold, and always made with love.
-      </p>
-      <p class="greeting-subtext">
-        Baked fresh. Written with heart. Served with coffee.
-      </p>
+      <h1>Hi, I’m Nick!</h1>
+      <p>I’m a self-taught baker with a passion for bold, comforting flavors that bring people together. This site is my recipe
+        book—filled with sweets shared with friends, late-night cravings, and family favorites.</p>
     </div>
+    <!-- Featured Image -->
+    <section class="featured-wrapper">
+      <div class="featured-item">
+        <img src="assets/images/tarts/tart.jpg"
+          class="featured-image">
+      </div>
+    </section>
+    <!-- Quick Links -->
+    <section>
+      <div class="section-header">
+        <span>Browse by Category</span>
+      </div>
+      <div class="quick-links">
+        <ng-container *ngFor="let link of quickLinks; index as i">
+          <div class="quick-link">
+            <a class="entry-image-link"
+              (click)="routeToRecipes(link.path)">
+              <div class="icon-wrapper"
+                [ngClass]="{
+              'icon-wrapper-odd': i % 2 === 0,
+              'icon-wrapper-even': i % 2 !== 0,
+              'icon-wrapper-prime': i % 3 === 0
+          }">
+                <mat-icon>{{ link.icon }}</mat-icon>
+              </div>
+              <div class="icon-title-wrapper">
+                <div class="icon-title">
+                  <span>{{ link.name }}</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </section>
   </div>
   <div class="wave">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1440 100"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M0,40 C360,120 1080,-40 1440,40 L1440,0 L0,0 Z" />
     </svg>
   </div>
 </section>
 
-<!-- Quick Links -->
-<section>
-  <div class="quick-links">
-    <ng-container *ngFor="let link of quickLinks; index as i">
-      <div class="quick-link">
-        <a class="entry-image-link" (click)="routeToRecipes(link.path)">
-          <div class="icon-wrapper"
-            [ngClass]="{
-              'icon-wrapper-odd': i % 2 === 0,
-              'icon-wrapper-even': i % 2 !== 0,
-              'icon-wrapper-prime': i % 3 === 0
-          }">
-            <mat-icon>{{ link.icon }}</mat-icon>
-          </div>
-          <div class="icon-title-wrapper">
-            <div class="icon-title">
-              <span>{{ link.name }}</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </ng-container>
-  </div>
-</section>
-
-<!-- Featured Recipes -->
+<!-- Nick's Latest Creations -->
 <section class="sub-featured-wrapper">
-  <a class="sub-featured-title">
-    <span>Fresh from the Oven</span>
-    <mat-icon>chevron_right</mat-icon>
-  </a>
+  <div class="section-header">
+    <span>Nick's Latest Creations</span>
+  </div>
   <div class="sub-featured-items">
     <ng-container *ngFor="let item of featuredItems">
-      <div class="sub-featured-item" (click)="routeToRecipe(item.slug)">
+      <div class="sub-featured-item"
+        (click)="routeToRecipe(item.slug)">
         <img [src]="item.image">
         <span>{{ item.name }}</span>
-        <mat-icon [class.bookmarked]="item.isBookmarked" (click)="bookmarkItem(item, $event)">bookmark</mat-icon>
+        <mat-icon [class.bookmarked]="item.isBookmarked"
+          (click)="bookmarkItem(item, $event)">bookmark</mat-icon>
       </div>
     </ng-container>
   </div>

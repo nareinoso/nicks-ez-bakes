@@ -1,3 +1,19 @@
+div.nav-container {
+  background-color: #fbe2ba;
+  background-image: url("/assets/textures/rice-paper.png");
+  background-repeat: repeat;
+  background-size: auto;
+
+  @media (max-width: 600px) {
+    background-size: 80px 80px;
+  }
+
+  &.scrolled {
+    backdrop-filter: blur(5px);
+    background: rgba(251, 226, 186, 0.9);
+  }
+}
+
 .home {
   display: block;
 
@@ -14,7 +30,6 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background-color: #fce7c8;
   position: relative;
 
   @media (max-width: 920px) {
@@ -80,22 +95,55 @@
   }
 }
 
+/* Section Header */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 1024px;
+  color: #5c3d31;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.section-header::before,
+.section-header::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #d29c74; /* warm coffee tone */
+  margin: 0 1rem;
+}
+
+.section-header span {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3e2f25; /* deep brown text */
+}
+
 /* Greeting */
 
 .greeting-wrapper {
   position: relative;
-  background-color: #fce7c8;
+  background-color: #fbe2ba;
+  background-image: url("/assets/textures/rice-paper.png");
+  background-repeat: repeat;
+  background-size: auto;
   overflow: hidden;
   padding: 0;
+
+  @media (max-width: 600px) {
+    background-size: 80px 80px;
+  }
 }
 
 .greeting-container {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 1rem 3rem;
-  padding-top: 0;
+  padding: 3rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: "Patua One", serif;
   line-height: 1.6;
   position: relative;
@@ -106,6 +154,16 @@
   transform: translateY(80px);
   animation: fadeInUp 0.8s ease-out forwards;
   animation-delay: 200ms;
+
+  p {
+    margin: 0;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  p, h1 {
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  }
 }
 
 @keyframes fadeInUp {
@@ -113,17 +171,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-h2 {
-  margin: 16px 0;
-}
-
-.greeting-subtext {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: black;
-  font-family: "Roboto", sans-serif;
 }
 
 .wave {
@@ -148,7 +195,14 @@ h2 {
     width: 100%;
     height: 100%;
     animation: steamSway 5s ease-in-out infinite;
-    background-color: #fce7c8;
+    background-color: #fbe2ba;
+    background-image: url("/assets/textures/rice-paper.png");
+    background-repeat: repeat;
+    background-size: auto;
+
+    @media (max-width: 600px) {
+      background-size: 80px 80px;
+    }
   }
 
   svg path {
@@ -161,8 +215,7 @@ h2 {
 
 .quick-links {
   max-width: 1024px;
-  margin: auto;
-  margin-top: 32px;
+  margin: 32px auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   justify-items: center;
@@ -274,8 +327,7 @@ h2 {
 
 .sub-featured {
   &-wrapper {
-    margin: auto;
-    margin-top: 64px;
+    margin: 64px auto;
     max-width: 1024px;
   }
 

@@ -3,12 +3,13 @@ import {
   Component,
   HostBinding,
   inject,
+  OnInit,
   ViewEncapsulation,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FeaturedItem } from '../../shared/models';
 
@@ -74,7 +75,7 @@ const QUICK_LINKS = [
   encapsulation: ViewEncapsulation.None,
   imports: [MatIconModule, MatButtonModule, MatGridListModule, CommonModule],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private router = inject(Router);
 
   @HostBinding('class') readonly className = 'home';
@@ -82,8 +83,27 @@ export class HomeComponent {
   public readonly featuredItems: FeaturedItem[] = FEATURED_DUMMY;
   public readonly quickLinks = QUICK_LINKS;
 
-  constructor(title: Title) {
-    title.setTitle('The Caffeinated Baker');
+  constructor(private titleService: Title, private metaService: Meta) {
+    titleService.setTitle('The Caffeinated Baker');
+  }
+
+  ngOnInit(): void {
+    this.titleService.setTitle(
+      'The Caffeinated Baker | Homemade Bakes & Recipes'
+    );
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content:
+          'A self-taught baker sharing comforting homemade treats, cakes, cookies, and more. Fresh recipes weekly.',
+      },
+      { name: 'author', content: 'Nick Reinoso' },
+      {
+        name: 'keywords',
+        content:
+          'baking, recipes, cookies, cakes, desserts, homemade, sweets, the caffeinated baker',
+      },
+    ]);
   }
 
   routeToRecipes(target: string): void {

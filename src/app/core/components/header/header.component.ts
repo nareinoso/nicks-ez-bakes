@@ -33,8 +33,8 @@ export class HeaderComponent {
   public navLinks: NavLink[] = [
     { label: 'Featured', path: '/home' },
     { label: 'Recipes', path: '/recipes' },
-    { label: 'Learn', path: '/learn' },
-    { label: 'Equipment', path: '/equipment' },
+    // { label: 'Learn', path: '/learn' },
+    // { label: 'Equipment', path: '/equipment' },
     { label: 'About', path: '/about' },
   ];
 
