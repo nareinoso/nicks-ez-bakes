@@ -27,6 +27,21 @@
               "src/favicon.ico",
               "src/assets",
               {
+                "glob": "googlea54774d77dbdfdcf.html",
+                "input": "src",
+                "output": "."
+              },
+                            {
+                "glob": "robots.txt",
+                "input": "src",
+                "output": "."
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src",
+                "output": "."
+              },
+              {
                 "glob": "**/*",
                 "input": "src/assets/images",
                 "output": "/assets/images"
@@ -51,7 +66,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "8kB"
+                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all"
@@ -89,6 +104,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              {
+                "glob": "googlea54774d77dbdfdcf.html",
+                "input": "src",
+                "output": "."
+              },
+              {
+                "glob": "robots.txt",
+                "input": "src",
+                "output": "."
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src",
+                "output": "."
+              },
               {
                 "glob": "**/*",
                 "input": "src/assets/images",

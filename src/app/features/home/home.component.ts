@@ -3,6 +3,7 @@ import {
   Component,
   HostBinding,
   inject,
+  OnDestroy,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
@@ -12,6 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
 import { FeaturedItem } from '../../shared/models';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 const FEATURED_DUMMY: FeaturedItem[] = [
   {
@@ -80,14 +88,40 @@ const QUICK_LINKS = [
     CommonModule,
     RouterModule,
   ],
+  animations: [
+    trigger('expandCollapse', [
+      state(
+        'expanded',
+        style({
+          height: '*',
+          opacity: 1,
+          padding: '*',
+          overflow: 'hidden',
+        })
+      ),
+      state(
+        'collapsed',
+        style({
+          height: '0px',
+          opacity: 0,
+          padding: '0px',
+          overflow: 'hidden',
+        })
+      ),
+      transition('expanded <=> collapsed', [animate('250ms ease-in-out')]),
+    ]),
+  ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   private router = inject(Router);
 
   @HostBinding('class') readonly className = 'home';
 
   public readonly featuredItems: FeaturedItem[] = FEATURED_DUMMY;
   public readonly quickLinks = QUICK_LINKS;
+
+  isGreetingVisible = true;
+  isMobileView = false;
 
   constructor(private titleService: Title, private metaService: Meta) {
     titleService.setTitle('The Caffeinated Baker');
@@ -110,6 +144,28 @@ export class HomeComponent implements OnInit {
           'baking, recipes, cookies, cakes, desserts, homemade, sweets, the caffeinated baker',
       },
     ]);
+
+    this.checkViewport();
+    window.addEventListener('resize', this.checkViewport.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.checkViewport.bind(this));
+  }
+
+  checkViewport() {
+    this.isMobileView = window.innerWidth <= 600;
+  }
+
+  toggleGreeting() {
+    this.isGreetingVisible = !this.isGreetingVisible;
+
+    if (!this.isGreetingVisible && this.isMobileView) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   }
 
   routeToRecipes(target: string): void {

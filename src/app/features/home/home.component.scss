@@ -37,9 +37,6 @@ div.nav-container {
   }
   @media (max-width: 600px) {
     padding: 8px;
-
-    width: 100%;
-    max-width: 100%;
   }
 }
 
@@ -137,6 +134,44 @@ div.nav-container {
   font-size: 1.5rem;
   font-weight: bold;
   color: #3e2f25; /* deep brown text */
+}
+
+/* Collapse Button */
+
+.collapse-button-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.collapse-button {
+  background-color: #fff8f5;
+  border: 3px double #f5cda7;
+  border-radius: 50%;
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: -16px;
+
+  mat-icon {
+    font-size: 28px;
+    color: #4b2e2e;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #fff2e0;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 /* Greeting */

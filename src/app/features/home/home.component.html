@@ -1,6 +1,6 @@
 <!-- Greeting & Links -->
 <section>
-  <div class="greeting-wrapper">
+  <div class="greeting-wrapper" [@expandCollapse]="isGreetingVisible ? 'expanded' : 'collapsed'">
     <!-- Greeting -->
     <div class="greeting-container">
       <div class="greeting-row">
@@ -8,8 +8,8 @@
         <div class="greeting-col">
           <h1>Hi, I’m Nick!</h1>
           <p>
-            I’m a self-taught baker with a passion for bold, comforting flavors that bring people together. This site is my recipe
-            book—filled with sweets shared with friends, late-night cravings, and family favorites.
+            I’m a self-taught baker with a love for cozy, nostalgic flavors that bring people together.
+            This is my recipe book—filled with sweet treats for every craving and every crowd.
           </p>
           <!-- CTA -->
           <div class="cta-container">
@@ -20,7 +20,6 @@
         </div>
       </div>
     </div>
-
     <!-- Quick Links -->
     <section>
       <div class="section-header">
@@ -58,6 +57,12 @@
     </svg>
   </div>
 </section>
+<!-- Collapse Button -->
+<div class="collapse-button-wrapper">
+  <button (click)="toggleGreeting()" class="collapse-button" aria-label="Toggle Greeting">
+    <mat-icon>{{ isGreetingVisible  ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </button>
+</div>
 
 <!-- Signature Treat -->
 <section>
