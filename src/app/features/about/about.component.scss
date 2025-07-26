@@ -92,28 +92,29 @@
     margin: 0;
   }
 
-  .wave {
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-  line-height: 0;
-
-  svg {
-    display: block;
+  .wave-top,
+  .wave-bottom {
     width: 100%;
-    height: 100%;
-    animation: steamSway 5s ease-in-out infinite;
+    height: 80px;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      animation: steamSway 5s ease-in-out infinite;
+    }
+
+    svg path {
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.05));
+      fill: peachpuff;
+    }
   }
 
-  svg path {
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.05));
-    fill: peachpuff;
+  .wave-top {
+    transform: rotateZ(180deg);
   }
-
-  &.top {
-    transform: rotate(180deg);
-  }
-}
 
   .page-title,
   .favorite-moments-title {

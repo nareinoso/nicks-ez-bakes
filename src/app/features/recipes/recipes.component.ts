@@ -108,10 +108,13 @@ export class RecipesComponent implements OnInit {
   activePill: string = this.filterPills[0].key;
   showFilters: boolean = false;
 
+  page = 1;
+  pageSize = 12;
   recipes: Recipe[] = [];
 
   constructor(title: Title, private route: ActivatedRoute) {
     title.setTitle('Recipes | The Caffeinated Baker');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   get isPillActive() {
@@ -140,6 +143,16 @@ export class RecipesComponent implements OnInit {
     return occasionsVal ? occasionsVal > 0 : false;
   }
 
+  get paginatedRecipes(): Recipe[] {
+    const start = (this.page - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    return this.filteredRecipes.slice(start, end);
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredRecipes.length / this.pageSize);
+  }
+
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params) => {
       const category = params.get('category');
@@ -155,6 +168,10 @@ export class RecipesComponent implements OnInit {
     this.recipesService
       .getRecipes()
       .subscribe((recipes) => (this.recipes = recipes));
+
+    this.categories.valueChanges.subscribe(() => (this.page = 1));
+    this.flavors.valueChanges.subscribe(() => (this.page = 1));
+    this.occasions.valueChanges.subscribe(() => (this.page = 1));
   }
 
   toggleFilters() {
@@ -221,6 +238,21 @@ export class RecipesComponent implements OnInit {
 
       return matchesCategory && matchesFlavor && matchesOccasion;
     });
+  }
+
+  changePage(direction: 'next' | 'prev') {
+    if (direction === 'next' && this.page < this.totalPages) {
+      this.page++;
+    } else if (direction === 'prev' && this.page > 1) {
+      this.page--;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goToPage(page: number) {
+    this.page = page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   private normalize(value: string): string {

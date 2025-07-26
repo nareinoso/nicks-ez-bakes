@@ -70,12 +70,32 @@
 
 <!-- Recipes List -->
 <section class="recipe-list">
-  <div class="recipe-card" *ngFor="let recipe of filteredRecipes" (click)="navigateToRecipe(recipe.slug)">
+  <div class="recipe-card" *ngFor="let recipe of paginatedRecipes" (click)="navigateToRecipe(recipe.slug)">
     <a class="recipe-title" [href]="'/recipe/' + recipe.slug">
       <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" loading="lazy" />
       <span>{{ recipe.name }}</span>
     </a>
   </div>
+</section>
+<!-- Paginator -->
+<section class="pagination" *ngIf="totalPages > 1">
+  <button mat-button (click)="changePage('prev')" [disabled]="page === 1">
+    <mat-icon>chevron_left</mat-icon>
+    <span>Prev</span>
+  </button>
+
+  <button
+    mat-button
+    *ngFor="let p of [].constructor(totalPages); let i = index"
+    [class.active]="page === i + 1"
+    (click)="goToPage(i + 1)">
+    {{ i + 1 }}
+  </button>
+
+  <button mat-button (click)="changePage('next')" [disabled]="page === totalPages">
+    <span>Next</span>
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </section>
 
 <!-- Empty State -->

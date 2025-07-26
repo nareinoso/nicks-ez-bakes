@@ -125,6 +125,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private titleService: Title, private metaService: Meta) {
     titleService.setTitle('The Caffeinated Baker');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   ngOnInit(): void {

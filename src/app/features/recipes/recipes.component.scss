@@ -119,10 +119,6 @@
   .recipe-title {
     text-decoration: none;
     color: inherit;
-
-    &:hover {
-      color: #5c3d31;
-    }
   }
 
   .recipe-card {
@@ -138,12 +134,14 @@
 
     &:hover {
       cursor: pointer;
+      transform: scale(1.02);
+      box-shadow: 4px 4px 12px 0 rgba(248, 214, 199, 0.8);
+      transition: all 0.2s ease;
     }
 
     a {
       display: flex;
       flex-wrap: wrap;
-
 
       span {
         margin: 0 8px;
@@ -161,6 +159,23 @@
         object-fit: cover;
         box-shadow: var(--box-shadow-default);
         margin-bottom: 16px;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem;
+
+    button {
+      background: #f1e0d6;
+
+      &.active {
+        font-weight: bold;
+        background: #5c3d31;
+        color: white;
       }
     }
   }

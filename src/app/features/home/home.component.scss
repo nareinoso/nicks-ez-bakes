@@ -1,28 +1,366 @@
-div.nav-container {
+.home {
+  display: block;
   background-color: #fbe2ba;
   background-image: url("/assets/textures/rice-paper.png");
   background-repeat: repeat;
   background-size: auto;
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    background-size: 80px 80px;
+  }
+}
+
+/* Greeting */
+
+.greeting-wrapper {
+  position: relative;
+  padding: 0;
+  background-color: #fff8f5;
+}
+
+.greeting-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 3rem;
+  font-size: 1.6rem;
+  font-family: "Patua One", serif;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  color: #5c3d31;
+  border-radius: 1rem;
+  opacity: 0;
+  animation: fadeInGreeting 0.8s ease-out forwards;
+  animation-delay: 200ms;
+  position: relative;
 
   @media (max-width: 600px) {
     background-size: 80px 80px;
   }
 
-  &.scrolled {
-    backdrop-filter: blur(5px);
-    background: rgba(251, 226, 186, 0.9);
+  .greeting-row {
+    display: flex;
+    gap: 40px;
+
+    img {
+      max-height: 300px;
+      max-width: 300px;
+      border-radius: 50%;
+      border: 8px solid white;
+      box-shadow: var(--box-shadow-thick);
+    }
+
+    @media (max-width: 840px) {
+      flex-direction: column;
+
+      img {
+        align-self: center;
+      }
+    }
+  }
+
+  .greeting-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+
+    p {
+      margin: 0;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    p,
+    h1 {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
-.home {
-  display: block;
+@keyframes fadeInGreeting {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  h1 {
+/* Browse Recipes Btn */
+
+.cta-container {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Patua One", serif;
+  color: #4b2e2e;
+  background-color: #fff8f5; // soft vanilla base
+  border: 3px double #f5cda7; // piped border look
+  border-radius: 32px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 0 0 4px #fce7d8; // layered frosting feel
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #fff2e0;
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12), inset 0 0 0 4px #fbd9c6;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Section Header */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 1024px;
+  color: #5c3d31;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.section-header::before,
+.section-header::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #d29c74; /* warm coffee tone */
+  margin: 0 1rem;
+}
+
+.section-header span {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3e2f25; /* deep brown text */
+}
+
+/* Browse by Category */
+
+.quick-links {
+  max-width: 1024px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+
+  @media (max-width: 1214px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 0;
   }
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
 }
 
-/* Featured Item */
+.quick-link {
+  display: block;
+  text-align: center;
+  position: relative;
+  min-width: 120px;
+
+  &:hover {
+    cursor: pointer;
+
+    .icon-wrapper {
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .icon-wrapper {
+    border-radius: 50%;
+    border: 5px solid #f5f3f2;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto -30px;
+    z-index: 999;
+    position: relative;
+    transform: 0.2s ease;
+    transition: transform 0.2s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 50%;
+      height: 30%;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      filter: blur(4px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    mat-icon {
+      font-family: "Material Symbols Outlined", sans-serif;
+      height: 32px;
+      width: 32px;
+      font-size: 32px;
+    }
+
+    &-even {
+      background-color: #ffcf7c;
+      mat-icon {
+        color: #bb7a0c;
+      }
+    }
+    &-odd {
+      background-color: #f4d6c1;
+      mat-icon {
+        color: #bb7a0c;
+      }
+    }
+    &-prime {
+      background-color: #ed8667;
+
+      mat-icon {
+        color: #a74421;
+      }
+    }
+  }
+
+  .icon-title-wrapper {
+    position: relative;
+    padding: 40px 10px 20px;
+    background: white;
+    box-shadow: var(--box-shadow-default);
+    border-radius: 8px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: var(--box-shadow-thick);
+    }
+  }
+
+  .icon-title {
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 2px solid;
+    border-color: #e2a55b;
+    display: block;
+    width: fit-content;
+    padding: 0 0 3px;
+    margin: 0 auto;
+    color: black;
+  }
+}
+
+/* Wave */
+
+.wave {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+
+  @keyframes swayWave {
+    0%,
+    100% {
+      transform: rotate(180deg) translateY(0);
+    }
+    50% {
+      transform: rotate(180deg) translateY(8px);
+    }
+  }
+  animation: swayWave 7s ease-in-out infinite;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: steamSway 5s ease-in-out infinite;
+    background-color: #fbe2ba;
+    background-image: url("/assets/textures/rice-paper.png");
+    background-repeat: repeat;
+    background-size: auto;
+    transform: rotateZ(180deg);
+
+    @media (max-width: 600px) {
+      background-size: 80px 80px;
+    }
+  }
+
+  svg path {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.05));
+    fill: #fff8f5;
+  }
+}
+
+/* Collapse Button */
+
+.collapse-button-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-top: -55px;
+}
+
+.collapse-button {
+  background-color: #fff8f5;
+  border: 3px double #f5cda7;
+  border-radius: 50%;
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: -16px;
+
+  mat-icon {
+    font-size: 28px;
+    color: #4b2e2e;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #fff2e0;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Signature Treat */
 
 .featured-wrapper {
   display: flex;
@@ -109,341 +447,7 @@ div.nav-container {
   }
 }
 
-/* Section Header */
-
-.section-header {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 3rem auto;
-  max-width: 1024px;
-  color: #5c3d31;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-.section-header::before,
-.section-header::after {
-  content: "";
-  flex: 1;
-  border-bottom: 2px solid #d29c74; /* warm coffee tone */
-  margin: 0 1rem;
-}
-
-.section-header span {
-  font-family: "Georgia", serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #3e2f25; /* deep brown text */
-}
-
-/* Collapse Button */
-
-.collapse-button-wrapper {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  margin-top: -40px;
-}
-
-.collapse-button {
-  background-color: #fff8f5;
-  border: 3px double #f5cda7;
-  border-radius: 50%;
-  padding: 8px;
-  width: 48px;
-  height: 48px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  margin-top: -16px;
-
-  mat-icon {
-    font-size: 28px;
-    color: #4b2e2e;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    background-color: #fff2e0;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-}
-
-/* Greeting */
-
-.greeting-wrapper {
-  position: relative;
-  background-color: #fbe2ba;
-  background-image: url("/assets/textures/rice-paper.png");
-  background-repeat: repeat;
-  background-size: auto;
-  overflow: hidden;
-  padding: 0;
-
-  @media (max-width: 600px) {
-    background-size: 80px 80px;
-  }
-}
-
-.greeting-container {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 3rem;
-  font-size: 1.6rem;
-  font-family: "Patua One", serif;
-  line-height: 1.6;
-  position: relative;
-  z-index: 1;
-  color: #5c3d31;
-  border-radius: 1rem;
-  opacity: 0;
-  animation: fadeInGreeting 0.8s ease-out forwards;
-  animation-delay: 200ms;
-  position: relative;
-
-  .greeting-row {
-    display: flex;
-    gap: 40px;
-
-    img {
-      max-height: 300px;
-      max-width: 300px;
-      border-radius: 50%;
-      border: 8px solid white;
-      box-shadow: var(--box-shadow-thick);
-    }
-
-    @media (max-width: 840px) {
-    flex-direction: column;
-
-    img {
-      align-self: center;
-    }
-  }
-  }
-
-  .greeting-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-
-    p {
-      margin: 0;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    p,
-    h1 {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    }
-  }
-}
-
-@keyframes fadeInGreeting {
-  0% {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.wave {
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-  line-height: 0;
-
-  @keyframes swayWave {
-    0%,
-    100% {
-      transform: rotate(180deg) translateY(0);
-    }
-    50% {
-      transform: rotate(180deg) translateY(8px);
-    }
-  }
-  animation: swayWave 7s ease-in-out infinite;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    animation: steamSway 5s ease-in-out infinite;
-    background-color: #fbe2ba;
-    background-image: url("/assets/textures/rice-paper.png");
-    background-repeat: repeat;
-    background-size: auto;
-
-    @media (max-width: 600px) {
-      background-size: 80px 80px;
-    }
-  }
-
-  svg path {
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.05));
-    fill: #fff8f5;
-  }
-}
-
-/* CTA */
-
-.cta-container {
-  margin-top: 2rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: "Patua One", serif;
-  color: #4b2e2e;
-  background-color: #fff8f5; // soft vanilla base
-  border: 3px double #f5cda7; // piped border look
-  border-radius: 32px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 0 0 4px #fce7d8; // layered frosting feel
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: #fff2e0;
-    transform: scale(1.03);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12), inset 0 0 0 4px #fbd9c6;
-  }
-
-  &:active {
-    transform: scale(0.98);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-  }
-}
-
-/* Quick Links */
-
-.quick-links {
-  max-width: 1024px;
-  margin: 32px auto;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  justify-items: center;
-
-  @media (max-width: 1214px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 0;
-  }
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-}
-
-.quick-link {
-  display: block;
-  text-align: center;
-  position: relative;
-  min-width: 120px;
-
-  &:hover {
-    cursor: pointer;
-
-    .icon-wrapper {
-      transform: scale(1.1);
-    }
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .icon-wrapper {
-    border-radius: 50%;
-    border: 5px solid #f5f3f2;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto -30px;
-    z-index: 999;
-    position: relative;
-    transform: 0.2s ease;
-
-    mat-icon {
-      font-family: "Material Symbols Outlined", sans-serif;
-      height: 32px;
-      width: 32px;
-      font-size: 32px;
-    }
-
-    &-even {
-      background-color: #ffcf7c;
-      mat-icon {
-        color: #bb7a0c;
-      }
-    }
-    &-odd {
-      background-color: #f4d6c1;
-      mat-icon {
-        color: #bb7a0c;
-      }
-    }
-    &-prime {
-      background-color: #ed8667;
-
-      mat-icon {
-        color: #a74421;
-      }
-    }
-  }
-
-  .icon-title-wrapper {
-    position: relative;
-    padding: 40px 10px 20px;
-    background: white;
-    box-shadow: var(--box-shadow-default);
-    border-radius: 8px;
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: var(--box-shadow-thick);
-    }
-  }
-
-  .icon-title {
-    font-size: 1rem;
-    letter-spacing: 0.05rem;
-    line-height: 1.1;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-bottom: 2px solid;
-    border-color: #e2a55b;
-    display: block;
-    width: fit-content;
-    padding: 0 0 3px;
-    margin: 0 auto;
-    color: black;
-  }
-}
-
-/* Sub Featured Items */
+/* Nick's Latest Creations */
 
 .sub-featured {
   &-wrapper {

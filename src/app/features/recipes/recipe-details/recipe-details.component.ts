@@ -42,7 +42,9 @@ export class RecipeDetailsComponent implements OnInit {
     private recipeService: RecipesService,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document
-  ) {}
+  ) {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
 
   public ngOnInit(): void {
     this.getRecipeFromSlug();

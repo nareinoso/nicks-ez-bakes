@@ -13,5 +13,6 @@ export class AboutComponent {
 
   constructor(title: Title) {
     title.setTitle('About | The Caffeinated Baker');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 }
