@@ -39,9 +39,36 @@
       <!-- Navigation Menu -->
       <button mat-icon-button
         class="menu-btn"
-        aria-label="Navigation menu">
+        aria-label="Navigation menu"
+        (click)="toggleMenu()">
         <fa-icon [icon]="['fas', 'bars']"></fa-icon>
       </button>
     </ng-template>
   </div>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" [ngClass]="{ open: showMenu, closed: !showMenu }">
+  <nav class="mobile-sidenav" (click)="$event.stopPropagation()">
+    <div class="menu-logo-container">
+      <div class="nav-logo"
+          [routerLink]="'/'">
+        <img id="tcb-logo" [src]="'/assets/images/tcb-logo.svg'" />
+        <img id="tcb-logo-text" [src]="'/assets/images/tcb-logo-text.svg'" />
+      </div>
+      <button class="close-btn" (click)="toggleMenu()" aria-label="Close Menu">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="mobile-links">
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        (click)="toggleMenu()"
+        routerLinkActive="active"
+      >
+        {{ link.label }}
+      </a>
+    </div>
+  </nav>
 </div>

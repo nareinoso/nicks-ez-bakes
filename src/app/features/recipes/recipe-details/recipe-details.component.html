@@ -2,7 +2,7 @@
   class="recipe-details">
 
 
-  <ng-container *ngIf="recipe?.steps?.length; else emptyState">
+  <ng-container *ngIf="recipe?.stepSections?.length; else emptyState">
     <div class="button-row">
       <button mat-button
         (click)="router.navigate(['/recipes'])">
@@ -40,7 +40,7 @@
             <label>Total Time:</label>
             <span>{{ recipe.totalTime }}</span>
           </span>
-          <span>
+          <span *ngIf="recipe.yield">
             <label>Yield:</label>
             <span>{{ recipe.yield }}</span>
           </span>
@@ -54,11 +54,12 @@
 
     <div class="ingredients">
       <h2>Ingredients</h2>
-      <ul>
-        <li *ngFor="let item of recipe.ingredients">
-          {{ item }}
-        </li>
-      </ul>
+      <div *ngFor="let section of recipe.ingredientSections">
+        <h3 *ngIf="section.label">{{ section.label }}</h3>
+        <ul>
+          <li *ngFor="let item of section.items">{{ item }}</li>
+        </ul>
+      </div>
     </div>
 
     <div class="equipment">
@@ -72,12 +73,15 @@
 
     <div class="steps">
       <h2>Instructions</h2>
-      <ol class="custom-list">
-        <li *ngFor="let step of recipe.steps; let i = index">
-          <div class="step-number">{{ i + 1 }}</div>
-          <div class="step-text">{{ step }}</div>
-        </li>
-      </ol>
+      <div *ngFor="let section of recipe.stepSections">
+        <h3 *ngIf="section.label">{{ section.label }}</h3>
+        <ol class="custom-list">
+          <li *ngFor="let step of section.steps; let i = index">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="step-text">{{ step }}</div>
+          </li>
+        </ol>
+      </div>
     </div>
   </ng-container>
 </section>

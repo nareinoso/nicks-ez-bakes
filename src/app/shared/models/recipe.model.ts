@@ -16,7 +16,13 @@ export interface Recipe {
   yield?: string;
   description?: string;
   credit?: string;
-  ingredients?: string[];
+  ingredientSections?: {
+    label: string;
+    items: string[];
+  }[];
   equipment?: string[];
-  steps?: string[];
+  stepSections?: {
+    label: string;
+    steps: string[];
+  }[];
 }

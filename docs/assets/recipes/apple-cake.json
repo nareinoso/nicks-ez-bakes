@@ -12,7 +12,21 @@
   "chillTime": "",
   "totalTime": "",
   "yield": "",
-  "ingredients": [],
+  "ingredientSections": [
+    {
+      "items": [
+      ]
+    }
+  ],
   "equipment": [],
-  "steps": []
+  "stepSections": [
+    {
+      "label": "Prepare the Batter",
+      "steps": []
+    },
+    {
+      "label": "Bake the Cake",
+      "steps": []
+    }
+  ]
 }

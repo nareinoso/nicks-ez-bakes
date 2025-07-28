@@ -92,10 +92,10 @@ export class RecipeDetailsComponent implements OnInit {
       cookTime: this.convertToISO8601Duration(recipe.cookTime),
       totalTime: this.convertToISO8601Duration(recipe.totalTime),
       recipeYield: recipe.yield,
-      recipeIngredient: recipe.ingredients,
-      recipeInstructions: recipe?.steps?.map((step) => ({
+      recipeIngredient: recipe.ingredientSections,
+      recipeInstructions: recipe?.stepSections?.map((stepSection) => ({
         '@type': 'HowToStep',
-        text: step,
+        text: stepSection.steps.join(' '),
       })),
     });
     this.renderer.appendChild(this.document.head, script);

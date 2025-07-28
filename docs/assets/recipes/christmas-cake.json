@@ -12,7 +12,15 @@
   "chillTime": "",
   "totalTime": "",
   "yield": "",
-  "ingredients": [],
+  "ingredientSections": [
+    {
+      "items": []
+    }
+  ],
   "equipment": [],
-  "steps": []
+  "stepSections": [
+    {
+      "steps": []
+    }
+  ]
 }

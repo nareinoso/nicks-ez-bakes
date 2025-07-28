@@ -5,6 +5,7 @@ import {
   HostBinding,
   HostListener,
   inject,
+  OnDestroy,
   ViewEncapsulation,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +15,7 @@ import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { FontAwesomeModule } from '../../../../assets/fonts/font-awesome';
 import { NavLink } from '../../models/nav-link.model';
 import { SearchDialogComponent } from '../../../shared/components/search/search-dialog.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -21,14 +23,23 @@ import { SearchDialogComponent } from '../../../shared/components/search/search-
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  imports: [RouterModule, CommonModule, MatButtonModule, FontAwesomeModule],
+  imports: [
+    RouterModule,
+    CommonModule,
+    MatButtonModule,
+    FontAwesomeModule,
+    MatIconModule,
+  ],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
   @HostBinding('class') readonly className = 'ez-header';
   readonly dialog = inject(MatDialog);
   private destroyed = new Subject<void>();
+
   isMobileView$ = new BehaviorSubject<boolean>(false);
   isScrolled = false;
+  showMenu = false;
+  scrollY = 0;
 
   public navLinks: NavLink[] = [
     { label: 'Featured', path: '/home' },
@@ -52,6 +63,48 @@ export class HeaderComponent {
   }
 
   constructor() {
+    this.initializeMobileView();
+    this.initializeMobileMenu();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed.next();
+    this.destroyed.complete();
+    document.body.classList.remove('no-scroll');
+    document.body.style.top = '';
+  }
+
+  public onSearchClick(): void {
+    this.dialog.open(SearchDialogComponent, {
+      height: '59rem',
+      width: '100%',
+      maxHeight: '90vh',
+      maxWidth: '75rem',
+      panelClass: 'search-dialog',
+    });
+  }
+
+  public toggleMenu(): void {
+    this.showMenu = !this.showMenu;
+
+    if (this.showMenu) {
+      // Save current scroll position
+      this.scrollY = window.scrollY;
+
+      // Lock scroll and fix body position
+      document.body.classList.add('no-scroll');
+      document.body.style.top = `-${this.scrollY}px`;
+    } else {
+      // Unlock scroll
+      document.body.classList.remove('no-scroll');
+      document.body.style.top = '';
+
+      // Restore scroll position
+      window.scrollTo(0, this.scrollY);
+    }
+  }
+
+  private initializeMobileView(): void {
     inject(BreakpointObserver)
       .observe([
         Breakpoints.XSmall,
@@ -74,13 +127,13 @@ export class HeaderComponent {
       });
   }
 
-  public onSearchClick(): void {
-    this.dialog.open(SearchDialogComponent, {
-      height: '59rem',
-      width: '100%',
-      maxHeight: '90vh',
-      maxWidth: '75rem',
-      panelClass: 'search-dialog',
+  private initializeMobileMenu(): void {
+    this.isMobileView$.subscribe({
+      next: (isMobileView) => {
+        if (!isMobileView) {
+          this.showMenu = false;
+        }
+      },
     });
   }
 }
