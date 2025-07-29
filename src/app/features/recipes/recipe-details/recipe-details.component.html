@@ -71,7 +71,9 @@
       <h2>Equipment</h2>
       <ul>
         <li *ngFor="let item of recipe.equipment">
-          <mat-checkbox>{{ item.name | sentenceCase }}</mat-checkbox>
+          <mat-checkbox [(ngModel)]="item.checked">
+            <span [class.strikethrough]="item.checked">{{ item.name | sentenceCase }}</span>
+          </mat-checkbox>
         </li>
       </ul>
     </div>
