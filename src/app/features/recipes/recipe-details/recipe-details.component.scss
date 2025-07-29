@@ -113,17 +113,23 @@
     display: block;
     margin-bottom: 1rem;
     line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
   }
 
   .credit {
     font-style: italic;
+    font-size: 1rem;
     display: block;
     margin-bottom: 1rem;
   }
 
   .hero-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    object-fit: contain;
+    max-width: 100%;
+    display: block;
+    height: min(100%, 600px);
     border-radius: 12px;
     margin-bottom: 1.5rem;
   }
@@ -133,7 +139,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     border-bottom: 2px solid #7c5c4b;
-    gap: 16px;
+    gap: 24px;
 
     @media (max-width: 720px) {
       flex-direction: column;
@@ -144,6 +150,7 @@
     .meta-text {
       display: flex;
       flex-direction: column;
+      font-size: 1.25rem;
     }
 
     img {
@@ -185,6 +192,11 @@
       margin-bottom: 0.5rem;
       list-style: none;
     }
+
+    li,
+    li span {
+      font-size: 1.25rem;
+    }
   }
 
   .strikethrough {
@@ -214,7 +226,7 @@
 
       .step-text {
         flex: 1;
-        line-height: 1.5rem;
+        line-height: 1.6;
       }
     }
   }
