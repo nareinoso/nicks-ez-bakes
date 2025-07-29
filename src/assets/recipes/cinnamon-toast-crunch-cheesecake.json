@@ -1,26 +1,110 @@
 {
   "slug": "cinnamon-toast-crunch-cheesecake",
   "name": "Cinnamon Toast Crunch Cheesecake",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "A rich and creamy cheesecake with a cinnamon toast crunch crust, topped with whipped cream cheese frosting, white chocolate ganache, and more cinnamon toast crunch cereal. A true showstopper dessert that is perfect for special occasions or a sweet treat at home.",
+  "credit": "Cheesecake recipe originally by Stephanie Keeping of Spaceships & Laser Beams. Whipped topping recipe originally by Chelsey White of Chelsweets.",
   "imageUrl": "assets/images/cheesecakes/cheesecake.jpg",
   "categories": ["cheesecakes"],
   "flavors": ["spiced", "rich"],
-  "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "occasion": ["datenight", "birthday", "holidays", "showstopper"],
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour 40 minutes",
+  "chillTime": "8 hours",
+  "totalTime": "10 hours 10 minutes",
+  "yield": "10 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the crust",
+      "items": [
+        { "name": "2 cups graham cracker crumbs, fine ground" },
+        { "name": "2 cups cinnamon toast crunch cereal crumbs, fine ground" },
+        { "name": "4 tablespoons unsalted butter, melted" }
+      ]
+    },
+    {
+      "label": "For the cheesecake filling",
+      "items": [
+        { "name": "½ cup heavy cream" },
+        { "name": "1 cup cinnamon toast crunch cereal" },
+        { "name": "32 ounces full-fat cream cheese, softened to room temperature (four 8-ounce blocks)" },
+        { "name": "1½ cups granulated sugar" },
+        { "name": "1 tablespoon vanilla extract" },
+        { "name": "6 large eggs, room temperature" }
+      ]
+    },
+    {
+      "label": "For the whipped cream cheese topping",
+      "items": [
+        { "name": "1 cup (8 oz) block full-fat cream cheese, cold" },
+        { "name": "1 cup powdered sugar" },
+        { "name": "1 teaspoon vanilla extract or vanilla bean paste" },
+        { "name": "2½ cups heavy whipping cream, cold" }
+      ]
+    },
+    {
+      "label": "For the white chocolate ganache",
+      "items": [
+        { "name": "1 cup white chocolate chips, Ghirardelli brand" },
+        { "name": "¼ cup heavy cream" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "9-inch springform pan" },
+    { "name": "Large mixing bowl" },
+    { "name": "Handheld mixer or stand mixer" },
+    { "name": "Large roasting pan" },
+    { "name": "Heavy-duty aluminum foil" },
+    { "name": "Parchment paper round" },
+    { "name": "Microwave-safe measuring cup or kettle for boiling water" },
+    { "name": "Whisk attachment for mixer" },
+    { "name": "Rubber spatula" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the crust",
+      "steps": [
+        { "text": "Preheat oven to 375°F. Spray the inside of a 9-inch springform pan with baker’s spray and place a parchment round onto the bottom of the pan." },
+        { "text": "Tear off two large pieces of heavy-duty aluminum foil. Set the springform pan on one of the pieces of foil and bring it up around the sides of the pan. Repeat with the second piece of foil. Be sure that the foil is tightly wrapped around the sides of the pan to ensure that none of the water from the water bath will leak into the pan while the cheesecake bakes." },
+        { "text": "To make the crust, mix together, in a large bowl, the graham cracker crumbs, cinnamon toast crunch cereal crumbs, and melted butter until fully combined. Press the crumbs into the bottom and halfway up the sides of the prepared springform pan. Be sure to tightly pack the crumbs to make a sturdy crust." },
+        { "text": "Bake the crust on the middle rack of the oven for 10 minutes. Remove and set aside to cool completely. Reduce the oven temperature to 325°F." },
+        { "text": "Start your water boiling by adding 4-5 cups of water to a large spouted liquid measuring microwave-safe cup. It typically takes 3-4 minutes (in an 1100-watt microwave) on high to boil the water. Alternatively, you can boil water on the stovetop in a kettle." }
+      ]
+    },
+    {
+      "label": "For the cheesecake filling",
+      "steps": [
+        { "text": "To a small bowl, add the ½ cup heavy cream and cinnamon toast crunch cereal. Stir to coat the cereal in the heavy cream. Allow the heavy cream to sit and absorb the cinnamon flavor of the cereal. Set aside." },
+        { "text": "To make the cheesecake filling, add the room-temperature cream cheese and granulated sugar to a large mixing bowl. Beat on medium speed for 1-2 minutes, using a handheld mixer, until smooth." },
+        { "text": "With the mixer on low speed, add the vanilla extract and the eggs, one egg at a time, to the cream cheese mixture, being sure to fully incorporate each egg before adding the next. Be sure to scrape down the bottom and sides of the bowl as needed to ensure that all the ingredients get blended well, and your cream cheese is free of any lumps." },
+        { "text": "Remove and discard the cereal from the heavy cream, then add the cinnamon-flavored heavy cream to the cheesecake batter and mix just until fully incorporated. Be sure not to overmix this cheesecake filling, as you want as few air bubbles in the batter as possible." },
+        { "text": "Slowly pour the cheesecake filling into the cooled crust. Spread out the top surface into an even layer. Gently tap the pan on the counter 2-3 times to remove any air bubbles from the cheesecake filling." },
+        { "text": "Place the cheesecake into a large roasting pan and place the roasting pan into the oven on the center rack. Very carefully pour the boiling water into the roasting pan, being sure not to get any of the water into the cheesecake until it comes up about 1 inch on the side of the springform pan." },
+        { "text": "Bake for 1 hour and 30 minutes or until the cheesecake is just barely set in the center (it will just barely wiggle) when the pan is lightly nudged. It will continue to bake as it cools. Turn off the oven, do not remove the cheesecake, and crack open the oven door about 1 inch. Allow the cheesecake to cool in the oven for 1 hour." },
+        { "text": "Remove the roasting pan from the oven and remove the springform pan from the roasting pan. Take the aluminum foil off of the sides of the springform pan. Run a sharp knife along the edges of the cheesecake to make sure that as it cools, the cheesecake does not stick to the sides of the pan." },
+        { "text": "Chill the cheesecake in the refrigerator for at least 8 hours or up to overnight to allow the cheesecake to set and chill fully. Once the cheesecake has chilled, you will remove the outer ring of the springform pan before adding the white chocolate ganache and garnishes." }
+      ]
+    },
+    {
+      "label": "For the whipped cream cheese topping",
+      "steps": [
+        { "text": "Chill your mixing bowl and whisk attachment in the freezer for 30 minutes to help this whipped cream frosting whip up better." },
+        { "text": "Place 1 cup (8 oz. block) of cold cream cheese into the chilled mixing bowl and mix on a medium-low speed until smooth." },
+        { "text": "Pour in 1 cup of powdered sugar, and mix on low at first to avoid powdered sugar clouds/explosions. Increase the speed to medium-high once the powdered sugar is incorporated, and mix for about 1 minute. Scrape the bowl with a rubber spatula as needed throughout this process." },
+        { "text": "Add in 1 tsp of vanilla extract, then turn the mixer to a medium-high speed and gradually pour in 2 1/2 cups of cold heavy cream. I like to do this in about 4 additions and focus on pouring the heavy cream down the side of the bowl to prevent it from splattering." },
+        { "text": "Watch the mixture closely once the heavy cream is fully mixed in. It should thicken and take shape shortly after this (mine usually does within about 30 seconds of mixing in the heavy cream). Take care not to over-mix your whipped cream frosting!! It will become soupy and sadly, you won't be able to fix it." },
+        { "text": "As soon as you see the frosting start to take shape, turn off your mixer and do a quick whisk test. Dunk your whisk attachment into the frosting, then put it out and flip it upside down. The frosting should keep its shape and form a nice peak. If it doesn't, continue to mix the frosting on a medium-high speed for 30-second intervals until it does." },
+        { "text": "Once the frosting is ready, store in the fridge until the ganache is ready. I like to use a large open star piping tip to pipe the frosting around the edges of the cheesecake." }
+      ]
+    },
+        {
+      "label": "For the white chocolate ganache",
+      "steps": [
+        { "text": "To make the white chocolate ganache, add the white chocolate chips to a microwave-safe bowl and pour the remaining ¼ cup of heavy cream over the chopped white chocolate chips. Microwave on high for 1 minute, then allow the white chocolate to sit undisturbed for another 1-2 minutes. Stir until smooth. If needed, you can heat the mixture for another 30 seconds and stir until smooth. Allow the ganache to cool slightly before spreading it over the top surface of the chilled cheesecake. The ganache should be soft enough to spread easily but not drip over the sides of the cheesecake." },
+        { "text": "While the white chocolate ganache is still slightly soft, you will want to add the cinnamon toast crunch cereal and whipped topping garnish so that the cereal sticks to the cheesecake when sliced." },
+        { "text": "To garnish the cheesecake, add the cinnamon toast crunch cereal to the top of the cheesecake, then pipe or dollop the whipped topping around the edges of the cheesecake. You can also add a few extra pieces of cinnamon toast crunch cereal on top of the whipped topping for decoration." },
+        { "text": "Slice and serve! Store any leftovers in an airtight container in the refrigerator for up to 5 days." }
+      ]
     }
   ]
 }

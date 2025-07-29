@@ -1,26 +1,78 @@
 {
   "slug": "apple-tart",
   "name": "French Apple Tart",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "This classic French apple tart features a buttery, flaky crust filled with a smooth apple puree and topped with beautifully arranged slices of sautéed apples. It's a showstopper dessert that's perfect for any occasion.",
+  "credit": "Recipe originally by Andrea Geary of America's Test Kitchen.",
   "imageUrl": "assets/images/tarts/apple-tart.jpg",
   "categories": ["tart"],
   "flavors": ["fruity"],
-  "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "occasion": ["showstopper", "party", "holidays", "brunch"],
+  "prepTime": "45 minutes",
+  "cookTime": "45 minutes",
+  "chillTime": "1hour 30 minutes",
+  "totalTime": "3 hours",
+  "yield": "8-10 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the tart crust",
+      "items": [
+        { "name": "1 ⅓ cups (6 2/3 ounces/189 grams) all-purpose flour" },
+        { "name": "5 tablespoons (2 1/4 ounces/64 grams) sugar" },
+        { "name": "½ teaspoon salt" },
+        { "name": "10 tablespoons unsalted butter, melted" }
+      ]
+    },
+    {
+      "label": "For the apple filling",
+      "items": [
+        { "name": "10 Golden Delicious apples (8 ounces each), peeled and cored" },
+        { "name": "3 tablespoons unsalted butter" },
+        { "name": "1 tablespoon water" },
+        { "name": "½ cup apricot preserves" },
+        { "name": "¼ teaspoon salt" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "9-inch tart pan with removable bottom" },
+    { "name": "wire rack" },
+    { "name": "rimmed baking sheet" },
+    { "name": "12-inch skillet" },
+    { "name": "potato masher" },
+    { "name": "thin metal spatula" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "Make the tart crust",
+      "steps": [
+        { "text": "Adjust 1 oven rack to lowest position and second rack 5 to 6 inches from broiler element. Heat oven to 350 degrees." },
+        { "text": "Whisk flour, sugar, and salt together in bowl." },
+        { "text": "Add melted butter and stir with wooden spoon until dough forms." },
+        { "text": "Using your hands, press two-thirds of dough into bottom of 9-inch tart pan with removable bottom. Press remaining dough into fluted sides of pan. Press and smooth dough with your hands to even thickness." },
+        { "text": "Place pan on wire rack set in rimmed baking sheet and bake on lowest rack, until crust is deep golden brown and firm to touch, 30 to 35 minutes, rotating pan halfway through baking." },
+        { "text": "Set aside until ready to fill." }
+      ]
+    },
+    {
+      "label": "Prepare the apple filling",
+      "steps": [
+        { "text": "Cut 5 apples lengthwise into quarters and cut each quarter lengthwise into 4 slices." },
+        { "text": "Melt 1 tablespoon butter in 12-inch skillet over medium heat. Add apple slices and water and toss to combine. Cover and cook, stirring occasionally, until apples begin to turn translucent and are slightly pliable, 3 to 5 minutes." },
+        { "text": "Transfer apples to large plate, spread into single layer, and set aside to cool. Do not clean skillet" },
+        { "text": "While apples cook, microwave apricot preserves until fluid, about 30 seconds. Strain preserves through fine-mesh strainer into small bowl, reserving solids. Set aside 3 tablespoons strained preserves for brushing tart" },
+        { "text": "Cut remaining 5 apples into 1/2-inch-thick wedges." },
+        { "text": "Melt remaining 2 tablespoons butter in now-empty skillet over medium heat. Add remaining apricot preserves, reserved apricot solids, apple wedges, and salt. Cover and cook, stirring occasionally, until apples are very soft, about 10 minutes" },
+        { "text": "Mash apples to puree with potato masher. Continue to cook, stirring occasionally, until puree is reduced to 2 cups, about 5 minutes" }
+      ]
+    },
+    {
+      "label": "Assemble and bake the tart",
+      "steps": [
+        { "text": "Transfer apple puree to baked tart shell and smooth surface. Select 5 thinnest slices of sautéed apple and set aside. Starting at outer edge of tart, arrange remaining slices, tightly overlapping, in concentric circles. Bend reserved slices to fit in center. Bake tart, still on wire rack in sheet, on lowest rack, for 30 minutes. Remove tart from oven and heat broiler." },
+        { "text": "While broiler heats, warm reserved preserves in microwave until fluid, about 20 seconds. Brush evenly over surface of apples, avoiding tart crust." },
+        { "text": "Broil tart, checking every 30 seconds and turning as necessary, until apples are attractively caramelized, 1 to 3 minutes." },
+        { "text": "Let tart cool for at least 1 1/2 hours. Remove outer metal ring of tart pan, slide thin metal spatula between tart and pan bottom, and carefully slide tart onto serving platter. Cut into wedges and serve." }
+      ]
     }
   ]
 }

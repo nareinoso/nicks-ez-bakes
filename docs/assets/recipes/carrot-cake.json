@@ -1,26 +1,88 @@
 {
   "slug": "carrot-cake",
   "name": "Carrot Cake",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "This moist and flavorful carrot cake is packed with grated carrots and toasted pecans, topped with a rich cream cheese frosting. Perfect for birthdays, holidays, or any special occasion.",
+  "credit": "Recipe originally by Sally McKenney of Sally's Baking Addiction.",
   "imageUrl": "assets/images/cakes/carrot-cake.jpg",
   "categories": ["cakes"],
   "flavors": ["spiced"],
-  "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "occasion": ["birthday", "holidays", "party", "showstopper"],
+  "prepTime": "30 minutes",
+  "cookTime": "30 minutes",
+  "chillTime": "2 hours",
+  "totalTime": "3 hours",
+  "yield": "10-12 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the Cake",
+      "items": [
+        { "name": "2 cups (260g) chopped pecans (1 cup for cake, 1 cup for garnish. Nuts are optional.)" },
+        { "name": "1 and 1/2 cups (300g) packed light or dark brown sugar" },
+        { "name": "1/2 cup (100g) granulated sugar" },
+        { "name": "1 cup (240ml) vegetable oil or canola oil (or melted coconut oil)" },
+        { "name": "4 large eggs" },
+        { "name": "3/4 cup (180g) smooth unsweetened applesauce" },
+        { "name": "1 teaspoon pure vanilla extract" },
+        { "name": "2 and 1/2 cups (312g) all-purpose flour (spooned & leveled)" },
+        { "name": "2 teaspoons baking powder" },
+        { "name": "1 teaspoon baking soda" },
+        { "name": "1/2 teaspoon salt" },
+        { "name": "1 and 1/2 teaspoons ground cinnamon" },
+        { "name": "1 teaspoon ground ginger" },
+        { "name": "1/4 teaspoon ground nutmeg" },
+        { "name": "1/4 teaspoon ground cloves" },
+        { "name": "2 cups (260g) grated carrots (about 4 large)" }
+      ]
+    },
+    {
+      "label": "For the Frosting",
+      "items": [
+        { "name": "16 ounces (452g) full-fat brick cream cheese, softened to room temperature" },
+        { "name": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature" },
+        { "name": "4 cups (480g) confectioners’ sugar" },
+        { "name": "1 and 1/2 teaspoons pure vanilla extract" },
+        { "name": "pinch of salt, to taste" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "Oven" },
+    { "name": "Baking sheet" },
+    { "name": "Parchment paper or silicone baking mat" },
+    { "name": "9-inch cake pans (2 or 3)" },
+    { "name": "Wire rack" },
+    { "name": "Large mixing bowls" },
+    { "name": "Whisk or electric mixer" },
+    { "name": "Rubber spatula or wooden spoon" },
+    { "name": "Serving plate or cake stand" },
+    { "name": "Offset spatula (for frosting)" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the Cake",
+      "steps": [
+        { "text": "Preheat oven to 300°F (149°C). Line a large baking sheet with parchment paper or a silicone baking mat. Spread the chopped pecans on the sheet and toast for 7-8 minutes. Remove from the oven and allow to cool for 10-15 minutes." },
+        { "text": "Turn the oven up to 350°F (177°C). Grease two or three 9-inch cake pans, line with parchment paper rounds, then grease the parchment paper. Parchment paper helps the cakes seamlessly release from the pans." },
+        { "text": "Whisk the brown sugar, granulated sugar, oil, eggs, applesauce, and vanilla together in a large bowl until combined and no brown sugar lumps remain." },
+        { "text": "In another large bowl, whisk the flour, baking powder, baking soda, salt, cinnamon, ginger, nutmeg, and cloves together." },
+        { "text": "Pour the wet ingredients into the dry ingredients and, using a rubber spatula or wooden spoon, fold the ingredients together until just combined. Fold in the carrots and 1 cup of the toasted pecans. (The rest of the pecans are for garnish.)" },
+        { "text": "Pour/spoon the batter evenly into the cake pans. If using three cake pans, bake for 20-24 minutes. If using two cake pans, bake for 30-35 minutes. Test the center with a toothpick. If it comes out clean, the cakes are done. If not, continue to bake until cooked through. Do not over-bake. Allow the cakes to cool completely in the pans set on a wire rack. The cakes must be completely cool before frosting and assembling." }
+      ]
+    },
+    {
+      "label": "For the Frosting",
+      "steps": [
+        { "text": "In a large bowl using a handheld or stand mixer fitted with a whisk or paddle attachment, beat the cream cheese and butter together on medium-high speed until smooth, about 2 minutes. " },
+        { "text": "Add the confectioners’ sugar, vanilla extract, and a pinch of salt. Beat on low speed for 30 seconds, then increase to high speed and beat for 3 minutes until completely combined and creamy. Add more confectioners’ sugar if frosting is too thin, a little milk if frosting is too thick, or an extra pinch of salt if frosting is too sweet. Frosting should be soft, but not runny." }
+      ]
+    },
+    {
+      "label": "Assembly",
+      "steps": [
+        { "text": "Place one layer of cake on a serving plate or cake stand. Spread a generous amount of frosting on top. Place the second layer on top and repeat. If using a third layer, repeat again. Frost the top and sides of the cake with the remaining frosting." },
+        { "text": "To create scalloped edges, pipe small dollops of frosting along the perimeter of the cake, one at a time, and then use an offset spatula or the back of a spoon to carve out a wave/scale pattern. Repeat until cake is fully covered." },
+        { "text": "Garnish with the remaining toasted pecans, if desired. Slice and serve. Store leftovers in an airtight container in the refrigerator for up to 5 days." }
+      ]
     }
   ]
 }

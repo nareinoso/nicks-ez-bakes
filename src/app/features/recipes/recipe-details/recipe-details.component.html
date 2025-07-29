@@ -4,6 +4,7 @@
   </ng-container>
 
   <ng-template #detailsTemplate>
+    <!-- Action Buttons -->
     <div class="button-row">
       <button mat-button
         (click)="router.navigate(['/recipes'])">
@@ -20,42 +21,63 @@
         <mat-icon>print</mat-icon> Print
       </button>
     </div>
+
+    <!-- Metadata -->
     <div class="meta-container">
       <div class="meta-text">
         <h1 class="title">{{ recipe.name }}</h1>
+        <!-- Categories & Flavors -->
+        <div class="meta-chips">
+          <span *ngFor="let category of recipe.categories" class="category" (click)="navigateToCategory(category)">
+            {{ category | sentenceCase }}
+          </span>
+          <span *ngFor="let flavor of recipe.flavors" class="flavor" (click)="navigateToFlavor(flavor)">
+            {{ flavor | sentenceCase }}
+          </span>
+        </div>
+        <!-- Cook Times -->
         <div class="cook-times">
           <span>
+            <mat-icon>chef_hat</mat-icon>
             <label>Prep Time:</label>
             <span>{{ recipe.prepTime }}</span>
           </span>
           <span>
-            <label>Cook Time:</label> {{ recipe.cookTime }}</span>
+            <mat-icon>skillet</mat-icon>
+            <label>Cook Time:</label> {{ recipe.cookTime }}
+          </span>
           <span *ngIf="recipe.chillTime">
+            <mat-icon>mode_cool</mat-icon>
             <label>Chill Time:</label>
             <span>{{ recipe.chillTime }}</span>
           </span>
           <span>
+            <mat-icon>timer</mat-icon>
             <label>Total Time:</label>
             <span>{{ recipe.totalTime }}</span>
           </span>
           <span *ngIf="recipe.yield">
+            <mat-icon>hand_meal</mat-icon>
             <label>Yield:</label>
             <span>{{ recipe.yield }}</span>
           </span>
         </div>
       </div>
-      <img *ngIf="recipe.imageUrl"
-        [src]="recipe.imageUrl"
-        class="hero-image"
-        alt="{{ recipe.name }}" />
+      <!-- Image -->
+      <img *ngIf="recipe.imageUrl" [src]="recipe.imageUrl" class="hero-image" alt="{{ recipe.name }}" />
     </div>
+
+    <!-- Description-->
     <div class="description">
       <span>{{ recipe.description }}</span>
       <span *ngIf="recipe.credit"
         class="credit">-- {{ recipe.credit }}
       </span>
     </div>
-<hr class="section-divider">
+
+    <hr class="section-divider">
+
+    <!-- Ingredients -->
     <div class="ingredients">
       <h2>Ingredients</h2>
       <div *ngFor="let section of recipe.ingredientSections" class="step-section">
@@ -69,7 +91,10 @@
         </ul>
       </div>
     </div>
-<hr class="section-divider">
+
+    <hr class="section-divider">
+
+    <!-- Equipment -->
     <div class="equipment">
       <h2>Equipment</h2>
       <ul>
@@ -80,7 +105,10 @@
         </li>
       </ul>
     </div>
-<hr class="section-divider">
+
+    <hr class="section-divider">
+
+    <!-- Instructions -->
     <div class="steps">
       <h2>Instructions</h2>
       <div *ngFor="let section of recipe.stepSections" class="step-section">

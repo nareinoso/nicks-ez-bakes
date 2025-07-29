@@ -60,6 +60,20 @@ export class RecipeDetailsComponent implements OnInit {
     window.print();
   }
 
+  navigateToCategory(category: string): void {
+    const formattedCategory = category.toLowerCase().replace(/\s+/g, '-');
+    this.router.navigate(['/recipes'], {
+      queryParams: { category: formattedCategory },
+    });
+  }
+
+  navigateToFlavor(flavor: string): void {
+    const formattedFlavor = flavor.toLowerCase().replace(/\s+/g, '-');
+    this.router.navigate(['/recipes'], {
+      queryParams: { flavor: formattedFlavor },
+    });
+  }
+
   private getRecipeFromSlug(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
     if (!slug) return;
@@ -67,7 +81,7 @@ export class RecipeDetailsComponent implements OnInit {
     this.recipeService.getRecipe(slug).subscribe({
       next: (recipe) => {
         // Transform items into checkable objects
-        recipe.ingredientSections = recipe.ingredientSections.map(
+        recipe.ingredientSections = recipe?.ingredientSections?.map(
           (section) => ({
             ...section,
             items: section.items.map((item) => ({
@@ -82,7 +96,7 @@ export class RecipeDetailsComponent implements OnInit {
           checked: false,
         }));
 
-        recipe.stepSections = recipe.stepSections.map((section) => ({
+        recipe.stepSections = recipe?.stepSections?.map((section) => ({
           ...section,
           steps: section.steps.map((step) => ({
             text: typeof step === 'string' ? step : step.text,

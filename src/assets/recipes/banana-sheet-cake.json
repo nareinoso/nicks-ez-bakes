@@ -1,26 +1,91 @@
 {
   "slug": "banana-sheet-cake",
   "name": "Banana Sheet Cake",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "A moist and flavorful banana sheet cake topped with a creamy cream cheese frosting, toasted nuts, and coconut. Perfect for parties or brunch gatherings.",
+  "credit": "Recipe originally by Sally McKenney of Sally's Baking Addiction.",
   "imageUrl": "assets/images/cakes/banana-sheet-cake.jpg",
   "categories": ["cake"],
   "flavors": ["fruity"],
-  "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "occasion": ["party", "brunch"],
+  "prepTime": "30 minutes",
+  "cookTime": "45 minutes",
+  "chillTime": "1 hour 30 minutes",
+  "totalTime": "2 hours 45 minutes",
+  "yield": "12 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the Cake",
+      "items": [
+        { "name": "1 and 1/2 cups (345g) mashed bananas (about 4 medium or 3 large bananas)" },
+        { "name": "3 cups (375g) all-purpose flour (spooned & leveled)" },
+        { "name": "1 teaspoon baking powder" },
+        { "name": "1 teaspoon baking soda" },
+        { "name": "1/2 teaspoon ground cinnamon" },
+        { "name": "1/2 teaspoon salt" },
+        { "name": "3/4 cup (12 Tbsp; 170g) unsalted butter, softened to room temperature" },
+        { "name": "1 cup (200g) granulated sugar" },
+        { "name": "1/2 cup (100g) packed light or dark brown sugar" },
+        { "name": "3 large eggs, at room temperature" },
+        { "name": "2 teaspoons pure vanilla extract" },
+        { "name": "1 and 1/2 cups (360ml) buttermilk, at room temperature" }
+      ]
+    },
+    {
+      "label": "For the Frosting",
+      "items": [
+        { "name": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature" },
+        { "name": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature" },
+        { "name": "3 cups (360g) confectioners’ sugar, plus an extra 1/4 cup if needed" },
+        { "name": "1 teaspoon pure vanilla extract" },
+        { "name": "1/8 teaspoon salt" }
+      ]
+    },
+    {
+      "label": "For the Topping",
+      "items": [
+        { "name": "1/2 cup (75g) chopped walnuts or pecans, toasted" },
+        { "name": "1/2 cup (75g) shredded sweetened coconut, toasted" },
+        { "name": "1 banana, sliced" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "9×13-inch baking pan" },
+    { "name": "Mixing bowls" },
+    { "name": "Handheld or stand mixer with paddle attachment" },
+    { "name": "Rubber spatula" },
+    { "name": "Wire rack" },
+    { "name": "Dry skillet for toasting nuts and coconut" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the Cake",
+      "steps": [
+        { "text": "Preheat the oven to 350°F (177°C) and grease a 9×13-inch pan." },
+        { "text": "Mash the bananas. Set mashed bananas aside." },
+        { "text": "Whisk the flour, baking powder, baking soda, cinnamon, and salt together. Set aside." },
+        { "text": "Using a handheld or stand mixer fitted with a paddle attachment, beat the butter on high speed until smooth and creamy—about 1 minute. Add both sugars and beat on high speed for 2 minutes until creamed together. Scrape down the sides and up the bottom of the bowl with a rubber spatula as needed." },
+        { "text" : "Add the eggs and the vanilla. Beat on medium-high speed until combined, then beat in the mashed bananas. Scrape down the sides and up the bottom of the bowl as needed." },
+        { "text": "With the mixer on low speed, add the dry ingredients in three additions alternating with the buttermilk and mixing each addition just until incorporated. Do not overmix. The batter will be slightly thick and a few lumps is OK." },
+        { "text": "Spread batter into the prepared pan. Bake for 45–50 minutes. Baking times vary, so keep an eye on yours. The cake is done when a toothpick inserted in the center comes out clean. If you find the top of the cake is browning too quickly in the oven, loosely cover it with aluminum foil." },
+        { "text": "Remove the cake from the oven and set on a wire rack. Allow to cool completely. After about 45 minutes, I usually place it in the refrigerator to speed things up." }
+      ]
+    },
+    {
+      "label": "For the Frosting",
+      "steps": [
+        { "text": "In a large bowl using a handheld or stand mixer fitted with a paddle or whisk attachment, beat the cream cheese and butter together on high speed until smooth and creamy. " },
+        { "text": "Add 3 cups confectioners’ sugar, vanilla, and salt. Beat on low speed for 30 seconds, then switch to high speed and beat for 2 minutes. If you want the frosting a little thicker, add the extra 1/4 cup of confectioners sugar (I add it). " },
+        { "text": "Spread the frosting on the cooled cake. Refrigerate for 30 minutes before serving. This helps sets the frosting and makes cutting easier." }
+      ]
+    },
+    {
+      "label": "For the Topping",
+      "steps": [
+        { "text": "Toast the walnuts or pecans and coconut in a dry skillet over medium heat until fragrant, about 3–5 minutes. Stir frequently to prevent burning." },
+        { "text": "Once the cake is frosted and chilled, sprinkle the toasted nuts and coconut on top. Add banana slices just before serving to prevent browning." },
+        { "text": "Slice and serve. Store leftovers in an airtight container in the refrigerator for up to 5 days." }
+      ]
     }
   ]
 }

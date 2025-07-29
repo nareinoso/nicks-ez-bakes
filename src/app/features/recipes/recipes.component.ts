@@ -156,10 +156,19 @@ export class RecipesComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params) => {
       const category = params.get('category');
+      const flavor = params.get('flavor');
+      const occasion = params.get('occasion');
 
       if (category && this.categoryList.includes(category)) {
         this.categories.setValue([category]);
         this.activePill = category.toLowerCase();
+      } else if (flavor && this.flavorsList.includes(flavor)) {
+        this.flavors.setValue([flavor]);
+      } else if (
+        occasion &&
+        this.occasionList.some((o) => o.key === occasion)
+      ) {
+        this.occasions.setValue([occasion]);
       } else {
         this.activePill = 'all';
       }
@@ -219,22 +228,26 @@ export class RecipesComponent implements OnInit {
 
     return this.recipes.filter((recipe) => {
       const recipeCategories = recipe.categories?.map(this.normalize) ?? [];
-      const recipeOccasion = this.normalize(String(recipe.occasion));
+      const recipeOccasions = recipe.occasion?.map(this.normalize) ?? [];
+
       const recipeIngredients =
-        recipe.flavors?.map((ing: any) =>
-          this.normalize(typeof ing === 'string' ? ing : ing.name ?? '')
+        recipe.flavors?.map((ingredient: any) =>
+          this.normalize(
+            typeof ingredient === 'string' ? ingredient : ingredient.name ?? ''
+          )
         ) ?? [];
 
       const matchesCategory =
         !categories.length ||
-        recipeCategories.some((cat) => categories.includes(cat));
+        recipeCategories.some((category) => categories.includes(category));
 
       const matchesFlavor =
         !flavors.length ||
-        flavors.some((ing) => recipeIngredients.includes(ing));
+        flavors.some((flavor) => recipeIngredients.includes(flavor));
 
       const matchesOccasion =
-        !occasions.length || occasions.includes(recipeOccasion);
+        !occasions.length ||
+        recipeOccasions.some((occasion) => occasions.includes(occasion));
 
       return matchesCategory && matchesFlavor && matchesOccasion;
     });

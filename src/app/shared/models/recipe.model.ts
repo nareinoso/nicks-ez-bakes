@@ -1,4 +1,4 @@
-import { Flavor } from './ingredient.type';
+import { Flavor } from './flavor.type';
 import { Occasion } from './occasion.type';
 import { Category } from './category.type';
 
@@ -16,7 +16,7 @@ export interface Recipe {
   yield?: string;
   description?: string;
   credit?: string;
-  ingredientSections: {
+  ingredientSections?: {
     label: string;
     items: {
       name: string;
