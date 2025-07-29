@@ -4,6 +4,10 @@
   padding: 2rem;
   padding-top: 1rem;
 
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
+
   .button-row {
     display: flex;
     align-items: center;
@@ -28,6 +32,7 @@
         border: 1px solid;
         border-color: #5c3d31;
         border-radius: 40px;
+        box-shadow: inset 0 1px 0 #fff, 0 1px 4px rgba(0, 0, 0, 0.1);
 
         mat-icon {
           padding-left: 16px;
@@ -51,7 +56,8 @@
     .mat-icon-button,
     .mat-button,
     nav,
-    footer {
+    footer,
+    .description {
       display: none !important;
     }
 
@@ -111,17 +117,26 @@
 
   .description {
     display: block;
-    margin-bottom: 1rem;
+    padding: 24px;
     line-height: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.6;
+    border: 1px solid #7c5c4b;
+    background-color: #fff8f5;
+    background-image: url("/assets/textures/rice-paper.png");
+    background-size: auto;
+    background-repeat: repeat;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-default);
+    margin-bottom: 2rem;
+    color: #333;
   }
 
   .credit {
     font-style: italic;
     font-size: 1rem;
     display: block;
-    margin-bottom: 1rem;
+    padding: 16px 0;
   }
 
   .hero-image {
@@ -130,15 +145,19 @@
     max-width: 100%;
     display: block;
     height: min(100%, 600px);
-    border-radius: 12px;
     margin-bottom: 1.5rem;
+    background-color: #fdf8f2;
+    padding: 10px;
+    filter: sepia(10%) brightness(1.05);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(92, 64, 51, 0.3);
+    border: 2px solid rgba(246, 235, 220, 0.8);
   }
 
   .meta-container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    border-bottom: 2px solid #7c5c4b;
     gap: 24px;
 
     @media (max-width: 720px) {
@@ -150,7 +169,7 @@
     .meta-text {
       display: flex;
       flex-direction: column;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     img {
@@ -173,15 +192,52 @@
     }
   }
 
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      #ccc,
+      #ccc 2px,
+      transparent 4px,
+      transparent 8px
+    );
+    margin: 2rem 0;
+  }
+
+  .step-section {
+    margin-bottom: 2rem;
+
+    h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+    }
+  }
+
   .ingredients,
   .equipment,
   .steps {
     margin-bottom: 2rem;
+    background: url("/assets/textures/rice-paper.png") repeat;
+    background-color: #fefaf6;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    @media print {
+      box-shadow: none;
+      background: none;
+    }
 
     h2 {
       margin-bottom: 0.75rem;
       color: #5c3d31;
       font-family: "Patua One", serif;
+      border-bottom: 1px solid #e0d6cf;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -195,8 +251,20 @@
 
     li,
     li span {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
+      color: #333;
+
+      @media print {
+        font-size: 1rem;
+      }
     }
+  }
+
+  .mdc-checkbox__native-control:focus:focus:checked ~ .mdc-checkbox__background,
+  .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+    border-color: black;
+    background-color: #a75d3e; // mocha tone to match your headings
+    color: #fff8f5;
   }
 
   .strikethrough {
@@ -219,9 +287,17 @@
       .step-number {
         font-family: "Patua One", serif;
         font-size: 1.25rem;
-        color: #5c3d31; // mocha tone to match your headings
         margin-right: 1rem;
         line-height: 1.2;
+        display: inline-block;
+        background-color: #fdf5e6;
+        border: 1px solid #d7c4aa;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        font-weight: bold;
+        color: #5a3e36;
       }
 
       .step-text {
@@ -243,15 +319,24 @@
   }
 
   .empty-state {
-    display: flex;
-    max-width: 1024px;
-    margin: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #5c3d31;
+    display: flex;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #d7c2ac;
+    border-radius: 1rem;
+    margin: auto;
     margin-top: 5rem;
+    padding: 2rem;
+    background: url("/assets/textures/rice-paper.png") repeat;
+    animation: fadeInUp 0.5s ease;
+    color: #5c3d31;
 
+    @media (max-width: 600px) {
+      margin-top: 0;
+    }
     mat-icon {
       font-family: "Material Symbols Outlined";
       font-size: 5rem;
@@ -260,7 +345,7 @@
       border: 5px solid;
       border-radius: 50%;
       padding: 1rem;
-      margin-bottom: 1rem;
+      margin: 1rem;
     }
 
     h2 {
@@ -269,7 +354,7 @@
 
     a {
       display: inline-block;
-      margin-top: 2rem;
+      margin: 2rem;
       padding: 0.5rem 1.25rem;
       border-radius: 8px;
       text-decoration: none;
@@ -283,4 +368,15 @@
       }
     }
   }
+
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 }

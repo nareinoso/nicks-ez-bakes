@@ -23,9 +23,6 @@
     <div class="meta-container">
       <div class="meta-text">
         <h1 class="title">{{ recipe.name }}</h1>
-        <span class="description">{{ recipe.description }}</span>
-        <span *ngIf="recipe.credit"
-          class="credit">{{ recipe.credit }}</span>
         <div class="cook-times">
           <span>
             <label>Prep Time:</label>
@@ -52,10 +49,16 @@
         class="hero-image"
         alt="{{ recipe.name }}" />
     </div>
-
+    <div class="description">
+      <span>{{ recipe.description }}</span>
+      <span *ngIf="recipe.credit"
+        class="credit">-- {{ recipe.credit }}
+      </span>
+    </div>
+<hr class="section-divider">
     <div class="ingredients">
       <h2>Ingredients</h2>
-      <div *ngFor="let section of recipe.ingredientSections">
+      <div *ngFor="let section of recipe.ingredientSections" class="step-section">
         <h3 *ngIf="section.label">{{ section.label }}</h3>
         <ul>
           <li *ngFor="let item of section.items">
@@ -66,7 +69,7 @@
         </ul>
       </div>
     </div>
-
+<hr class="section-divider">
     <div class="equipment">
       <h2>Equipment</h2>
       <ul>
@@ -77,10 +80,10 @@
         </li>
       </ul>
     </div>
-
+<hr class="section-divider">
     <div class="steps">
       <h2>Instructions</h2>
-      <div *ngFor="let section of recipe.stepSections">
+      <div *ngFor="let section of recipe.stepSections" class="step-section">
         <h3 *ngIf="section.label">{{ section.label }}</h3>
         <ol class="custom-list">
           <li *ngFor="let step of section.steps; let i = index">
@@ -94,7 +97,9 @@
 
   <ng-template #emptyState>
     <div class="empty-state">
-      <mat-icon>local_dining</mat-icon>
+      <img src="assets/images/recipe-placeholder.svg"
+        alt="Recipe Not Ready"
+        class="empty-state-image" />
       <h2>Recipe Not Ready</h2>
       <span>This recipe is still in the works. Check back soon!</span>
       <a (click)="router.navigate(['/recipes'])">

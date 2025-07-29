@@ -1,26 +1,104 @@
 {
   "slug": "fruit-tart",
   "name": "Fruit Tart",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "A delightful tart featuring a buttery crust filled with smooth pastry cream and topped with an array of fresh fruits. This dessert is perfect for showcasing seasonal fruits and is sure to impress at any gathering.",
+  "credit": "Recipe originally by Lan Lam of America's Test Kitchen and Christina Marsigliese of Scientifically Sweet.",
   "imageUrl": "assets/images/tarts/tart.jpg",
   "categories": ["tarts"],
   "flavors": ["fruity", "fresh"],
   "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "prepTime": "30 minutes",
+  "cookTime": "45 minutes",
+  "chillTime": "1 hour",
+  "totalTime": "2 hours, 15 minutes",
+  "yield": "8-10 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "Crust",
+      "items": [
+        { "name": "1 ⅓ cups (6 2/3 ounces/189 grams) all-purpose flour" },
+        { "name": "¼ cup (1 3/4 ounce/50 grams) sugar" },
+        { "name": "1/8 teaspoon salt" },
+        { "name": "10 tablespoons unsalted butter" },
+        { "name": "2 tablespoons water" }
+      ]
+    },
+    {
+      "label": "Pastry Cream",
+      "items": [
+        { "name": "⅓ cup 65g granulated sugar" },
+        { "name": "2 tablespoon 16g corn starch" },
+        { "name": "1 tablespoon 9g all-purpose flour" },
+        { "name": "¾ cup 180ml 35% heavy whipping cream" },
+        { "name": "¾ cup 180ml whole milk or 2% milk" },
+        { "name": "4 large egg yolks" },
+        { "name": "1 vanilla bean (or 1 teaspoon pure vanilla extract)" },
+        { "name": "2 tablespoon 28g unsalted butter" }
+      ]
+    },
+    {
+      "label": "Fruit Topping",
+      "items": [
+        {
+          "name": "2 cups mixed fresh fruit (e.g., strawberries, blueberries, kiwi, peaches)"
+        },
+        { "name": "1/4 cup (60ml) apricot jam or glaze" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "9-inch tart pan with removable bottom" },
+    { "name": "small saucepan" },
+    { "name": "medium bowl" },
+    { "name": "whisk" },
+    { "name": "fine mesh strainer" },
+    { "name": "plastic wrap" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "Crust",
+      "steps": [
+        {
+          "text": "Adjust oven rack to middle position and heat oven to 350 degrees. Whisk flour, sugar, and salt together in bowl. Melt butter in small saucepan over medium-high heat, swirling saucepan occasionally, until foaming subsides. Cook, stirring and scraping bottom of saucepan with heatproof spatula, until milk solids are dark golden brown and butter has nutty aroma, 1 to 3 minutes. Remove saucepan from heat and add water. When bubbling subsides, transfer butter to bowl with flour mixture and stir until well combined. Transfer dough to 9-inch tart pan with removable bottom and let dough rest until just warm, about 10 minutes."
+        },
+        {
+          "text": "Use your hands to evenly press and smooth dough over bottom and up side of pan (using two-thirds of dough for bottom crust and remaining third for side). Place pan on wire rack set in rimmed baking sheet and bake until crust is golden brown, 25 to 30 minutes, rotating pan halfway through baking. Let crust cool completely, about 1 hour. (Cooled crust can be wrapped loosely in plastic wrap and stored at room temperature for up to 24 hours.)"
+        }
+      ]
+    },
+    {
+      "label": "Pastry Cream",
+      "steps": [
+        {
+          "text": "In a small 1-quart stainless steel saucepan, combine sugar, corn starch and flour and whisk to blend evenly so there are no lumps of starch or flour. Very slowly begin to whisk in the cream so that it blends smoothly with the starch/sugar mixture. Once all the cream is added, you can pour in the milk and whisk well. Add egg yolks one a time and whisk them in evenly before each addition."
+        },
+        {
+          "text": "Massage the vanilla bean to soften it and loosing the little seeds inside. Split it in half lengthwise using a sharp paring knife and scrape out those little seeds from both sides. Add the seeds to the pot and then add the scraped bean/pod as well."
+        },
+        {
+          "text": "Place the sauce pot over medium-low heat and whisk constantly until it starts to thicken. Be patient as this can take up to 10 minutes. Increase the heat slightly to medium if necessary, but do not walk away from the pan and do not stop stirring as it can easily catch and scorch at the bottom of the pan."
+        },
+        {
+          "text": "Once the mixture starts to thicken, lower the heat and watch carefully. Once it starts to bubble, let it bubble for just 5 seconds while stirring then immediately transfer it to a clean bowl. NOTE: you can pass it through a fine mesh sieve to remove any curdled egg pieces if you are so inclined."
+        },
+        {
+          "text": "Add butter and stir it in until melted and evenly incorporated. If you’re using vanilla extract instead of the pod, then you can stir it in at this point. Place a piece of plastic wrap directly over the surface of the custard to cover it and refrigerate for at least 4 hours until thoroughly chilled and use within 3 days."
+        }
+      ]
+    },
+    {
+      "label": "Assembly",
+      "steps": [
+        {
+          "text": "Spread the chilled pastry cream evenly over the cooled tart crust."
+        },
+        {
+          "text": "Cut and arrange the mixed fresh fruit on top of the pastry cream in your desired pattern."
+        },
+        {
+          "text": "Heat apricot jam in a small saucepan until melted and pass through a fine mesh strainer. Brush the strained jam over the fruit for a shiny glaze."
+        }
+      ]
     }
   ]
 }

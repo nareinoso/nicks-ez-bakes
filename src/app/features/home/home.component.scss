@@ -507,6 +507,7 @@
   background-color: white;
   box-shadow: var(--box-shadow-thick);
   transition: transform 0.3s ease;
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;
@@ -514,6 +515,7 @@
   }
 
   img {
+    border-radius: 8px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     width: 100%;

@@ -11,6 +11,7 @@
     justify-content: space-evenly;
     padding: 32px 24px;
     gap: 72px;
+    background-color: peachpuff;
 
     @media (max-width: 1024px) {
       flex-direction: column;
@@ -180,9 +181,10 @@
     }
 
     p {
-      max-width: 600px;
+      max-width: 65ch;
       margin: auto;
       padding: 0 8px;
+      line-height: 1.75;
     }
   }
 
