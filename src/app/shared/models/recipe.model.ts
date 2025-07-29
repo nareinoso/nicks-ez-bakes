@@ -3,8 +3,8 @@ import { Occasion } from './occasion.type';
 import { Category } from './category.type';
 
 export interface Recipe {
-  slug: string; // Optional slug for routing
-  imageUrl: string; // Optional image URL for the recipe
+  slug: string;
+  imageUrl: string;
   name: string;
   categories: Category[];
   flavors: Flavor[];
@@ -16,13 +16,22 @@ export interface Recipe {
   yield?: string;
   description?: string;
   credit?: string;
-  ingredientSections?: {
+  ingredientSections: {
     label: string;
-    items: string[];
+    items: {
+      name: string;
+      checked?: boolean;
+    }[];
   }[];
-  equipment?: string[];
-  stepSections?: {
+  equipment?: {
+    name: string;
+    checked?: boolean;
+  }[];
+  stepSections: {
     label: string;
-    steps: string[];
+    steps: {
+      text: string;
+      checked?: boolean;
+    }[];
   }[];
 }

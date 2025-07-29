@@ -25,6 +25,14 @@
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
   }
+
+  .mat-mdc-card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .search-result {
@@ -32,24 +40,27 @@
   flex-direction: column;
   border-radius: 8px;
   box-shadow: none !important;
+  height: fit-content;
 
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
     img {
-      transform: scale(1.05);
+      transform: scale(1.025);
       transition: transform 0.3s ease;
       overflow: hidden;
     }
     span {
       color: rgba(9, 105, 104, 0.8);
+      text-decoration: underline;
     }
   }
 
   span {
     font-weight: 500;
     font-size: 1rem;
+    margin-top: 4px;
   }
 
   .mat-mdc-card-header {
@@ -77,10 +88,16 @@
   overflow: hidden !important;
   display: flex;
   flex-direction: column;
+
+  background-color: #fff8f5;
+  background-image: url("/assets/textures/rice-paper.png");
+  background-size: auto;
+  background-repeat: repeat;
 }
 
 .mdc-text-field--outlined {
   --mdc-outlined-text-field-container-shape: 0.35rem !important;
+  background-color: white;
 }
 
 .mat-mdc-form-field {
@@ -91,7 +108,8 @@
   border-radius: 20px !important;
 }
 
-.mdc-dialog--open .mat-mdc-dialog-surface, .mdc-dialog--closing .mat-mdc-dialog-surface {
+.mdc-dialog--open .mat-mdc-dialog-surface,
+.mdc-dialog--closing .mat-mdc-dialog-surface {
   height: 90%;
 }
 

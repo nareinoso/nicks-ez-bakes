@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, throwError } from 'rxjs';
-import { Recipe } from '../models';
+import { Recipe, SearchResult } from '../models';
 
 const RECIPES_DUMMY_DATA: Recipe[] = [
   {
@@ -11,6 +11,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['bars'],
     flavors: ['chocolate'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'lemon-bars',
@@ -19,6 +21,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['bars'],
     flavors: ['citrus'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'millionaire-shortbread',
@@ -27,6 +31,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['bars'],
     flavors: ['chocolate'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'chocolate-raspberry-cake',
@@ -35,6 +41,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     occasion: ['birthday'],
     flavors: ['chocolate', 'fruity'],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'banana-bread',
@@ -43,6 +51,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['bread'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'banana-scones',
@@ -51,6 +61,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['breakfast'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'apple-cake',
@@ -59,6 +71,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['fruity', 'spiced'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'banana-sheet-cake',
@@ -67,6 +81,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'carrot-cake',
@@ -75,6 +91,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['spiced'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'christmas-cake',
@@ -83,6 +101,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['nutty', 'fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'lemon-blueberry-cake',
@@ -91,6 +111,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['citrus', 'fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'pineapple-cake',
@@ -99,6 +121,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cake'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'basque-cheesecake',
@@ -107,6 +131,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cheesecake'],
     flavors: ['rich'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'blueberry-cheesecake',
@@ -115,6 +141,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cheesecake'],
     flavors: ['fruity', 'rich'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'cinnamon-toast-crunch-cheesecake',
@@ -123,6 +151,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cheesecake'],
     flavors: ['spiced', 'rich'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'chocolate-chunk-cookies',
@@ -131,6 +161,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['chocolate'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'chocolate-oatmeal-cookies',
@@ -139,6 +171,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['chocolate', 'spiced'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'chocolate-peppermint-cookies',
@@ -147,6 +181,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['chocolate', 'fresh'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'gingersnaps',
@@ -155,6 +191,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['spiced'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'snickerdoodles',
@@ -163,6 +201,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['spiced'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'xmas-cookies',
@@ -171,6 +211,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['cookies'],
     flavors: ['spiced', 'chocolate'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'pecan-pie',
@@ -179,6 +221,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['pie'],
     flavors: ['nutty'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'bourbon-pecan-pie',
@@ -187,6 +231,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['pie'],
     flavors: ['nutty'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'key-lime-pie',
@@ -195,6 +241,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['pie'],
     flavors: ['citrus', 'rich'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'apple-tart-tatin',
@@ -203,6 +251,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['tart'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'apple-tart',
@@ -211,6 +261,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['tart'],
     flavors: ['fruity'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'chocolate-tart',
@@ -219,6 +271,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['tart'],
     flavors: ['chocolate'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
   {
     slug: 'fruit-tart',
@@ -227,6 +281,8 @@ const RECIPES_DUMMY_DATA: Recipe[] = [
     categories: ['tart'],
     flavors: ['fruity', 'fresh'],
     occasion: [],
+    ingredientSections: [],
+    stepSections: [],
   },
 ];
 
@@ -236,6 +292,19 @@ export class RecipesService {
 
   public getRecipes(): Observable<Recipe[]> {
     return of(RECIPES_DUMMY_DATA);
+  }
+
+  public searchRecipes(): Observable<SearchResult[]> {
+    // Simulate a search operation
+    return of(
+      RECIPES_DUMMY_DATA.map((recipe) => ({
+        slug: recipe.slug,
+        name: recipe.name,
+        category: 'recipes',
+        imageUrl: recipe.imageUrl,
+        link: `/recipe/${recipe.slug}`,
+      }))
+    );
   }
 
   getRecipe(slug: string): Observable<Recipe> {

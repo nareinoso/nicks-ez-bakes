@@ -2,25 +2,72 @@
   "slug": "banana-scones",
   "name": "Banana Scones",
   "description": "",
-  "credit": "Recipe originally by of .",
+  "credit": "Recipe originally by Sally McKenney of Sally's Baking Addiction.",
   "imageUrl": "assets/images/breakfast/banana-scones.jpg",
   "categories": ["breakfast"],
-  "flavors": ["fruity"],
+  "flavors": ["fruity", "spiced"],
   "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
+  "prepTime": "30 minutes",
+  "cookTime": "25 minutes",
   "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "totalTime": "1 hour",
+  "yield": "12 scones",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the Scones",
+      "items": [
+        { "name": "1 cup (230g) mashed bananas (about 3 medium or 2 large ripe bananas)" },
+        { "name": "1/4 cup (60g) plain Greek yogurt (or any plain yogurt or sour cream)" },
+        { "name": "1/2 cup (100g) packed light or dark brown sugar" },
+        { "name": "1 large egg" },
+        { "name": "1 teaspoon pure vanilla extract" },
+        { "name": "2 and 1/2 cups (313g) all-purpose flour (spooned & leveled)" },
+        { "name": "2 and 1/2 teaspoons baking powder" },
+        { "name": "1 and 1/2 teaspoons ground cinnamon" },
+        { "name": "1/8 teaspoon ground nutmeg" },
+        { "name": "1/2 teaspoon salt" },
+        { "name": "5 Tablespoons (71g) unsalted butter, frozen" },
+        { "name": "1 cup (125g) chopped walnuts (optional)" },
+        { "name": "top before baking: 3 Tablespoons (45ml) milk and coarse sugar" },
+        { "name": "top after baking: freeze-dried strawberries (optional, for garnish) " }
+      ]
+    },
+    {
+      "label": "For the Glaze",
+      "items": [
+        { "name": "2 Tablespoons (28g) unsalted butter" },
+        { "name": "1/3 cup (80ml) pure maple syrup" },
+        { "name": "1 cup (112g) sifted confectioners sugar" },
+        { "name": "1 splash bourbon (optional, but recommended)" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "stand mixer or handheld mixer" },
+    { "name": "large mixing bowl" },
+    { "name": "box grater or food processor for grating butter" },
+    { "name": "baking sheets" },
+    { "name": "parchment paper or silicone baking mat" },
+    { "name": "small saucepan " }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the Scones",
+      "steps": [
+        { "text": "Preheat oven to 400°F (204°C). Line 2 large baking sheets with parchment paper or a silicone baking mat. Set aside." },
+        { "text": "In a stand mixer or medium bowl with a handheld mixer, beat the mashed bananas, yogurt, brown sugar, egg, and vanilla extract together. Set aside." },
+        { "text": "In a large bowl, whisk the flour, baking powder, cinnamon, nutmeg, and salt together. Grate the frozen butter (I use a box grater to grate it; a food processor also works for grating). Toss the grated butter into the flour mixture and combine it with a pastry cutter, two forks, a food processor, or your fingers until the mixture resembles coarse meal. Set aside." },
+        { "text": "Drizzle wet ingredients over flour mixture, add the walnuts, and then toss the mixture together with a rubber spatula until everything appears moistened. Try your best to not overwork the dough at any point. Dough will be sticky and a little wet. Drop scones, 1/4 cup of dough each, at least 3 inches apart on the prepared baking sheet. Brush scones with milk, then top with a little coarse sugar if desired for extra crunch. Tastes great!" },
+        { "text": "Bake for 20-25 minutes or until lightly golden and cooked through. Remove from the oven and cool as you make the icing. The scones taste even better after they cool down! " }
+      ]
+    },
+    {
+      "label": "For the Glaze",
+      "steps": [
+        { "text": "In a small saucepan over medium heat, melt the butter. Stir in the maple syrup and bring to a gentle boil. Remove from heat and whisk in the confectioners sugar until smooth. If using, add a splash of bourbon for extra flavor." },
+        { "text": "Drizzle glaze over cooled scones and let it set for about 10 minutes before serving. Top with freeze-dried strawberries if desired." },
+        { "text": "Scones are best enjoyed right away, though leftover scones keep well at room temperature or in the refrigerator for about 3-5 days. You can also freeze the scones for up to 3 months. Thaw overnight in the refrigerator before serving. Reheat in a toaster oven or microwave if desired. " }
+      ]
     }
   ]
 }

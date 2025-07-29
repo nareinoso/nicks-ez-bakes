@@ -1,8 +1,9 @@
 <section *ngIf="recipe"
   class="recipe-details">
+  <ng-container *ngIf="recipe.stepSections[0].steps.length > 0; then detailsTemplate; else emptyState">
+  </ng-container>
 
-
-  <ng-container *ngIf="recipe?.stepSections?.length; else emptyState">
+  <ng-template #detailsTemplate>
     <div class="button-row">
       <button mat-button
         (click)="router.navigate(['/recipes'])">
@@ -57,7 +58,11 @@
       <div *ngFor="let section of recipe.ingredientSections">
         <h3 *ngIf="section.label">{{ section.label }}</h3>
         <ul>
-          <li *ngFor="let item of section.items">{{ item }}</li>
+          <li *ngFor="let item of section.items">
+            <mat-checkbox [(ngModel)]="item.checked">
+              <span [class.strikethrough]="item.checked">{{ item.name }}</span>
+            </mat-checkbox>
+          </li>
         </ul>
       </div>
     </div>
@@ -66,7 +71,7 @@
       <h2>Equipment</h2>
       <ul>
         <li *ngFor="let item of recipe.equipment">
-          {{ item | sentenceCase }}
+          <mat-checkbox>{{ item.name | sentenceCase }}</mat-checkbox>
         </li>
       </ul>
     </div>
@@ -78,21 +83,21 @@
         <ol class="custom-list">
           <li *ngFor="let step of section.steps; let i = index">
             <div class="step-number">{{ i + 1 }}</div>
-            <div class="step-text">{{ step }}</div>
+            <div class="step-text">{{ step.text }}</div>
           </li>
         </ol>
       </div>
     </div>
-  </ng-container>
-</section>
+  </ng-template>
 
-<ng-template #emptyState>
-  <div class="empty-state">
-    <mat-icon>local_dining</mat-icon>
-    <h2>Recipe Not Ready</h2>
-    <span>This recipe is still in the works. Check back soon!</span>
-    <a (click)="router.navigate(['/recipes'])">
-      Back to Recipes
-    </a>
-  </div>
-</ng-template>
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <mat-icon>local_dining</mat-icon>
+      <h2>Recipe Not Ready</h2>
+      <span>This recipe is still in the works. Check back soon!</span>
+      <a (click)="router.navigate(['/recipes'])">
+        Back to Recipes
+      </a>
+    </div>
+  </ng-template>
+</section>

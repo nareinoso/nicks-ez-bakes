@@ -37,6 +37,7 @@ export class HeaderComponent implements OnDestroy {
   private destroyed = new Subject<void>();
 
   isMobileView$ = new BehaviorSubject<boolean>(false);
+  isSearchOpen = false;
   isScrolled = false;
   showMenu = false;
   scrollY = 0;
@@ -75,12 +76,21 @@ export class HeaderComponent implements OnDestroy {
   }
 
   public onSearchClick(): void {
-    this.dialog.open(SearchDialogComponent, {
+    if (this.isSearchOpen) {
+      return;
+    }
+    this.isSearchOpen = true;
+
+    let searchDialogRef = this.dialog.open(SearchDialogComponent, {
       height: '59rem',
-      width: '100%',
+      width: '95%',
       maxHeight: '90vh',
       maxWidth: '75rem',
       panelClass: 'search-dialog',
+    });
+
+    searchDialogRef.afterClosed().subscribe(() => {
+      this.isSearchOpen = false;
     });
   }
 

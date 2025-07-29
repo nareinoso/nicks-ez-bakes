@@ -1,16 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { SearchResult } from '../../models';
 import { RecipesService } from '../../services';
+
+const MOCK_RESULTS = [
+  {
+    slug: 'brownies',
+    name: 'Fudgy Brownies',
+    category: 'recipes',
+    imageUrl: 'assets/images/bars/brownies.png',
+    link: '/recipe/brownies',
+  },
+  {
+    slug: 'banana-bread',
+    name: 'Banana Bread',
+    category: 'recipes',
+    imageUrl: 'assets/images/bread/banana-bread.png',
+    link: '/recipe/banana-bread',
+  },
+];
 
 @Component({
   standalone: true,
@@ -26,6 +55,9 @@ import { RecipesService } from '../../services';
     MatButtonModule,
     MatChipsModule,
     MatCardModule,
+    RouterModule,
+    ReactiveFormsModule,
+    MatIcon,
   ],
   providers: [
     {
@@ -35,88 +67,73 @@ import { RecipesService } from '../../services';
   ],
   encapsulation: ViewEncapsulation.None,
 })
-export class SearchDialogComponent {
-  filters = [
-    { label: 'Recipes', value: 'recipes' },
-    { label: 'Learn', value: 'learn' },
-    { label: 'Equipment', value: 'equipment' },
-  ];
+export class SearchDialogComponent implements AfterViewInit {
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
 
-  results = [
-    {
-      title: 'Baking Basics',
-      category: 'Learn',
-      image: 'assets/images/learn/baking.jpg',
-    },
-    {
-      title: 'Baking Sheet Set',
-      category: 'Equipment',
-      image: 'assets/images/equipment/baking-sheets.jpg',
-    },
-    {
-      title: 'Banana Bread',
-      category: 'Recipes',
-      image: 'assets/images/bread/banana-bread.jpg',
-    },
-    {
-      title: 'Bread Baking Guide',
-      category: 'Learn',
-      image: 'assets/images/bread/bread.jpg',
-    },
-    {
-      title: 'Brownies',
-      category: 'Recipes',
-      image: 'assets/images/cookies/brownies.jpg',
-    },
-    {
-      title: 'Cookie Decorating',
-      category: 'Learn',
-      image: 'assets/images/learn/cookie-decorating.jpg',
-    },
-    {
-      title: 'Chocolate Chip Cookies',
-      category: 'Recipes',
-      image: 'assets/images/cookies/cookies.jpg',
-    },
-    {
-      title: 'Cake Decorating Tips',
-      category: 'Learn',
-      image: 'assets/images/learn/decorating.jpg',
-    },
-    {
-      title: 'Stand Mixer',
-      category: 'Equipment',
-      image: 'assets/images/equipment/mixer.jpg',
-    },
-    {
-      title: 'Mixing Bowls',
-      category: 'Equipment',
-      image: 'assets/images/equipment/mixing-bowl.jpg',
-    },
-    {
-      title: 'Oven Thermometer',
-      category: 'Equipment',
-      image: 'assets/images/equipment/thermometer.jpg',
-    },
-    {
-      title: 'Pancakes',
-      category: 'Recipes',
-      image: 'assets/images/breakfast/pancakes.jpg',
-    },
-    {
-      title: 'Pastry Techniques',
-      category: 'Learn',
-      image: 'assets/images/desserts/pastries.jpg',
-    },
-    {
-      title: 'Rolling Pin',
-      category: 'Equipment',
-      image: 'assets/images/equipment/rolling-pins.jpg',
-    },
-    {
-      title: 'Sourdough Bread',
-      category: 'Recipes',
-      image: 'assets/images/bread/sourdough.jpg',
-    },
-  ];
+  private router = inject(Router);
+  private recipeService = inject(RecipesService);
+  private readonly dialogRef = inject(MatDialogRef<SearchDialogComponent>);
+
+  filters = [{ label: 'Recipes', value: 'recipes' }];
+  searchControl = new FormControl('');
+  activeFilter = 'recipes';
+  searchResults: SearchResult[] = [];
+  mockResults = MOCK_RESULTS;
+
+  ngOnInit() {
+    this.searchControl.valueChanges
+      .pipe(debounceTime(300), distinctUntilChanged())
+      .subscribe((query: any) => this.performSearch(query));
+  }
+
+  ngAfterViewInit() {
+    this.searchInput.nativeElement.focus();
+  }
+
+  performSearch(query: string | null): void {
+    if (!query) {
+      this.searchResults = [];
+      return;
+    }
+
+    // Replace this with your real search logic
+    this.recipeService
+      .searchRecipes()
+      .pipe(debounceTime(300), distinctUntilChanged())
+      .subscribe((results: SearchResult[]) => {
+        this.searchResults = results.filter((result) =>
+          result.name.toLowerCase().includes(query.toLowerCase())
+        );
+      });
+  }
+
+  clearSearch(): void {
+    this.searchControl.setValue('');
+    this.searchResults = [];
+  }
+
+  setActiveFilter(value: string): void {
+    this.activeFilter = value;
+    this.performSearch(this.searchControl.value || '');
+  }
+
+  goToLink(item: SearchResult): void {
+    this.dialogRef.close(); // Close the dialog before navigating
+    // Trick Angular into thinking the URL is different by navigating to root first
+    switch (item.category) {
+      case 'recipes':
+        this.router
+          .navigateByUrl('/', { skipLocationChange: true })
+          .then(() => {
+            this.router.navigateByUrl(`/recipe/${item.slug}`);
+          });
+        break;
+      default:
+        console.warn(
+          `No navigation logic defined for category: ${item.category}`
+        );
+        this.router.navigateByUrl(`/not-found`);
+        break;
+    }
+  }
 }

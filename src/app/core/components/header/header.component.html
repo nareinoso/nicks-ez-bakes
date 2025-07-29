@@ -22,6 +22,7 @@
         <button mat-icon-button
           class="search-btn"
           aria-label="Search button"
+          [disabled]="isSearchOpen"
           (click)="onSearchClick()">
           <fa-icon [icon]="['fas', 'search']"></fa-icon>
         </button>

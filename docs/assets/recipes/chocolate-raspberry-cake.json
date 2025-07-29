@@ -16,120 +16,132 @@
     {
       "label": "For the Cake",
       "items": [
-        "1 3/4 cups all-purpose flour 220g",
-        "1 3/4 granulated sugar 350g",
-        "3/4 cup unsweetened cocoa powder 75g",
-        "1 tsp baking powder",
-        "2 tsp baking soda",
-        "1 tsp salt",
-        "1 cup buttermilk 240ml",
-        "1/2 cup vegetable oil or canola oil, or melted coconut oil 120ml",
-        "2 large eggs at room temperature",
-        "1 tsp pure vanilla extract 5mL",
-        "1 cup freshly brewed strong hot coffee3 240ml"
+        { "name": "1 3/4 cups all-purpose flour 220g" },
+        { "name": "1 3/4 granulated sugar 350g" },
+        { "name": "3/4 cup unsweetened cocoa powder 75g" },
+        { "name": "1 tsp baking powder" },
+        { "name": "2 tsp baking soda" },
+        { "name": "1 tsp salt" },
+        { "name": "1 cup buttermilk 240ml" },
+        { "name": "1/2 cup vegetable oil or canola oil, or melted coconut oil 120ml" },
+        { "name": "2 large eggs at room temperature" },
+        { "name": "1 tsp pure vanilla extract 5mL" },
+        { "name": "1 cup freshly brewed strong hot coffee3 240ml" },
+        { "name": "1 container chocolate sprinkles (optional) 4oz 113g" }
       ]
     },
     {
       "label": "For the Raspberry Syrup",
       "items": [
-        "1 cup fresh raspberries 150g",
-        "1/2 cup granulated sugar 100g",
-        "3/4 cup water 60mL",
-        "1/4 cup chambord or raspberry liqueur (optional) 60mL"
+        { "name": "1 cup fresh raspberries 150g" },
+        { "name": "1/2 cup granulated sugar 100g" },
+        { "name": "3/4 cup water 60mL" },
+        { "name": "1/4 cup chambord or raspberry liqueur (optional) 60mL" }
       ]
     },
     {
       "label": "For the Glaze",
       "items": [
-        "1/2 cup raspberry jam 120mL",
-        "1 tbsp water 15mL",
-        "1 tbsp brandy or raspberry liqueur (optional) 15mL"
+        { "name": "1/2 cup raspberry jam 120mL" },
+        { "name": "1 tbsp water 15mL" },
+        { "name": "1 tbsp brandy or raspberry liqueur (optional) 15mL" }
       ]
     },
     {
       "label": "For the Ganache (optional)",
       "items": [
-        "1/2 cup heavy cream 120mL",
-        "8 oz bittersweet chocolate chopped 225g",
-        "1 tbsp light corn syrup optional"
+        { "name": "1/2 cup heavy cream 120mL" },
+        { "name": "8 oz bittersweet chocolate chopped 225g" },
+        { "name": "1 tbsp light corn syrup optional" }
       ]
     },
 
     {
       "label": "For the Buttercream",
       "items": [
-        "8 oz bittersweet chocolate chopped 225g",
-        "2 cup unsalted butter at room temperature 452g",
-        "5 large egg whites at room temperature",
-        "1 1/2 cup granulated sugar 300g",
-        "1 tsp vanilla extract",
-        "1 pinch kosher salt"
+        { "name": "8 oz bittersweet chocolate chopped 225g" },
+        { "name": "2 cup unsalted butter at room temperature 452g" },
+        { "name": "5 large egg whites at room temperature" },
+        { "name": "1 1/2 cup granulated sugar 300g" },
+        { "name": "1 tsp vanilla extract" },
+        { "name": "1 pinch kosher salt" }
       ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "3 8-inch round cake pans" },
+    { "name": "Mixing bowls" },
+    { "name": "Whisk" },
+    { "name": "Rubber spatula" },
+    { "name": "Fine-mesh sieve" },
+    { "name": "Small saucepan" },
+    { "name": "Stand mixer with whisk and paddle attachments" },
+    { "name": "Double boiler or microwave for melting chocolate" },
+    { "name": "Wire rack for cooling cakes" },
+    { "name": "Serving plate" }
+  ],
   "stepSections": [
     {
       "label": "For the Cake",
       "steps": [
-        "Sift the dry ingredients. Whisk together.",
-        "Mix the wet ingredients and add eggs one at a time",
-        "Slowly add the dry mixture to wet. Mix until combined",
-        "Distribute batter evenly into buttered and floured 8 inch pans.",
-        "Bake at 350 degrees F for about 25 min or until the centers are set.",
-        "Let the cakes cool in the pans for 10 minutes, then turn them out onto a wire rack to cool completely."
+        { "text": "Sift the dry ingredients. Whisk together." },
+        { "text": "Mix the wet ingredients and add eggs one at a time" },
+        { "text": "Slowly add the dry mixture to wet. Mix until combined" },
+        { "text": "Distribute batter evenly into buttered and floured 8 inch pans." },
+        { "text": "Bake at 350 degrees F for about 25 min or until the centers are set." },
+        { "text": "Let the cakes cool in the pans for 10 minutes, then turn them out onto a wire rack to cool completely." }
       ]
     },
     {
       "label": "For the Raspberry Syrup",
       "steps": [
-        "In a small saucepan, combine the raspberries, sugar, and water. Bring to a boil over medium heat, stirring until the sugar dissolves.",
-        "Reduce the heat and simmer for about 10 minutes until the mixture thickens slightly.",
-        "Remove from heat and strain through a fine-mesh sieve to remove the seeds. Stir in the Chambord or raspberry liqueur if using.",
-        "Let the syrup cool completely before using."
+        { "text": "In a small saucepan, combine the raspberries, sugar, and water. Bring to a boil over medium heat, stirring until the sugar dissolves." },
+        { "text": "Reduce the heat and simmer for about 10 minutes until the mixture thickens slightly." },
+        { "text": "Remove from heat and strain through a fine-mesh sieve to remove the seeds. Stir in the Chambord or raspberry liqueur if using." },
+        { "text": "Let the syrup cool completely before using." }
       ]
     },
     {
       "label": "For the Ganache (optional)",
       "steps": [
-        "Heat the heavy cream in a small saucepan over medium heat until it just begins to simmer.",
-        "Remove from heat and add the chopped chocolate. Let it sit for a minute to melt the chocolate.",
-        "Stir until smooth and glossy. If using, stir in the corn syrup for added shine.",
-        "Let the ganache cool to room temperature before using."
+        { "text": "Heat the heavy cream in a small saucepan over medium heat until it just begins to simmer." },
+        { "text": "Remove from heat and add the chopped chocolate. Let it sit for a minute to melt the chocolate." },
+        { "text": "Stir until smooth and glossy. If using, stir in the corn syrup for added shine." },
+        { "text": "Let the ganache cool to room temperature before using." }
       ]
     },
     {
       "label": "For the Glaze",
       "steps": [
-        "Heat the jam, water and brandy in the microwave for about 25 seconds. Mix together and strain. Set aside to cool."
+        { "text": "Heat the jam, water and brandy in the microwave for about 25 seconds. Mix together and strain. Set aside to cool." }
       ]
     },
     {
       "label": "For the Buttercream",
       "steps": [
-        "Melt your chocolate in a microwave or over a double boiler until smooth. Set aside to cool slightly.",
-        "Add egg whites, sugar and salt in a bowl.",
-        "Give the mixture a brief whisk.",
-        "Place the bowl over a pan of simmering water. Make sure the water does not touch the bowl.",
-        "Whisk the egg whites occasionally while it warms up. When the mixture has warmed, whisk it constantly. You will heat the mixture until it reaches an internal temperature of 160ºF or until it's not grainy between your fingers.",
-        "Transfer the bowl to a stand mixer, mix with a whisk attachment until you get room temperature glossy peaks.",
-        "Switch to a paddle attachment and while the mixture is running on low, add tablespoon sized dollops of room temperature butter making sure to let the butter incorporate before you add the next piece.",
-        "Once all the butter is incorporated, add the vanilla extract and cooled chocolate. Mix until smooth.",
-        "You can transfer it to a piping bag or to a ziplock bag to store in the refrigerator before assembly."
+        { "text": "Melt your chocolate in a microwave or over a double boiler until smooth. Set aside to cool slightly." },
+        { "text": "Add egg whites, sugar and salt in a bowl." },
+        { "text": "Give the mixture a brief whisk." },
+        { "text": "Place the bowl over a pan of simmering water. Make sure the water does not touch the bowl." },
+        { "text": "Whisk the egg whites occasionally while it warms up. When the mixture has warmed, whisk it constantly. You will heat the mixture until it reaches an internal temperature of 160ºF or until it's not grainy between your fingers." },
+        { "text": "Transfer the bowl to a stand mixer, mix with a whisk attachment until you get room temperature glossy peaks." },
+        { "text": "Switch to a paddle attachment and while the mixture is running on low, add tablespoon sized dollops of room temperature butter making sure to let the butter incorporate before you add the next piece." },
+        { "text": "Once all the butter is incorporated, add the vanilla extract and cooled chocolate. Mix until smooth." },
+        { "text": "You can transfer it to a piping bag or to a ziplock bag to store in the refrigerator before assembly." }
       ]
     },
     {
       "label": "For the Assembly",
       "steps": [
-        "Once the cakes are completely cooled, level them if necessary.",
-        "Place one layer of cake on a serving plate. Brush or soak (with a squeeze bottle) generously with raspberry syrup.",
-        "Spread a layer of buttercream over the first layer, then add a layer of fresh raspberries.",
-        "Repeat with the second layer of cake, more raspberry syrup, buttercream, and raspberries.",
-        "Place the final layer of cake on top and cover the entire cake with a thin layer of buttercream to create a crumb coat. Chill in the refrigerator for 15 minutes.",
-        "After chilling, cover the cake with a thicker layer of buttercream and smooth it out.",
-        "Drizzle the ganache over the top of the cake, allowing it to drip down the sides.",
-        "Decorate with additional fresh raspberries on top and brush them with the glaze for extra shine.",
-        "Serve the cake at room temperature. Enjoy your delicious Chocolate Raspberry Cake!"
+        { "text": "Once the cakes are completely cooled, level them if necessary." },
+        { "text": "Place one layer of cake on a serving plate. Brush or soak (with a squeeze bottle) generously with raspberry syrup." },
+        { "text": "Spread a layer of buttercream over the first layer, then add a layer of fresh raspberries." },
+        { "text": "Repeat with the second layer of cake, more raspberry syrup, buttercream, and raspberries." },
+        { "text": "Place the final layer of cake on top and cover the entire cake with a thin layer of buttercream to create a crumb coat. Chill in the refrigerator for 15 minutes." },
+        { "text": "After chilling, cover the cake with a thicker layer of buttercream and smooth it out." },
+        { "text": "Drizzle the ganache over the top of the cake, allowing it to drip down the sides." },
+        { "text": "Decorate with additional fresh raspberries on top and brush them with the glaze for extra shine. Additionally, you can create a skirt by pressing chocolate sprinkles around the bottom of the cake." },
+        { "text": "Serve the cake at room temperature. Enjoy your delicious Chocolate Raspberry Cake!" }
       ]
     }
   ]

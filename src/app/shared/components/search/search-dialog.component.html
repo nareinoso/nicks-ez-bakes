@@ -1,25 +1,54 @@
 <mat-dialog-content>
   <div class="search-header">
-    <mat-form-field>
-      <input matInput placeholder="Search" />
-      <button matSuffix mat-icon-button aria-label="Search">
+    <mat-form-field class="search-field">
+      <input matInput #searchInput
+        placeholder="Search"
+        [formControl]="searchControl"
+        (keyup.enter)="performSearch(searchControl.value)" />
+
+      <!-- Search Button -->
+      <button
+        matPrefix
+        mat-icon-button
+        aria-label="Search"
+        [disabled]="true"
+        (click)="performSearch(searchControl.value)">
         <fa-icon [icon]="['fas', 'search']"></fa-icon>
+      </button>
+
+      <!-- Clear Button -->
+      <button *ngIf="searchControl.value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearSearch()">
+        <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
     <mat-chip-listbox class="search-filters">
-      <mat-chip-option *ngFor="let filter of filters" [value]="filter.value">
+      <mat-chip-option *ngFor="let filter of filters"
+        [value]="filter.value"
+        [selected]="filter.value === activeFilter"
+        (click)="setActiveFilter(filter.value)">
         {{ filter.label }}
       </mat-chip-option>
     </mat-chip-listbox>
   </div>
   <div class="search-results">
-    <ng-container *ngFor="let result of results">
-      <mat-card class="search-result">
+    <ng-container *ngIf="searchResults.length; else noResults">
+      <mat-card class="search-result"
+        *ngFor="let result of searchResults"
+        (click)="goToLink(result)">
         <mat-card-header>
-          <img [src]="result.image" alt="{{ result.title }}"/>
-          <span>{{ result.title }}</span>
+          <img [src]="result.imageUrl"
+            alt="{{ result.name }}" />
+          <span>{{ result.name }}</span>
         </mat-card-header>
       </mat-card>
     </ng-container>
+
+    <ng-template #noResults>
+      <p class="no-results">No results found.</p>
+    </ng-template>
   </div>
 </mat-dialog-content>

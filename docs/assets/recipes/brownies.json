@@ -14,45 +14,45 @@
   "ingredientSections": [
     {
       "items": [
-        "10 tablespoons (141g) salted butter, melted",
-        "1 cup (207g) granulated sugar",
-        "2 large eggs",
-        "2 tsp vanilla extract",
-        "1/2 cup (114g) chocolate chips, melted",
-        "3/4 cup (99g) all-purpose flour",
-        "1/4 cup (24g) unsweetened cocoa powder",
-        "1/2 tsp salt",
-        "1 cup (180g) chocolate chips",
-        "(optional) Flaky sea salt for topping"
+        { "name": "10 tablespoons (141g) salted butter, melted" },
+        { "name": "1 cup (207g) granulated sugar" },
+        { "name": "2 large eggs" },
+        { "name": "2 tsp vanilla extract" },
+        { "name": "1/2 cup (114g) chocolate chips, melted" },
+        { "name": "3/4 cup (99g) all-purpose flour" },
+        { "name": "1/4 cup (24g) unsweetened cocoa powder" },
+        { "name": "1/2 tsp salt" },
+        { "name": "1 cup (180g) chocolate chips" },
+        { "name": "(optional) Flaky sea salt for topping" }
       ]
     }
   ],
   "equipment": [
-    "9x9 baking pan",
-    "parchment paper",
-    "microwave-safe bowl",
-    "whisk",
-    "silicone spatula",
-    "measuring cups & spoons"
+    { "name": "9x9 baking pan" },
+    { "name": "parchment paper" },
+    { "name": "microwave-safe bowl" },
+    { "name": "whisk" },
+    { "name": "silicone spatula" },
+    { "name": "measuring cups & spoons" }
   ],
   "stepSections": [
     {
       "label": "Make the Batter",
       "steps": [
-        "Preheat the oven to 350°F (175°C) and line a 9x9-inch metal baking pan with parchment paper.",
-        "Melt 141 g salted butter in the microwave in a micrwoave-safe bowl in 20-second increments until fully melted. Pour into a large mixing bowl. Whisk in 207 g granulated sugar by hand until smooth, 30 seconds.",
-        "Add in 2 eggs and 10 mL vanilla extract. Whisk vigorously for 1 minute to ensure a crackly top.",
-        "Melt 114 g chocolate chips in a microwave in 30-second increments, stirring between each. Once melted and smooth, whisk into the brownie batter until combined and smooth.",
-        "Use a rubber spatula to stir in 99 g all-purpose flour, 24 g unsweetened cocoa powder, and 0.5 teaspoon salt until just combined. Stir in whole, unmelted chocolate chips.",
-        "Pour into prepared pan and smooth out."
+        { "text": "Preheat the oven to 350°F (175°C) and line a 9x9-inch metal baking pan with parchment paper." },
+        { "text": "Melt 141 g salted butter in the microwave in a micrwoave-safe bowl in 20-second increments until fully melted. Pour into a large mixing bowl. Whisk in 207 g granulated sugar by hand until smooth, 30 seconds." },
+        { "text": "Add in 2 eggs and 10 mL vanilla extract. Whisk vigorously for 1 minute to ensure a crackly top." },
+        { "text": "Melt 114 g chocolate chips in a microwave in 30-second increments, stirring between each. Once melted and smooth, whisk into the brownie batter until combined and smooth." },
+        { "text": "Use a rubber spatula to stir in 99 g all-purpose flour, 24 g unsweetened cocoa powder, and 0.5 teaspoon salt until just combined. Stir in whole, unmelted chocolate chips." },
+        { "text": "Pour into prepared pan and smooth out." }
       ]
     },
     {
       "label" : "Bake and Finish",
       "steps": [
-        "Bake in the preheated oven for 30 minutes, or until a toothpick inserted into the center comes out with a few moist crumbs.",
-        "Remove from oven and let cool in the pan for at least 30 minutes .",
-        "Top with flaky sea salt and let cool before slicing into 9 squares."
+        { "text": "Bake in the preheated oven for 30 minutes, or until a toothpick inserted into the center comes out with a few moist crumbs." },
+        { "text": "Remove from oven and let cool in the pan for at least 30 minutes ." },
+        { "text": "Top with flaky sea salt and let cool before slicing into 9 squares." }
       ]
     }
   ]

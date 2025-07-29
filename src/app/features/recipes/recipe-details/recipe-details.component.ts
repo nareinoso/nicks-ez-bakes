@@ -7,15 +7,15 @@ import {
   Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../../shared/models';
-import { RecipesService } from '../../../shared/services';
 import { SentenceCasePipe } from '../../../shared/pipes';
-import { timestamp } from 'rxjs';
+import { RecipesService } from '../../../shared/services';
 
 @Component({
   standalone: true,
@@ -29,6 +29,8 @@ import { timestamp } from 'rxjs';
     MatIconModule,
     ReactiveFormsModule,
     SentenceCasePipe,
+    MatCheckboxModule,
+    FormsModule,
   ],
 })
 export class RecipeDetailsComponent implements OnInit {
@@ -64,12 +66,35 @@ export class RecipeDetailsComponent implements OnInit {
 
     this.recipeService.getRecipe(slug).subscribe({
       next: (recipe) => {
+        // Transform items into checkable objects
+        recipe.ingredientSections = recipe.ingredientSections.map(
+          (section) => ({
+            ...section,
+            items: section.items.map((item) => ({
+              name: item.name,
+              checked: false,
+            })),
+          })
+        );
+
+        recipe.equipment = recipe?.equipment?.map((item) => ({
+          ...item,
+          checked: false,
+        }));
+
+        recipe.stepSections = recipe.stepSections.map((section) => ({
+          ...section,
+          steps: section.steps.map((step) => ({
+            text: typeof step === 'string' ? step : step.text,
+            checked: false,
+          })),
+        }));
+
         this.recipe = recipe;
         this.title.setTitle(`${this.recipe?.name} | The Caffeinated Baker`);
         this.insertRecipeSchema(this.recipe);
       },
       error: () => {
-        // Log error
         console.log(`Recipe for slug: ${slug} not found.`);
       },
     });

@@ -2,25 +2,97 @@
   "slug": "millionaire-shortbread",
   "name": "Millionaire Shortbread",
   "description": "",
-  "credit": "Recipe originally by of .",
+  "credit": "Recipe originally by Andrea Geary of America's Test Kitchen.",
   "imageUrl": "assets/images/bars/millionaire-shortbread.jpg",
   "categories": ["bars"],
   "flavors": ["chocolate", "rich"],
   "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour",
+  "chillTime": "1 1/2 hours",
+  "totalTime": "3 hours",
+  "yield": "40 cookies",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the shortbread",
+      "items": [
+        { "name": "2 ½ cups (12 1/2 ounces/354 grams) all-purpose flour" },
+        { "name": "½ cup (3 1/2 ounces/99 grams) granulated sugar" },
+        { "name": "¾ teaspoon salt" },
+        { "name": "16 tablespoons unsalted butter, melted" }
+      ]
+    },
+    {
+      "label": "For the caramel",
+      "items": [
+        { "name": "1 (14-ounce) can sweetened condensed milk" },
+        { "name": "1 cup packed (7 ounces/198 grams) brown sugar" },
+        { "name": "½ cup heavy cream" },
+        { "name": "½ cup corn syrup" },
+        { "name": "8 tablespoons unsalted butter" },
+        { "name": "½ teaspoon salt" }
+      ]
+    },
+    {
+      "label": "For the chocolate topping",
+      "items": [
+        { "name": "8 ounces (227 grams) bittersweet chocolate (6 ounces [170 grams] chopped fine, 2 ounces [57 grams] grated)" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "9x13-inch baking pan" },
+    { "name": "aluminum foil" },
+    { "name": "medium saucepan" },
+    { "name": "mixing bowls" },
+    { "name": "whisk" },
+    { "name": "rubber spatula" },
+    { "name": "offset spatula" },
+    { "name": "food processor" },
+    { "name": "microwave-safe bowl" },
+    { "name": "dry measuring cups" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the shortbread",
+      "steps": [
+        { "text": "Adjust oven rack to lower-middle position and heat oven to 350 degrees." },
+        { "text": "Make foil sling for 13 by 9-inch baking pan by folding 2 long sheets of aluminum foil; first sheet should be 13 inches wide and second sheet should be 9 inches wide. Lay sheets of foil in pan perpendicular to each other, with extra foil hanging over edges of pan. Push foil into corners and up sides of pan, smoothing foil flush to pan." },
+        { "text": "Combine flour, sugar, and salt in medium bowl." },
+        { "text": "Add melted butter and stir with rubber spatula until flour is evenly moistened." },
+        { "text": "Crumble dough evenly over bottom of prepared pan. Using your fingertips and palm of your hand, press and smooth dough into even thickness." },
+        { "text": "Using fork, pierce dough at 1-inch intervals." },
+        { "text": "Bake until light golden brown and firm to touch, 25 to 30 minutes." },
+        { "text": "Transfer pan to wire rack. Using sturdy metal spatula, press on entire surface of warm crust to compress (this will make finished bars easier to cut)." },
+        { "text": "Let crust cool until it is just warm, at least 20 minutes." }
+      ]
+    },
+    {
+      "label": "For the caramel",
+      "steps": [
+        { "text": "Stir all ingredients together in large, heavy-bottomed saucepan. Cook over medium heat, stirring frequently, until mixture registers between 236 and 239 degrees (temperature will fluctuate), 16 to 20 minutes." },
+        { "text": "Pour over crust and spread to even thickness (mixture will be very hot)." },
+        { "text": "Let cool completely, about 1 1/2 hours." }
+      ]
+    },
+    {
+      "label": "For the chocolate topping",
+      "steps": [
+        { "text": "Microwave chopped chocolate in bowl at 50 percent power, stirring every 15 seconds, until melted but not much warmer than body temperature (check by holding in palm of your hand), 1 to 2 minutes." },
+        { "text": "Add grated chocolate and stir until smooth, returning to microwave for no more than 5 seconds at a time to finish melting if necessary." },
+        { "text": "Spread chocolate evenly over surface of filling. Refrigerate shortbread until chocolate is just set, about 10 minutes." },
+        { "text": "Using offset spatula, spread chocolate evenly over filling." },
+        { "text": "Refrigerate until chocolate is firm, about 1 hour." }
+      ]
+    },
+    {
+      "label": "To serve",
+      "steps": [
+        { "text": "Using foil overhang, lift shortbread out of pan and transfer to cutting board; discard foil." },
+        { "text": "Using serrated knife and gentle sawing motion, cut shortbread in half crosswise to create two 6 1/2 by 9-inch rectangles." },
+        { "text": "Cut each rectangle in half to make four 3 1/4 by 9-inch strips." },
+        { "text": "Cut each strip crosswise into 10 equal pieces. (Shortbread can be stored at room temperature, between layers of parchment, for up to 1 week.)" }
+      ]
     }
   ]
 }

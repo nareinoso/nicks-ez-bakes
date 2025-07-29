@@ -177,9 +177,19 @@
       font-family: "Patua One", serif;
     }
 
+    ul {
+      padding-left: 0;
+    }
+
     li {
       margin-bottom: 0.5rem;
+      list-style: none;
     }
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+    opacity: 0.6;
   }
 
   .custom-list {
