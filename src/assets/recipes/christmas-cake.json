@@ -1,26 +1,76 @@
 {
   "slug": "christmas-cake",
   "name": "Christmas Cake",
-  "description": "",
-  "credit": "Recipe originally by of .",
+  "description": "A rich, moist fruit cake traditionally made for Christmas celebrations. This cake is packed with dried fruits, nuts, and spices, and can be decorated with marzipan and royal icing for a festive touch.",
+  "credit": "Recipe originally by James Martin of BBC Good Food.",
   "imageUrl": "assets/images/cakes/christmas-cake.jpg",
   "categories": ["cakes"],
   "flavors": ["citrus", "rich"],
-  "occasion": [],
-  "prepTime": "",
-  "cookTime": "",
-  "chillTime": "",
-  "totalTime": "",
-  "yield": "",
+  "occasion": ["holidays"],
+  "prepTime": "25 minutes",
+  "cookTime": "2 hours 10 minutes",
+  "chillTime": "1 hour",
+  "totalTime": "4 hours-2 weeks",
+  "yield": "12 servings",
   "ingredientSections": [
     {
-      "items": []
+      "items": [
+        { "name": "1kg mixed dried fruit (use a mix of raisins, sultanas, currants, cherries, cranberries, prunes or figs)" },
+        { "name": "zest and juice 1 orange" },
+        { "name": "zest and juice 1 lemon" },
+        { "name": "150ml brandy" },
+        { "name": "Sherry, whisky or rum, plus extra for feeding" },
+        { "name": "250g pack butter" },
+        { "name": "softened" },
+        { "name": "200g light soft brown sugar" },
+        { "name": "175g plain flour" },
+        { "name": "100g ground almond" },
+        { "name": "½ tsp baking powder" },
+        { "name": "2 tsp mixed spice" },
+        { "name": "1 tsp ground cinnamon" },
+        { "name": "¼ tsp ground cloves" },
+        { "name": "100g flaked almonds" },
+        { "name": "4 large eggs" },
+        { "name": "1 tsp vanilla extract" },
+        { "name": "powdered sugar, for dusting" },
+        { "name": "marzipan and royal icing (optional)" },
+        { "name": "apricot jam (if using marzipan)" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "large pan" },
+    { "name": "large bowl" },
+    { "name": "8-inch deep cake tin" },
+    { "name": "baking parchment" },
+    { "name": "newspaper" },
+    { "name": "string" },
+    { "name": "spatula" },
+    { "name": "skewer" },
+    { "name": "rolling pin (if using marzipan and icing)" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the cake",
+      "steps": [
+        { "text": "Put 1kg mixed dried fruit, the zest and juice of 1 orange and 1 lemon, 150ml brandy or other alcohol, 250g softened butter and 200g light, soft brown sugar in a large pan set over a medium heat." },
+        { "text": "Bring to the boil, then lower the heat and simmer for 5 mins. Tip the fruit mixture into a large bowl and leave to cool for 30 mins." },
+        { "text": "Heat oven to 300F. Line a deep 8-inch cake tin with a double layer of baking parchment, then wrap a double layer of newspaper around the outside – tie with string to secure. This acts as an insulator and helps prevent the cake from burning." },
+        { "text": "Add 175g plain flour, 100g ground almonds, ½ tsp baking powder, 2 tsp mixed spice, 1 tsp ground cinnamon, ¼ tsp ground cloves, 100g flaked almonds, 4 large eggs and 1 tsp vanilla extract to the fruit mixture and stir well, making sure there are no pockets of flour." },
+        { "text": "Tip into your prepared tin, level the top with a spatula and bake in the centre of the oven for around 2 hrs. After 2 hrs insert a skewer into the centre of the cake to test if it’s done. If any wet cake mixture clings to the skewer, return the cake to the oven for another 10 mins then check again and keep cooking, checking every 10 mins until the skewer comes out dry." },
+        { "text": "Remove the cake from the oven, poke holes in it with a skewer and spoon over 2 tbsp of your chosen alcohol. Leave the cake to cool completely in the tin." },
+        { "text": "To store, peel off the baking parchment, and store in a cake tin. Feed the cake with 1-2 tbsp alcohol every two weeks, or until you ice it." },
+        { "text": "Don’t feed the cake for the final week to give the surface a chance to dry before icing." }
+      ]
+    },
+    {
+      "label": "To decorate",
+      "steps": [
+        { "text": "Once the cake is completely cool, you can decorate it. You can use marzipan and royal icing, or simply dust with powdered sugar." },
+        { "text": "If using marzipan, roll out a layer to cover the top and sides of the cake, then brush with a little warmed apricot jam to help the icing stick." },
+        { "text": "Roll out royal icing to cover the cake, smoothing it down with your hands." },
+        { "text": "Decorate as desired with festive decorations." }
+      ]
     }
   ]
 }

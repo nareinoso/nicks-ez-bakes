@@ -1,0 +1,62 @@
+{
+  "slug": "ginger-cheesecake-cookies",
+  "name": "Ginger Cheesecake Cookies",
+  "description": "These cookies are a delightful combination of spiced ginger cookie dough and a creamy cheesecake filling, making them perfect for the holidays or any special occasion.",
+  "credit": "Recipe originally by Samantha Senevirante of NYT Cooking.",
+  "imageUrl": "assets/images/cookies/gingersnaps.jpg",
+  "categories": ["cookies"],
+  "flavors": ["citrus", "rich"],
+  "occasion": ["holidays", "gifting", "justbecause"],
+  "prepTime": "15 minutes",
+  "cookTime": "2 hours",
+  "chillTime": "1 hour",
+  "totalTime": "3 hours 15 minutes",
+  "yield": "18 cookies",
+  "ingredientSections": [
+    {
+      "label": "For the Filling",
+      "items": [
+        { "name": "6ounces/170 grams cream cheese, chilled" },
+        { "name": "½ cup/62 grams powdered sugar" },
+        { "name": "1large egg yolk" },
+        { "name": "2teaspoons vanilla extract" }
+      ]
+    },
+    {
+      "label": "For the Dough",
+      "items": [
+        { "name": "2½ cups/320 grams all-purpose flour" },
+        { "name": "1tablespoon ground ginger" },
+        { "name": "2teaspoons ground cinnamon" },
+        { "name": "1teaspoon baking soda" },
+        { "name": "½teaspoon freshly ground black pepper" },
+        { "name": "½teaspoon kosher salt (such as Diamond Crystal)" },
+        { "name": "10tablespoons/141 grams salted butter, at room temperature" },
+        { "name": "1cup/200 grams granulated sugar" },
+        { "name": "1large egg" },
+        { "name": "½cup/62 grams crystallized ginger, finely chopped" },
+        { "name": "⅓cup/113 milliliters unsulphured molasses" },
+        { "name": "2tablespoons finely chopped fresh ginger (no need to peel)" },
+        { "name": "White sanding sugar or granulated sugar, for rolling (optional)" }
+      ]
+    }
+  ],
+  "equipment": [
+    { "name": "Electric mixer" },
+    { "name": "Rimmed baking sheets" },
+    { "name": "Parchment paper" },
+    { "name": "Piping bag or resealable plastic bag" },
+    { "name": "Wire racks" }
+  ],
+  "stepSections": [
+    {
+      "steps": [
+        { "text": "Prepare the filling: In a large bowl, using an electric mixer on medium-high, beat together cream cheese, powdered sugar, egg yolk and vanilla until smooth. Transfer mixture to a piping bag or resealable plastic bag." },
+        { "text": "Set a sheet of parchment on a rimmed baking sheet. Snip off a ¼-inch opening from the bottom corner of the bag. Pipe equal-size dollops of the filling — you should have at least 18 — onto the prepared sheet. Using a spoon, smooth down any sharp edges. Freeze until completely firm, at least 1 hour. Line 2 more rimmed baking sheets with parchment." },
+        { "text": "Prepare the dough: In a large bowl, whisk together flour, ground ginger, cinnamon, baking soda, pepper and salt. In a second large bowl, using an electric mixer, beat butter and sugar on medium until pale and fluffy, 3 to 4 minutes. Beat in egg, crystallized ginger, molasses and fresh ginger, scraping the sides as you go. With the mixer on low, beat in the flour mixture until well combined." },
+        { "text": "Scoop dough into 2-inch/45-gram balls. (To portion the dough without a cookie scoop, form it into a rectangle, then use a sharp knife to cut the block into 18 equal pieces.) Working with one at a time, flatten a dough ball in the palm of your hand, then add a piece of frozen filling to the center. (Keep the rest of the filling in the freezer as you work.) Bring the dough up and around the filling, encasing it completely. Roll the dough ball between your hands to form it into a smooth sphere. Repeat with the remaining dough and filling. If the dough feels very soft, chill it for about 15 minutes." },
+        { "text": "Heat oven to 350 degrees. Roll each chilled ball in sanding sugar to coat, if you like, then place on the prepared sheets, at least 3 inches apart (they will spread). Bake, rotating sheets halfway through, until the center of each cookie is just set, 15 to 17 minutes. Repeat with any remaining cookies. Let cool on baking sheets for 5 minutes, then move to wire racks to cool completely. Cookies will keep, stored in an airtight container at room temperature, for up to 3 days" }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "slug": "lemon-blueberry-cake",
   "name": "Lemon Blueberry Cake",
-  "description": "",
+  "description": "A moist and flavorful lemon blueberry cake with a rich cream cheese frosting, perfect for any occasion. This cake is bursting with fresh blueberries and zesty lemon, making it a delightful treat for citrus lovers.",
   "credit": "Recipe originally by Sally McKenney of Sally’s Baking Addiction.",
   "imageUrl": "assets/images/cakes/lemon-blueberry-cake.png",
   "categories": ["cakes"],
@@ -14,13 +14,66 @@
   "yield": "12 servings",
   "ingredientSections": [
     {
-      "items": []
+      "label": "For the Cake",
+      "items": [
+        { "name": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature" },
+        { "name": "1 and 1/4 cups (250g) granulated sugar" },
+        { "name": "1/2 cup (100g) packed light brown sugar" },
+        { "name": "6 Tablespoons (90ml) vegetable oil, canola oil, or avocado oil" },
+        { "name": "4 large eggs, at room temperature" },
+        { "name": "1 Tablespoon pure vanilla extract" },
+        { "name": "3 cups (375g) all-purpose flour (spooned & leveled)" },
+        { "name": "2 teaspoons baking powder" },
+        { "name": "1/2 teaspoon baking soda" },
+        { "name": "1/2 teaspoon salt" },
+        { "name": "3/4 cup (180ml) buttermilk, at room temperature" },
+        { "name": "2 Tablespoons lemon zest" },
+        { "name": "1/2 cup (120ml) lemon juice (3–4 lemons), at room temperature" },
+        { "name": "1 and 1/2 cups (210g) fresh blueberries (I do not recommend frozen)" },
+        { "name": "1 Tablespoon all-purpose flour" }
+      ]
+    },
+    {
+      "label": "For the Cream Cheese Frosting",
+      "items": [
+        { "name": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature" },
+        { "name": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature" },
+        { "name": "3 and 1/2 cups (420g) confectioners’ sugar" },
+        { "name": "1 Tablespoon (15ml) heavy cream" },
+        { "name": "1 teaspoon pure vanilla extract" },
+        { "name": "pinch salt" }
+      ]
     }
   ],
-  "equipment": [],
+  "equipment": [
+    { "name": "3 8-inch round cake pans" },
+    { "name": "Parchment paper" },
+    { "name": "Handheld or stand mixer with paddle attachment" },
+    { "name": "Large serrated knife" },
+    { "name": "Cake stand" }
+  ],
   "stepSections": [
     {
-      "steps": []
+      "label": "For the Cake",
+      "steps": [
+        { "text": "Preheat oven to 350°F (177°C). Grease three 8-inch round cake pans, line with parchment paper rounds, then grease the parchment paper. Parchment paper helps the cakes seamlessly release from the pans." },
+        { "text": "Using a handheld or stand mixer with a paddle attachment, beat the butter on high until smooth and creamy, about 1 minute. Add granulated and brown sugars and beat on medium-high speed until combined, about 2 minutes. Add the oil and beat until combined and light and creamy, about 3 more minutes. Add the eggs and vanilla, and beat on medium speed until everything is completely combined, about 1 minute. Scrape down the sides and bottom of the bowl as needed." },
+        { "text": "In a large bowl, whisk together the flour, baking powder, baking soda, and salt. Add the dry ingredients to the wet ingredients. Beat on low speed for a few seconds, then beat in the milk, lemon zest, and lemon juice *just* until combined. Toss the blueberries with 1 Tablespoon of flour and gently fold into the batter. Batter is thick. Do not over-mix." },
+        { "text": "Spoon batter evenly into prepared cake pans. Bake for about 22–26 minutes or until a toothpick inserted in the center comes out clean. Remove from the oven and allow to cool completely in the pan before assembling and frosting." }
+      ]
+    },
+    {
+      "label": "For the Cream Cheese Frosting",
+      "steps": [
+        { "text": "Using a handheld or stand mixer with a paddle attachment, beat cream cheese and butter together on medium speed until no lumps remain, about 3 full minutes. Add confectioners’ sugar, heavy cream, vanilla extract, and salt with the mixer running on low. Turn mixer up to high speed and beat for 3 minutes." }
+      ]
+    },
+    {
+      "label": "Assembling the Cake",
+      "steps": [
+        { "text": "First, using a large serrated knife, slice a thin layer off the tops of the cakes to create a flat surface. Place 1 layer on your cake stand. Evenly cover the top with cream cheese frosting. Top with 2nd layer, more frosting, then the third layer. Top with frosting and spread around the sides. The recipe doesn’t make a ton of frosting, just enough for a light frost. Top with blueberries or lemon garnish if desired. Refrigerate for at least 45 minutes before cutting or else the cake may fall apart as you cut." },
+        { "text": "Store leftovers covered in the refrigerator for up to 5 days. Cake can be frozen for up to 3 months. Thaw overnight in the refrigerator before serving." }
+      ]
     }
   ]
 }

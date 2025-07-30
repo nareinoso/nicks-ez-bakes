@@ -1,0 +1,49 @@
+{
+  "slug": "chocolate-chip-cookies",
+  "name": "Chocolate Chip Cookies",
+  "description": "These classic chocolate chip cookies are a favorite for a reason. With a perfect balance of chewy and crispy textures, they are loaded with rich bittersweet chocolate and have a hint of sea salt to enhance the flavors. Ideal for any occasion, these cookies are sure to please everyone.",
+  "credit": "Recipe originally by Jacques Torres and adapted by David Leite.",
+  "imageUrl": "assets/images/cookies/chocolate-chip-cookies.jpg",
+  "categories": ["cookies"],
+  "flavors": ["chocolate"],
+  "occasion": ["everyday", "justbecause", "gifting", "party"],
+  "prepTime": "15 minutes",
+  "cookTime": "20 minutes",
+  "chillTime": "10 minutes",
+  "totalTime": "45 minutes",
+  "yield": "1½ dozen 5-inch cookies",
+  "ingredientSections": [
+    {
+      "items": [
+        { "name": "2 cups minus 2 tablespoons cake flour (8½ ounces)" },
+        { "name": "1⅔ cups bread flour (8½ ounces)" },
+        { "name": "1¼ teaspoons baking soda" },
+        { "name": "1½ teaspoons baking powder" },
+        { "name": "1½ teaspoons coarse sea salt, plus more for sprinkling" },
+        { "name": "1¼ cups unsalted butter (2½ sticks)" },
+        { "name": "1¼ cups light brown sugar (10 ounces)" },
+        { "name": "1 cup plus 2 tablespoons granulated sugar (8 ounces)" },
+        { "name": "2 large eggs" },
+        { "name": "2 teaspoons natural vanilla extract" },
+        { "name": "1¼ pounds bittersweet chocolate baking wafers" }
+      ]
+    }
+  ],
+  "equipment": [
+    { "name": "Mixer with paddle attachment" },
+    { "name": "Baking sheet" },
+    { "name": "Parchment paper or nonstick baking mat" },
+    { "name": "Wire rack" },
+    { "name": "Plastic wrap" }
+  ],
+  "stepSections": [
+    {
+      "steps": [
+        { "text": "Sift flours, baking soda, baking powder and salt into a bowl. Set aside." },
+        { "text": "Using a mixer fitted with paddle attachment, cream butter and sugars together until very light, about 5 minutes. Add eggs, one at a time, mixing well after each addition. Stir in the vanilla. Reduce speed to low, add dry ingredients and mix until just combined, 5 to 10 seconds. Drop chocolate pieces in and incorporate them without breaking them. Press plastic wrap against dough and refrigerate for 24 to 36 hours. Dough may be used in batches, and can be refrigerated for up to 72 hours." },
+        { "text": "When ready to bake, preheat oven to 350 degrees. Line a baking sheet with parchment paper or a nonstick baking mat. Set aside." },
+        { "text": "Scoop 6 3½-ounce mounds of dough (the size of generous golf balls) onto baking sheet, making sure to turn horizontally any chocolate pieces that are poking up; it will make for a more attractive cookie. Sprinkle lightly with salt and bake until golden brown but still soft, 18 to 20 minutes. Transfer sheet to a wire rack for 10 minutes, then slip cookies onto another rack to cool a bit more. Repeat with remaining dough, or reserve dough, refrigerated, for baking remaining batches the next day." }
+      ]
+    }
+  ]
+}
